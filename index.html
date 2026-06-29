@@ -1,1083 +1,777 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
-
-<!--Elemento <head> provee informaciÃ³n general (metadatos) del documento, incluyendo tÃ­tulo y enlaces a las hojas de estilos.-->
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <title>Trueno oficial</title>
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-
-        <!-- Ãconos de Bootstrap-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-
-        <!-- TipografÃ­as de Google-->
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&amp;display=swap" rel="stylesheet" />
-<link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />        <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&amp;family=Wix+Madefor+Display:wght@700&amp;display=swap" rel="stylesheet" />
-
-        <!-- Estilos CSS (incluye Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-
-        <style>
-            body {
-                background-color: #000000;
-                color: #ffffff;
-                font-family: "Wix Madefor Display", sans-serif;
-                font-optical-sizing: auto;
-                font-style: normal;
-            }
-
-            p,
-            a,
-            span,
-            input,
-            button,
-            select,
-            li,
-            div {
-                font-family: "Wix Madefor Display", sans-serif;
-                font-optical-sizing: auto;
-                font-style: normal;
-            }
-
-            #mainNav {
-                background-color: #000000;
-            }
-
-            #mainNav .navbar-brand,
-            #mainNav .navbar-nav .nav-item .nav-link {
-                color: #ffffff;
-            }
-
-            #mainNav .navbar-toggler {
-                color: #ffffff;
-                border-color: rgba(255, 255, 255, 0.65);
-            }
-
-            #mainNav .navbar-toggler .bi-list {
-                color: #ffffff;
-            }
-
-            #mainNav .navbar-collapse {
-                background-color: #000000;
-            }
-
-            #mainNav .navbar-brand:hover,
-            #mainNav .navbar-brand:active,
-            #mainNav .navbar-nav .nav-item .nav-link:hover,
-            #mainNav .navbar-nav .nav-item .nav-link.active {
-                color: #0d6efd;
-            }
-
-            .btn-primary {
-                background-color: #0d6efd;
-                border-color: #0d6efd;
-            }
-
-            .social-link {
-                width: auto;
-                height: auto;
-                padding: 0;
-                border: 0;
-                background-color: transparent;
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-            }
-
-            .social-link span,
-            .social-link img {
-                width: 30px;
-                height: 30px;
-                display: block;
-                object-fit: contain;
-                filter: brightness(0) saturate(100%) invert(31%) sepia(96%) saturate(2806%) hue-rotate(211deg) brightness(99%) contrast(100%);
-            }
-
-            .social-link:hover,
-            .social-link:focus {
-                background-color: transparent;
-                border-color: transparent;
-            }
-
-            .brand-logo {
-                height: 46px;
-                width: auto;
-                display: block;
-            }
-
-            .masthead {
-                background-color: #000000;
-                background-image: url("assets/img/Foto trueno 1.png");
-                background-position: center;
-                background-size: cover;
-                background-repeat: no-repeat;
-                display: flex;
-                align-items: center;
-                min-height: 100vh;
-                overflow: hidden;
-                position: relative;
-                margin-bottom: -1px;
-            }
-
-            #features,
-            #plantas,
-            #productos {
-                position: sticky;
-                top: 0;
-                min-height: 100vh;
-                display: flex;
-                align-items: center;
-                overflow: hidden;
-                will-change: transform;
-            }
-
-            .masthead {
-                z-index: 1;
-            }
-
-            .masthead::after {
-                content: "";
-                position: absolute;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                height: 180px;
-                background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000000);
-                pointer-events: none;
-                z-index: 1;
-            }
-
-            #frase {
-                z-index: 2;
-                min-height: 100vh;
-                display: flex;
-                align-items: center;
-                margin-top: -1px;
-            }
-
-            #features {
-                z-index: 3;
-            }
-
-            #plantas {
-                z-index: 4;
-            }
-
-            #productos {
-                z-index: 5;
-            }
-
-            .masthead h1 {
-                color: #ffffff;
-                font-size: clamp(4.2rem, 9vw, 8.5rem);
-                font-family: "Sedgwick Ave Display", cursive;
-                line-height: 0.82;
-                margin-bottom: 0.25rem;
-                text-transform: uppercase;
-            }
-
-            .masthead p {
-                color: #ffffff;
-                font-family: "Wix Madefor Display", sans-serif;
-                font-size: clamp(0.95rem, 1.55vw, 1.45rem);
-                font-weight: 700;
-                line-height: 1.1;
-                margin-left: 0;
-                margin-right: auto;
-                white-space: nowrap;
-                max-width: 8.5em;
-            }
-
-            .masthead .row {
-                min-height: 72vh;
-            }
-
-            .masthead .container {
-                max-width: none;
-            }
-
-            .masthead .col-lg-6:first-child {
-                position: relative;
-                z-index: 2;
-                flex: 0 0 70%;
-                max-width: 70%;
-                opacity: 1;
-                text-align: center !important;
-            }
-
-            .masthead .col-lg-6:last-child {
-                display: none;
-            }
-
-            .masthead .img-fluid {
-                filter: none;
-            }
-
-            .bg-gradient-primary-to-secondary {
-                background: linear-gradient(180deg, #000000 0%, #89b6d4 52%, #000000 100%) !important;
-            }
-
-            #frase iframe {
-                max-width: 980px;
-                height: 420px;
-            }
-
-            #frase .spotify-title {
-                color: #ffffff;
-                font-family: "Sedgwick Ave Display", cursive;
-                font-size: clamp(3rem, 9vw, 8rem);
-                line-height: 0.9;
-                margin-bottom: 0.5rem;
-                text-transform: uppercase;
-            }
-
-            #frase .spotify-subtitle {
-                color: #ffffff;
-                font-family: "Wix Madefor Display", sans-serif;
-                font-size: clamp(1.1rem, 2.4vw, 2rem);
-                font-weight: 700;
-                margin-bottom: 2rem;
-            }
-
-            #tour {
-                background-color: #000000;
-                color: #ffffff;
-                padding: 6rem 0;
-                position: relative;
-                z-index: 3;
-            }
-
-            #tour h2 {
-                color: #0d6efd;
-                font-family: "Sedgwick Ave Display", cursive;
-                font-size: clamp(2.5rem, 7vw, 6rem);
-                font-weight: 400;
-                margin-bottom: 2.5rem;
-                text-align: center;
-                text-transform: uppercase;
-            }
-
-            .tour-list {
-                display: grid;
-                column-gap: 1rem;
-                row-gap: 0.35rem;
-                grid-template-columns: repeat(3, 1fr);
-                list-style: none;
-                margin: 0;
-                padding: 0;
-                text-align: center;
-            }
-
-            .tour-country {
-                border-bottom: 0;
-                color: #ffffff;
-                cursor: default;
-                display: inline-block;
-                font-family: "Wix Madefor Display", sans-serif;
-                font-size: clamp(1rem, 2vw, 1.55rem);
-                font-weight: 700;
-                padding: 0.45rem 0;
-                position: relative;
-                width: auto;
-            }
-
-            .tour-detail {
-                color: #0d6efd;
-                display: block;
-                font-size: 0.82rem;
-                line-height: 1.25;
-                margin-top: 0;
-                max-height: 0;
-                opacity: 0;
-                overflow: hidden;
-                padding: 0;
-                pointer-events: none;
-                position: static;
-                transform: translateY(-4px);
-                transition: max-height 0.2s ease, margin-top 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
-                white-space: normal;
-                min-height: 2.5em;
-                z-index: 10;
-            }
-
-            .tour-country:hover {
-                color: #8ecbff;
-            }
-
-            .tour-country:hover .tour-detail {
-                margin-top: 0.35rem;
-                max-height: 6rem;
-                opacity: 1;
-                transform: translateY(0);
-            }
-
-            #features,
-            #plantas,
-            #productos {
-                background-color: #000000;
-            }
-
-            .text-gradient {
-                background: linear-gradient(45deg, #0077b6, #48cae4);
-                -webkit-background-clip: text;
-                background-clip: text;
-                -webkit-text-fill-color: transparent;
-            }
-
-            #features h3 {
-                color: #ffffff;
-                font-family: "Wix Madefor Display", sans-serif;
-                font-optical-sizing: auto;
-                font-size: clamp(0.95rem, 1.35vw, 1.1rem);
-                font-style: normal;
-                font-weight: 700;
-                line-height: 1.15;
-                white-space: nowrap;
-            }
-
-            #features,
-            #features * {
-                font-family: "Wix Madefor Display", sans-serif !important;
-                font-optical-sizing: auto;
-                font-style: normal;
-            }
-
-            #features .container-fluid > .row {
-                display: contents;
-            }
-
-            #features .container-fluid {
-                display: grid;
-                gap: 1.25rem;
-                grid-template-columns: repeat(2, 1fr);
-                font-family: "Wix Madefor Display", sans-serif;
-                padding-left: 0 !important;
-                padding-right: 0 !important;
-            }
-
-            #features .col-md-6 {
-                margin-bottom: 0 !important;
-                width: auto;
-            }
-
-            #features .text-center {
-                align-items: center;
-                display: flex;
-                flex-direction: column;
-                gap: 1.15rem;
-                justify-content: center;
-                padding: 0.75rem 0;
-                text-align: center !important;
-                opacity: 0;
-                transform: translateY(28px);
-            }
-
-            #features .text-center p {
-                color: #8ecbff !important;
-                font-size: calc(1rem - 5pt);
-            }
-
-            #features .feature-icon-img {
-                display: block;
-                filter: brightness(0) saturate(100%) invert(31%) sepia(96%) saturate(2806%) hue-rotate(211deg) brightness(99%) contrast(100%);
-                height: 7rem;
-                flex: 0 0 7rem;
-                margin: 0;
-                object-fit: contain;
-                transition: transform 0.25s ease;
-                width: 7rem;
-            }
-
-            #features .text-center:hover .feature-icon-img {
-                transform: scale(1.12);
-            }
-
-            #features.datos-visible .text-center {
-                animation: datosItemEntrada 0.65s ease forwards;
-            }
-
-            #features.datos-visible .col-md-6:nth-of-type(2) .text-center {
-                animation-delay: 0.12s;
-            }
-
-            #features.datos-visible .row:nth-of-type(2) .col-md-6:nth-of-type(1) .text-center {
-                animation-delay: 0.24s;
-            }
-
-            #features.datos-visible .row:nth-of-type(2) .col-md-6:nth-of-type(2) .text-center {
-                animation-delay: 0.36s;
-            }
-
-            #features .order-lg-0 img {
-                animation: datosFotoEntrada 0.9s ease both;
-            }
-
-            @keyframes datosFotoEntrada {
-                from {
-                    opacity: 0;
-                    transform: translateX(-30px);
-                }
-
-                to {
-                    opacity: 1;
-                    transform: translateX(0);
-                }
-            }
-
-            @keyframes datosItemEntrada {
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-
-            .img-fluid {
-                filter: grayscale(100%);
-                border-radius: 18px;
-                box-shadow: 0 18px 35px rgba(6, 79, 115, 0.28);
-            }
-
-            #plantas .carousel {
-                width: min(1180px, 100%);
-                margin: 0 auto;
-            }
-
-            #plantas .plantas-grilla {
-                display: flex;
-                gap: 1rem;
-                flex-wrap: nowrap;
-                overflow-x: auto;
-                padding-bottom: 1rem;
-            }
-
-            #productos .productos-linea {
-                display: flex;
-                gap: 1.25rem;
-                flex-wrap: nowrap;
-                overflow-x: auto;
-                scroll-behavior: smooth;
-                scrollbar-width: none;
-                padding: 1rem 0;
-            }
-
-            #productos .productos-linea::-webkit-scrollbar {
-                display: none;
-            }
-
-            #productos .productos-carrusel {
-                position: relative;
-            }
-
-            #productos .producto-card {
-                flex: 0 0 calc((100% - 2.5rem) / 3);
-                background-color: transparent;
-                min-width: 0;
-            }
-
-            #productos .producto-foto {
-                position: relative;
-                background-color: #ffffff;
-                overflow: hidden;
-                border-radius: 16px;
-                box-shadow: 0 12px 24px rgba(72, 202, 228, 0.2);
-            }
-
-            #productos .producto-card img {
-                width: 100%;
-                aspect-ratio: 1 / 1;
-                height: auto;
-                object-fit: contain;
-                display: block;
-                transition: opacity 0.25s ease;
-            }
-
-            #productos .producto-foto .producto-b {
-                position: absolute;
-                inset: 0;
-                opacity: 0;
-            }
-
-            #productos .producto-card:hover .producto-b {
-                opacity: 1;
-            }
-
-            #productos .producto-info {
-                padding: 0.75rem 1rem 1rem;
-                text-align: center;
-            }
-
-            #productos .producto-nombre {
-                color: #ffffff;
-                font-family: "Wix Madefor Display", sans-serif;
-                font-size: 1.15rem;
-                font-weight: 700;
-                line-height: 1.2;
-                min-height: 1.6em;
-                margin-bottom: 0.35rem;
-            }
-
-            #productos .producto-comprar {
-                background-color: #0d6efd;
-                border: 0;
-                border-radius: 999px;
-                color: #ffffff;
-                display: inline-block;
-                font-family: "Wix Madefor Display", sans-serif;
-                font-weight: 700;
-                font-size: 0.85rem;
-                padding: 0.4rem 0.95rem;
-                text-decoration: none;
-            }
-
-            #productos .producto-flecha {
-                align-items: center;
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                width: 46px;
-                height: 46px;
-                border: 0;
-                border-radius: 50%;
-                background-color: #0d6efd;
-                color: #ffffff;
-                display: flex;
-                font-size: 0;
-                justify-content: center;
-                line-height: 1;
-                z-index: 2;
-            }
-
-            #productos .producto-flecha::before {
-                border-right: 3px solid #ffffff;
-                border-top: 3px solid #ffffff;
-                content: "";
-                display: block;
-                height: 13px;
-                width: 13px;
-            }
-
-            #productos .producto-flecha.prev::before {
-                transform: rotate(-135deg);
-                margin-left: 4px;
-            }
-
-            #productos .producto-flecha.next::before {
-                transform: rotate(45deg);
-                margin-right: 4px;
-            }
-
-            #productos .producto-flecha.prev {
-                left: -1rem;
-            }
-
-            #productos .producto-flecha.next {
-                right: -1rem;
-            }
-
-            #plantas .plantas-grilla > div {
-                flex: 0 0 180px;
-            }
-
-            #plantas .carousel-item img,
-            #plantas .producto-card img {
-                width: 100%;
-                aspect-ratio: 3 / 4;
-                height: auto;
-                object-fit: cover;
-                filter: grayscale(100%);
-                border-radius: 14px;
-                box-shadow: 0 12px 24px rgba(6, 79, 115, 0.22);
-            }
-
-            #plantas .planta-foto,
-            #plantas .producto-card {
-                position: relative;
-                overflow: hidden;
-                border-radius: 14px;
-            }
-
-            #plantas .producto-card .producto-b {
-                position: absolute;
-                inset: 0;
-                opacity: 0;
-                transition: opacity 0.25s ease;
-            }
-
-            #plantas .producto-card:hover .producto-b {
-                opacity: 1;
-            }
-
-            #plantas .planta-titulo {
-                position: absolute;
-                inset: 0;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                padding: 1rem;
-                color: #ffffff;
-                font-size: 1rem;
-                font-weight: 700;
-                text-align: center;
-                background-color: rgba(0, 77, 122, 0.62);
-                border-radius: 14px;
-                opacity: 0;
-                transition: opacity 0.25s ease;
-            }
-
-            #plantas .planta-foto:hover .planta-titulo {
-                opacity: 1;
-            }
-
-            #plantas .planta-nombre {
-                color: #8ecbff;
-                font-size: 0.95rem;
-                font-weight: 700;
-                text-align: center;
-                line-height: 1.2;
-                min-height: 2.4em;
-            }
-
-            @media (max-width: 992px) {
-                .tour-list,
-                #features .container-fluid {
-                    grid-template-columns: repeat(2, 1fr);
-                }
-
-                #productos .producto-card {
-                    flex-basis: calc((100% - 1.25rem) / 2);
-                }
-
-                #plantas .plantas-grilla > div {
-                    flex-basis: 160px;
-                }
-            }
-
-            @media (max-width: 576px) {
-                .masthead .col-lg-6:first-child {
-                    flex: 0 0 100%;
-                    max-width: 100%;
-                }
-
-                .masthead p {
-                    margin-left: 0;
-                }
-
-                #productos .producto-card {
-                    flex-basis: 78%;
-                }
-
-                #productos .producto-flecha {
-                    width: 38px;
-                    height: 38px;
-                }
-
-                .tour-list,
-                #features .container-fluid {
-                    grid-template-columns: 1fr;
-                }
-
-                #plantas .plantas-grilla > div {
-                    flex-basis: 140px;
-                }
-            }
-
-            footer {
-                background-color: #000000 !important;
-                position: relative;
-                z-index: 6;
-            }
-
-            footer .newsletter-title {
-                color: #ffffff;
-                font-family: "Wix Madefor Display", sans-serif;
-                font-size: 1.5rem;
-                font-weight: 700;
-                margin-bottom: 1rem;
-            }
-
-            footer .newsletter-form {
-                border-bottom: 1px solid rgba(255, 255, 255, 0.65);
-                display: flex;
-                margin: 0 auto 2.5rem;
-                max-width: 520px;
-            }
-
-            footer .newsletter-form input {
-                background: transparent;
-                border: 0;
-                color: #ffffff;
-                flex: 1;
-                padding: 0.85rem 0;
-                outline: 0;
-            }
-
-            footer .newsletter-form input::placeholder {
-                color: rgba(255, 255, 255, 0.65);
-            }
-
-            footer .newsletter-form button {
-                background: transparent;
-                border: 0;
-                color: #ffffff;
-                font-size: 1.8rem;
-                padding: 0 0 0 1rem;
-            }
-
-            footer .legal-line,
-            footer .legal-line a {
-                color: rgba(255, 255, 255, 0.65);
-                text-decoration: none;
-            }
-
-            footer .legal-line a:hover {
-                color: #ffffff;
-                text-decoration: underline;
-            }
-
-            .merch-marquee {
-                background-color: #0d6efd;
-                color: #ffffff;
-                overflow: hidden;
-                padding: 0.45rem 0;
-                position: relative;
-                z-index: 5;
-            }
-
-            .merch-marquee-track {
-                animation: merchMarquee 14s linear infinite;
-                display: flex;
-                gap: 3rem;
-                width: max-content;
-            }
-
-            .merch-marquee span {
-                font-family: "Wix Madefor Display", sans-serif;
-                font-size: clamp(1.25rem, 3.5vw, 2.8rem);
-                font-weight: 700;
-                line-height: 1;
-                text-transform: uppercase;
-                white-space: nowrap;
-            }
-
-            @keyframes merchMarquee {
-                from {
-                    transform: translateX(0);
-                }
-
-                to {
-                    transform: translateX(calc(-50% - 1.5rem));
-                }
-            }
-        </style>
-    </head>
-
-
-    <!--El elemento <body> define el cuerpo del HTML, es decir, todo el contenido *visible* en una pÃ¡gina web.-->
-    <body id="page-top">
-
-        <!-- NavegaciÃ³n (barra superior)-->
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav">
-            <div class="container px-5">
-                <span class="navbar-brand fw-bold" aria-label="Trueno">
-                    <img class="brand-logo" src="assets/Logo trueno.webp" alt="Trueno">
-                </span>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="bi-list"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
-                        <li class="nav-item"><a class="nav-link me-lg-3" href="#page-top">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link me-lg-3" href="#frase">Álbum</a></li>
-                        <li class="nav-item"><a class="nav-link me-lg-3" href="#tour">Tour</a></li>
-                        <li class="nav-item"><a class="nav-link me-lg-3" href="#features">Datos</a></li>
-                        <li class="nav-item"><a class="nav-link me-lg-3" href="#productos">Merch</a></li>
-                    </ul>
-                    <a class="btn btn-primary social-link mb-2 mb-lg-0" href="https://www.instagram.com/trueno?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Instagram">
-                        <span>
-                            <img src="assets/instagram.png" alt="">
-                        </span>
-                    </a>
-                    <a class="btn btn-primary social-link mb-2 mb-lg-0 ms-2" href="https://open.spotify.com/intl-es/artist/2x7PC78TmgqpEIjaGAZ0Oz?si=Lz3kFLuaSLOJRyXwcf5vjQ" aria-label="Spotify">
-                        <span>
-                            <img src="assets/spotify.png" alt="">
-                        </span>
-                    </a>
-                    <a class="btn btn-primary social-link mb-2 mb-lg-0 ms-2" href="https://www.youtube.com/@TruenoOficial" aria-label="YouTube">
-                        <span>
-                            <img src="assets/youtube.png" alt="">
-                        </span>
-                    </a>
-                </div>
-            </div>
+<head>
+    <meta charset="utf-8">
+    <title>Makita Cafetera CXT / LXT</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Makita, Cafetera, Herramientas, Batería" name="keywords">
+    <meta content="La cafetera de tu jornada. Alimentada por el mismo sistema de baterías que tus herramientas Makita." name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Template Stylesheet -->
+    <link href="css/makita-style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <a href="#hero"><img src="img/TP WEB-02.png" alt="Makita Logo" style="height: 45px;"></a>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <nav class="nav-links" id="nav-links">
+            <a href="#hero">INICIO</a>
+            <a href="#features">CARACTERÍSTICAS</a>
+            <a href="#bateria">BATERÍA</a>
+            <a href="#especificaciones">ESPECIFICACIONES</a>
+            <a href="#instructivo">INSTRUCTIVO</a>
+            <a href="#accesorios">ACCESORIOS</a>
+            <a href="#colores">COLORES</a>
+            <a href="#resenas">RESEÑAS</a>
+            <a href="#productos">PRODUCTOS</a>
         </nav>
+    </header>
 
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>EL CAFÉ DE<br>TU JORNADA</h1>
+            <h2 class="anton-font">CAFETERA CXT&reg; / LXT&reg;</h2>
+        </div>
+    </section>
 
-        <!-- Portada-->
-        <header class="masthead">
-            <div class="container px-5">
-                <div class="row gx-5 align-items-center">
-                    <div class="col-lg-6">
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="section-title-wrapper">
+            <div class="subtitle">RENDIMIENTO INDUSTRIAL</div>
+            <div class="title-with-line">
+                <h2 class="section-title anton-font">DISEÑO QUE HACE LA DIFERENCIA</h2>
+                <div class="separator-line"></div>
+            </div>
+        </div>
+        <div class="cards-container">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-briefcase"></i></div>
+                <h3>DISEÑO QUE HACE LA DIFERENCIA</h3>
+                <p>Diseñada para moverse con vos, liviana y con manija para no ocupar espacio en tu caja de herramientas.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-wrench"></i></div>
+                <h3>CONSTRUCCIÓN RESISTENTE</h3>
+                <p>Pensada para soportar el ritmo exigente de la jornada laboral, resistente a polvo, golpes y mucho más.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>PROTECCIÓN ACTIVA</h3>
+                <p>Sistema de apagado automático por bajo nivel de agua y protección de batería, garantizando la máxima seguridad.</p>
+            </div>
+        </div>
+    </section>
 
-                        <!-- Texto de la portada-->
-                        <div class="mb-5 mb-lg-0 text-center text-lg-start">
-                            <h1>TURR4ZO</h1>
-                            <p>YA DISPONIBLE EN TODAS LAS PLATAFORMAS</p>
-                        </div>
+    <!-- Banner Section -->
+    <section id="bateria" class="banner">
+        <div class="banner-content">
+            <h2 class="anton-font banner-title">SIN CABLES, SIN LÍMITES</h2>
+            <p>ALIMENTADA POR EL MISMO SISTEMA DE BATERÍAS QUE TUS HERRAMIENTAS MAKITA</p>
+        </div>
+    </section>
+
+    <!-- Split Sections -->
+    <section id="especificaciones" class="split-section">
+        <div class="split-image">
+            <video src="img/Animacion%201.mp4" autoplay loop muted playsinline></video>
+        </div>
+        <div class="split-text">
+            <div class="title-with-line">
+                <h2 class="anton-font">LA ENERGÍA QUE NECESITAS</h2>
+                <div class="separator-line"></div>
+            </div>
+            <p>Para esos días largos en la obra, tu café es el combustible que te mantiene en marcha. Nuestra cafetera está diseñada para darte el mejor rendimiento y sabor en cada taza.</p>
+        </div>
+    </section>
+
+    <!-- Parallax Wrapper -->
+    <div class="parallax-wrapper">
+        <section class="split-section reverse sticky-scroll-section">
+        <div class="split-image">
+            <video src="img/Animacion%202.mp4" autoplay loop muted playsinline></video>
+        </div>
+        <div class="split-text">
+            <div class="title-with-line">
+                <h2 class="anton-font">TU CAFÉ A TU MANERA</h2>
+                <div class="separator-line"></div>
+            </div>
+            <p>Se adapta a tus preferencias, podes elegir entre café molido gracias a su filtro re utilizable, fácil de lavar o con cápsula ya que también las admite.</p>
+        </div>
+    </section>
+
+    <!-- Steps Section -->
+    <section id="instructivo" class="steps-section" style="background-color: #0b0d10; padding-top: 60px; padding-bottom: 100px; flex-direction: column; align-items: center;">
+        <div class="section-title-wrapper" style="text-align: center;">
+            <div class="title-with-line">
+                <h2 class="section-title anton-font">LISTO EN 4 PASOS</h2>
+                <div class="separator-line" style="margin: 0 auto 20px auto;"></div>
+            </div>
+        </div>
+        <div class="steps-container">
+            <div class="connecting-line"></div>
+            <div class="step-item">
+                <div class="step-circle">1</div>
+                <p class="anton-font">Llená el tanque de agua</p>
+            </div>
+            <div class="step-item">
+                <div class="step-circle">2</div>
+                <p class="anton-font">Colocá tu cápsula o café</p>
+            </div>
+            <div class="step-item">
+                <div class="step-circle">3</div>
+                <p class="anton-font">Insertá la batería</p>
+            </div>
+            <div class="step-item">
+                <div class="step-circle">4</div>
+                <p class="anton-font">Presioná el botón</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specs Section (now Accessories) -->
+    <section id="accesorios" class="specs full-width-specs">
+        <div class="interactive-specs-container">
+            <div class="interactive-specs">
+                <img src="img/TP WEB-05.png" alt="Cafetera Makita y partes" class="specs-base-img">
+                
+                <!-- Hotspot 1 -->
+                <div class="hotspot" id="hs-1" style="top: 14%; left: 51%;">
+                    <div class="hotspot-number">1</div>
+                    <div class="hotspot-content">
+                        <div class="diag"></div><div class="horiz"></div>
+                        <div class="text">Manija para transportarla</div>
                     </div>
-                    <div class="col-lg-6">
+                </div>
 
-                        <!-- Imagen de la portada-->
-                        <img class="img-fluid d-block mx-auto" src="assets/img/Foto trueno 1.png" alt="Imagen principal" width="408" />
+                <!-- Hotspot 2 -->
+                <div class="hotspot" id="hs-2" style="top: 52%; left: 57%;">
+                    <div class="hotspot-number">2</div>
+                    <div class="hotspot-content">
+                        <div class="diag"></div><div class="horiz"></div>
+                        <div class="text">Taza con tapa</div>
+                    </div>
+                </div>
+
+                <!-- Hotspot 3 -->
+                <div class="hotspot" id="hs-3" style="top: 69%; left: 69%;">
+                    <div class="hotspot-number">3</div>
+                    <div class="hotspot-content">
+                        <div class="diag"></div><div class="horiz"></div>
+                        <div class="text">Adaptadores para filtro y capsula</div>
+                    </div>
+                </div>
+
+                <!-- Hotspot 4 -->
+                <div class="hotspot" id="hs-4" style="top: 52%; left: 42%;">
+                    <div class="hotspot-number">4</div>
+                    <div class="hotspot-content">
+                        <div class="diag"></div><div class="horiz"></div>
+                        <div class="text">Espacio para baterias de 18V y 12V</div>
+                    </div>
+                </div>
+
+                <!-- Hotspot 5 -->
+                <div class="hotspot" id="hs-5" style="top: 83%; left: 56%;">
+                    <div class="hotspot-number">5</div>
+                    <div class="hotspot-content">
+                        <div class="diag"></div><div class="horiz"></div>
+                        <div class="text">Cuchara medidora</div>
+                    </div>
+                </div>
+
+                <!-- Hotspot 6 -->
+                <div class="hotspot" id="hs-6" style="top: 64%; left: 31%;">
+                    <div class="hotspot-number">6</div>
+                    <div class="hotspot-content">
+                        <div class="diag"></div><div class="horiz"></div>
+                        <div class="text">Deposito con capacidad de 240ml</div>
                     </div>
                 </div>
             </div>
-        </header>
+            <div class="mobile-hotspot-display" style="display: none;">
+                <p class="mobile-hotspot-text">Tocá un número en la cafetera para ver los detalles.</p>
+            </div>
+        </div>
+    </section>
+    </div> <!-- End Parallax Wrapper -->
 
+    <!-- Colors Section -->
+    <section id="colores" class="colors-section">
+        <div class="colors-text">
+            <div class="title-with-line">
+                <h2 class="anton-font">ESTÉTICA UNIFICADA</h2>
+                <div class="separator-line"></div>
+            </div>
+            <p class="color-desc-1">Nuestras herramientas y accesorios están disponibles en una gama de colores pensada para que tu equipo no solo sea eficiente, sino también un reflejo de tu identidad.</p>
+            <p class="color-desc-2">Elegí tu color preferido y creá tu kit combinado.</p>
+            <div class="color-selectors">
+                <button class="color-btn active" data-color="cyan" style="background-color: #00b1cc;"></button>
+                <button class="color-btn" data-color="olive" style="background-color: #6a6a4f;"></button>
+                <button class="color-btn" data-color="burgundy" style="background-color: #4c1a2c;"></button>
+            </div>
+        </div>
+        <div class="colors-showcase">
+            <div class="rocks-texture"></div>
+            <div class="machines-container">
+                <!-- Main machine -->
+                <img src="img/Color 1.png" alt="Cyan Coffee Maker" class="machine center" data-index="0">
+                <!-- Secondary machines (peeking) -->
+                <img src="img/Color 2.png" alt="Olive Coffee Maker" class="machine peek-bottom" data-index="1">
+                <img src="img/Color 3.png" alt="Burgundy Coffee Maker" class="machine peek-top" data-index="2">
+            </div>
+        </div>
+    </section>
 
-        <!-- MÃ³dulo corto con una cita-->
-        <aside class="text-center bg-gradient-primary-to-secondary" id="frase">
-            <div class="container px-5">
-                <div class="row gx-5 justify-content-center">
-                    <div class="col-xl-8">
-                        <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/album/5nUfysd9pD76m2nxU0qHmU?utm_source=generator&theme=0&si=95606a1b78954b5a" width="100%" height="420" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                    </div>
+    <!-- Reviews Section -->
+    <section id="resenas" class="reviews-section">
+        <div class="section-title-wrapper">
+            <div class="title-with-line">
+                <h2 class="section-title anton-font">LO QUE DICEN NUESTROS CLIENTES</h2>
+                <div class="separator-line"></div>
+            </div>
+        </div>
+        <div class="reviews-container">
+            <div class="review-card">
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                 </div>
+                <p class="review-text">"La compré para llevarla a la obra y es un antes y un después. Tener un café recién hecho en el medio de la jornada, sin tener que ir a buscar uno, no tiene precio. ¡Un golazo!"</p>
+                <div class="review-author">- Marcelo G.</div>
             </div>
-        </aside>
-
-
-        <section id="tour">
-            <div class="container px-5">
-                <h2>Tour 2026</h2>
-                <ul class="tour-list">
-                    <li><span class="tour-country">Japón<span class="tour-detail">Niigata 25/07</span></span></li>
-                    <li><span class="tour-country">EE. UU.<span class="tour-detail">Nueva York 01/08</span></span></li>
-                    <li><span class="tour-country">Ecuador<span class="tour-detail">Samborondón 17/09<br>Quito 19/09</span></span></li>
-                    <li><span class="tour-country">Perú<span class="tour-detail">Lima 01/10<br>Arequipa 03/10</span></span></li>
-                    <li><span class="tour-country">Chile<span class="tour-detail">Santiago 09/10</span></span></li>
-                    <li><span class="tour-country">España<span class="tour-detail">Barcelona 13/10<br>Tenerife 16/10<br>Madrid 21/10</span></span></li>
-                    <li><span class="tour-country">Guatemala<span class="tour-detail">Cd. de Guatemala 30/10</span></span></li>
-                    <li><span class="tour-country">Costa Rica<span class="tour-detail">Guácima 01/11</span></span></li>
-                    <li><span class="tour-country">Venezuela<span class="tour-detail">Caracas 04/11</span></span></li>
-                    <li><span class="tour-country">El Salvador<span class="tour-detail">San Salvador 06/11</span></span></li>
-                    <li><span class="tour-country">México<span class="tour-detail">Puebla 21/11<br>Zapopan 29/11<br>Monterrey 29/11<br>Cd. de México 29/11</span></span></li>
-                </ul>
-            </div>
-        </section>
-
-
-        <!-- MÃ³dulo grande con 4 Ã­conos-->
-        <section id="features">
-            <div class="container px-5">
-                <div class="row gx-5 align-items-center">
-                    <div class="col-lg-8 order-lg-1 mb-5 mb-lg-0">
-                        <div class="container-fluid px-5">
-                            <div class="row gx-5">
-                                <div class="col-md-6 mb-5">
-
-                                    <!-- Ãcono 1-->
-                                    <div class="text-center">
-                                        <img class="feature-icon-img" src="assets/ICONOS S-02.png" alt="">
-                                        <h3 class="font-alt">85M de reproducciones</h3>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mb-5">
-
-                                    <!-- Ãcono 2-->
-                                    <div class="text-center">
-                                        <img class="feature-icon-img" src="assets/ICONOS S-03.png" alt="">
-                                        <h3 class="font-alt">Tour por 12 países</h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6 mb-5 mb-md-0">
-
-                                    <!-- Ãcono 3-->
-                                    <div class="text-center">
-                                        <img class="feature-icon-img" src="assets/ICONOS S-04.png" alt="">
-                                        <h3 class="font-alt">8 colaboraciones</h3>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-
-                                    <!-- Ãcono 4-->
-                                    <div class="text-center">
-                                        <img class="feature-icon-img" src="assets/ICONOS S-05.png" alt="">
-                                        <h3 class="font-alt">38 minutos</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 order-lg-0">
-
-                        <!-- Imagen del mÃ³dulo de Ã­conos-->
-                        <img class="img-fluid d-block mx-auto" src="assets/img/trueno-FOTO 2.jpg" alt="Imagen de Trueno" width="408" />
-                    </div>
+            <div class="review-card">
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                 </div>
+                <p class="review-text">"¡Me encanta que todo combine! Ya tenía el taladro y la amoladora en este color, así que cuando vi la cafetera no dudé. Es robusta, fácil de limpiar y queda perfecta al lado de mis otras herramientas."</p>
+                <div class="review-author">- Javier R.</div>
             </div>
-        </section>
-
-
-        <!-- Pie de pÃ¡gina (footer)-->
-        <section class="merch-marquee" aria-label="Merch Oficial">
-            <div class="merch-marquee-track">
-                <span>Merch Oficial</span>
-                <span>Merch Oficial</span>
-                <span>Merch Oficial</span>
-                <span>Merch Oficial</span>
-                <span>Merch Oficial</span>
-                <span>Merch Oficial</span>
-                <span>Merch Oficial</span>
-                <span>Merch Oficial</span>
-            </div>
-        </section>
-
-
-        <section id="productos">
-            <div class="container px-5">
-                <div class="productos-carrusel">
-                    <button class="producto-flecha prev" type="button" aria-label="Producto anterior">&lsaquo;</button>
-                    <button class="producto-flecha next" type="button" aria-label="Producto siguiente">&rsaquo;</button>
-                    <div class="productos-linea">
-                    <div class="producto-card">
-                        <div class="producto-foto">
-                            <img src="assets/img/Producto 1 a.webp" alt="Camiseta EUB">
-                            <img class="producto-b" src="assets/img/Producto 1 b.webp" alt="">
-                        </div>
-                        <div class="producto-info">
-                            <div class="producto-nombre">Camiseta EUB</div>
-                            <a class="producto-comprar" href="#">Comprar</a>
-                        </div>
-                    </div>
-                    <div class="producto-card">
-                        <div class="producto-foto">
-                            <img src="assets/img/Producto 2 a.webp" alt="Camiseta Azul y oro">
-                            <img class="producto-b" src="assets/img/Producto 2 b.webp" alt="">
-                        </div>
-                        <div class="producto-info">
-                            <div class="producto-nombre">Camiseta Azul y oro</div>
-                            <a class="producto-comprar" href="#">Comprar</a>
-                        </div>
-                    </div>
-                    <div class="producto-card">
-                        <div class="producto-foto">
-                            <img src="assets/img/Producto 3 a.webp" alt="Short EUB">
-                            <img class="producto-b" src="assets/img/Producto 3 b.webp" alt="">
-                        </div>
-                        <div class="producto-info">
-                            <div class="producto-nombre">Short EUB</div>
-                            <a class="producto-comprar" href="#">Comprar</a>
-                        </div>
-                    </div>
-                    <div class="producto-card">
-                        <div class="producto-foto">
-                            <img src="assets/img/Producto 4 a.webp" alt="Gorra Trueno">
-                            <img class="producto-b" src="assets/img/Producto 4 b.webp" alt="">
-                        </div>
-                        <div class="producto-info">
-                            <div class="producto-nombre">Gorra Trueno</div>
-                            <a class="producto-comprar" href="#">Comprar</a>
-                        </div>
-                    </div>
-                    <div class="producto-card">
-                        <div class="producto-foto">
-                            <img src="assets/img/Producto 5 a.jpg" alt="Gorro Trueno">
-                            <img class="producto-b" src="assets/img/Producto 5 b.webp" alt="">
-                        </div>
-                        <div class="producto-info">
-                            <div class="producto-nombre">Gorro Trueno</div>
-                            <a class="producto-comprar" href="#">Comprar</a>
-                        </div>
-                    </div>
-                    <div class="producto-card">
-                        <div class="producto-foto">
-                            <img src="assets/img/Producto 6 a.webp" alt="Stickers Holograficos">
-                            <img class="producto-b" src="assets/img/Producto 6 b.webp" alt="">
-                        </div>
-                        <div class="producto-info">
-                            <div class="producto-nombre">Stickers Holograficos</div>
-                            <a class="producto-comprar" href="#">Comprar</a>
-                        </div>
-                    </div>
-                    </div>
+            <div class="review-card">
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                 </div>
+                <p class="review-text">"Tenía mis dudas por ser a batería, pero la calidad del café es increíble. Se nota que es un producto bien hecho y pensado para durar. Makita nunca falla."</p>
+                <div class="review-author">- Carlos M.</div>
             </div>
-        </section>
+            <div class="review-card">
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="review-text">"La mejor compra del año. La uso en las obras sin electricidad. Es súper práctica, me encanta el diseño y lo mejor es que pude combinarla con todas mis otras herramientas."</p>
+                <div class="review-author">- Esteban V.</div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Products Carousel Section -->
+    <section id="productos" class="products-carousel-section">
+        <div class="section-title-wrapper">
+            <div class="subtitle">MÁS HERRAMIENTAS</div>
+            <div class="title-with-line">
+                <h2 class="section-title anton-font">COMPLETA TU EQUIPO LXT / CXT</h2>
+                <div class="separator-line"></div>
+            </div>
+        </div>
+        <div class="carousel-wrapper">
+            <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+            <div class="carousel-container" id="productCarousel">
+            <div class="product-card">
+                <img src="img/UC012GZ01-Photoroom.png" alt="Mini motosierra">
+                <h3>Motosierra a Batería 40V</h3>
+                <a href="#" class="btn-yellow-pill">VER MÁS</a>
+            </div>
+            <div class="product-card">
+                <img src="img/atornillador-de-impacto-inalambrico-18v-160nm-0-2500rpm-makita-dtd129z-Photoroom.png" alt="Atornillador de impacto">
+                <h3>Atornillador de impacto</h3>
+                <a href="#" class="btn-yellow-pill">VER MÁS</a>
+            </div>
+            <div class="product-card">
+                <img src="img/taladro-base-magnetica-1150w-makita-hb500-Photoroom.png" alt="Taladro base magnética">
+                <h3>Taladro base magnética</h3>
+                <a href="#" class="btn-yellow-pill">VER MÁS</a>
+            </div>
+            <div class="product-card">
+                <img src="img/grinder_blackbg.png" alt="Amoladora angular">
+                <h3>Amoladora angular</h3>
+                <a href="#" class="btn-yellow-pill">VER MÁS</a>
+            </div>
+            <div class="product-card">
+                <img src="img/blower_blackbg.png" alt="Sopladora a batería">
+                <h3>Sopladora a batería</h3>
+                <a href="#" class="btn-yellow-pill">VER MÁS</a>
+            </div>
+            <div class="product-card">
+                <img src="img/jigsaw_blackbg.png" alt="Sierra caladora a batería">
+                <h3>Sierra caladora a batería</h3>
+                <a href="#" class="btn-yellow-pill">VER MÁS</a>
+            </div>
+        </div>
+        <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
 
-        <footer class="bg-black text-center py-5">
-            <div class="container px-5">
-                <div class="newsletter-title">Suscríbete a nuestras novedades</div>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Correo electrónico" aria-label="Correo electrónico">
-                    <button type="submit" aria-label="Enviar">→</button>
-                </form>
-                <div class="legal-line small">
-                    © 2026, Trueno oficial
-                    <a href="#">Política de privacidad</a>
-                    <span class="mx-1">&middot;</span>
-                    <a href="#">Aviso legal</a>
-                    <span class="mx-1">&middot;</span>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="img/TP WEB-02.png" alt="Makita Logo" style="max-width: 150px;">
+            </div>
+            <div class="footer-columns">
+                <div class="footer-col">
+                    <h4>SOBRE NOSOTROS</h4>
+                    <a href="#">Historia</a>
+                    <a href="#">Novedades</a>
+                    <a href="#">Noticias</a>
+                </div>
+                <div class="footer-col">
+                    <h4>SOPORTE</h4>
                     <a href="#">Contacto</a>
-                    <span class="mx-1">&middot;</span>
-                    <a href="#">Política de envío</a>
-                    <span class="mx-1">&middot;</span>
-                    <a href="#">Reembolso</a>
+                    <a href="#">Servicio técnico</a>
+                    <a href="#">Garantía</a>
+                </div>
+                <div class="footer-col">
+                    <h4>NAVEGACIÓN</h4>
+                    <a href="#hero">Inicio</a>
+                    <a href="#features">Características</a>
+                    <a href="#specs">Especificaciones</a>
+                    <a href="#">Privacidad</a>
                 </div>
             </div>
-        </footer>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Makita Corporación. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+        
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenu.classList.toggle('is-active');
+        });
 
-        <!-- JavaScript de Bootstrap-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        const navItems = document.querySelectorAll('.nav-links a');
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenu.classList.remove('is-active');
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const carousel = document.getElementById('productCarousel');
+            const cards = document.querySelectorAll('.product-card');
+            const btnPrev = document.querySelector('.carousel-btn.prev');
+            const btnNext = document.querySelector('.carousel-btn.next');
 
-        <script>
-            const productosLinea = document.querySelector("#productos .productos-linea");
-            const productoPrev = document.querySelector("#productos .producto-flecha.prev");
-            const productoNext = document.querySelector("#productos .producto-flecha.next");
+            // Scroll calculation to find the center card
+            const updateCenterCard = () => {
+                const center = carousel.scrollLeft + carousel.clientWidth / 2;
+                let closestCard = cards[0];
+                let minDiff = Infinity;
+                
+                cards.forEach(card => {
+                    // Position relative to the container's scrollable content
+                    const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+                    const diff = Math.abs(center - cardCenter);
+                    
+                    if (diff < minDiff) {
+                        minDiff = diff;
+                        closestCard = card;
+                    }
+                });
 
-            if (productosLinea && productoPrev && productoNext) {
-                const moverProductos = (direccion) => {
-                    const tarjeta = productosLinea.querySelector(".producto-card");
-                    const distancia = tarjeta ? tarjeta.offsetWidth + 20 : 300;
-                    productosLinea.scrollBy({ left: direccion * distancia, behavior: "smooth" });
+                cards.forEach(card => card.classList.remove('active'));
+                if (closestCard) {
+                    closestCard.classList.add('active');
+                }
+            };
+
+            // Trigger initially and on scroll
+            carousel.addEventListener('scroll', updateCenterCard);
+            // Small timeout to let CSS layout calculate offsetLeft first
+            setTimeout(updateCenterCard, 100); 
+
+            // Autoplay logic
+            let autoplayInterval;
+            
+            const moveNext = () => {
+                let cardsList = Array.from(carousel.children);
+                let activeIndex = cardsList.findIndex(card => card.classList.contains('active'));
+                
+                // If we are at the end, move the first element to the end to loop infinitely
+                if (activeIndex >= cardsList.length - 2) {
+                    const firstCard = carousel.firstElementChild;
+                    carousel.style.scrollSnapType = 'none';
+                    carousel.appendChild(firstCard);
+                    carousel.scrollLeft -= (firstCard.offsetWidth + 30); // 30 is gap
+                    void carousel.offsetWidth;
+                }
+                
+                requestAnimationFrame(() => {
+                    carousel.style.scrollSnapType = 'x mandatory';
+                    cardsList = Array.from(carousel.children);
+                    activeIndex = cardsList.findIndex(card => card.classList.contains('active'));
+                    let nextCard = cardsList[activeIndex + 1];
+                    if (nextCard) {
+                        let scrollPos = nextCard.offsetLeft - (carousel.clientWidth / 2) + (nextCard.offsetWidth / 2);
+                        carousel.scrollTo({ left: scrollPos, behavior: 'smooth' });
+                    }
+                });
+            };
+            
+            const movePrev = () => {
+                let cardsList = Array.from(carousel.children);
+                let activeIndex = cardsList.findIndex(card => card.classList.contains('active'));
+                
+                // If we are at the beginning, move the last element to the start
+                if (activeIndex <= 1) {
+                    const lastCard = carousel.lastElementChild;
+                    carousel.style.scrollSnapType = 'none';
+                    carousel.insertBefore(lastCard, carousel.firstElementChild);
+                    carousel.scrollLeft += (lastCard.offsetWidth + 30);
+                    void carousel.offsetWidth;
+                }
+                
+                requestAnimationFrame(() => {
+                    carousel.style.scrollSnapType = 'x mandatory';
+                    cardsList = Array.from(carousel.children);
+                    activeIndex = cardsList.findIndex(card => card.classList.contains('active'));
+                    let prevCard = cardsList[activeIndex - 1];
+                    if (prevCard) {
+                        let scrollPos = prevCard.offsetLeft - (carousel.clientWidth / 2) + (prevCard.offsetWidth / 2);
+                        carousel.scrollTo({ left: scrollPos, behavior: 'smooth' });
+                    }
+                });
+            };
+
+            const startAutoplay = () => {
+                autoplayInterval = setInterval(() => {
+                    moveNext();
+                }, 2500); // 2.5 seconds for snappier feeling
+            };
+
+            const resetAutoplay = () => {
+                clearInterval(autoplayInterval);
+                startAutoplay();
+            };
+
+            // Navigation
+            btnNext.addEventListener('click', () => {
+                moveNext();
+                resetAutoplay();
+            });
+            
+            btnPrev.addEventListener('click', () => {
+                movePrev();
+                resetAutoplay();
+            });
+
+            // Pause autoplay on hover
+            carousel.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
+            carousel.addEventListener('mouseleave', startAutoplay);
+
+            // Give it a tiny bit of time to settle layout then start
+            setTimeout(() => {
+                startAutoplay();
+            }, 500);
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Hotspot sequential animation on scroll
+            const specsSection = document.getElementById('specs');
+            const hotspots = document.querySelectorAll('.hotspot');
+            
+            const specsObserver = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting) {
+                    hotspots.forEach((hs, index) => {
+                        setTimeout(() => {
+                            hs.classList.add('active');
+                        }, index * 400); // 400ms delay between each hotspot
+                    });
+                    specsObserver.disconnect();
+                }
+            }, { threshold: 0.5 });
+            
+            if (specsSection) {
+                specsObserver.observe(specsSection);
+            }
+
+            // Feature cards sequential animation
+            const featuresSection = document.querySelector('.features');
+            const featureCards = document.querySelectorAll('.feature-card');
+            
+            const featuresObserver = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting) {
+                    entries[0].target.classList.add('animate-in');
+                    featureCards.forEach((card, index) => {
+                        setTimeout(() => {
+                            card.classList.add('animate-in');
+                        }, index * 200); // 200ms delay between cards
+                    });
+                    featuresObserver.disconnect();
+                }
+            }, { threshold: 0.2 });
+            
+            if (featuresSection) {
+                featuresObserver.observe(featuresSection);
+            }
+
+            // Carousel Section animation (for its title line)
+            const carouselSection = document.querySelector('.products-carousel-section');
+            const carouselObserver = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting) {
+                    entries[0].target.classList.add('animate-in');
+                    carouselObserver.disconnect();
+                }
+            }, { threshold: 0.2 });
+            
+            if (carouselSection) {
+                carouselObserver.observe(carouselSection);
+            }
+
+            // Split sections animation
+            const splitSections = document.querySelectorAll('.split-section');
+            const splitObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                        splitObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.3 });
+            
+            splitSections.forEach(section => {
+                splitObserver.observe(section);
+            });
+
+            // Color Selector Logic
+            const colorBtns = document.querySelectorAll('.colors-section .color-btn');
+            const machines = document.querySelectorAll('.colors-section .machine');
+            const texture = document.querySelector('.colors-section .rocks-texture');
+            let currentColorIndex = 0;
+            let colorAutoplayInterval;
+
+            const updateColorCarousel = (activeIndex) => {
+                currentColorIndex = activeIndex;
+                // Trigger texture zoom
+                texture.classList.add('zoom');
+                setTimeout(() => texture.classList.remove('zoom'), 600);
+
+                // Update buttons
+                colorBtns.forEach((btn, idx) => {
+                    if (idx === activeIndex) btn.classList.add('active');
+                    else btn.classList.remove('active');
+                });
+
+                // Update machines positions
+                machines.forEach((machine, idx) => {
+                    machine.classList.remove('center', 'peek-top', 'peek-bottom');
+                    
+                    if (idx === activeIndex) {
+                        machine.classList.add('center');
+                    } else if (idx === (activeIndex + 1) % machines.length) {
+                        machine.classList.add('peek-bottom');
+                    } else {
+                        machine.classList.add('peek-top');
+                    }
+                });
+            };
+
+            const startColorAutoplay = () => {
+                colorAutoplayInterval = setInterval(() => {
+                    let nextIndex = (currentColorIndex + 1) % machines.length;
+                    updateColorCarousel(nextIndex);
+                }, 3000);
+            };
+
+            const resetColorAutoplay = () => {
+                clearInterval(colorAutoplayInterval);
+                startColorAutoplay();
+            };
+
+            colorBtns.forEach((btn, idx) => {
+                btn.addEventListener('click', () => {
+                    updateColorCarousel(idx);
+                    resetColorAutoplay();
+                });
+            });
+            
+            machines.forEach((machine, idx) => {
+                machine.addEventListener('click', () => {
+                    if (!machine.classList.contains('center')) {
+                        updateColorCarousel(idx);
+                        resetColorAutoplay();
+                    }
+                });
+            });
+
+            // Start autoplay initially
+            startColorAutoplay();
+
+            // Steps section animation
+            const stepsSection = document.querySelector('.steps-section');
+            if (stepsSection) {
+                const stepsObserver = new IntersectionObserver((entries) => {
+                    if (entries[0].isIntersecting) {
+                        entries[0].target.classList.add('animate-in');
+                        stepsObserver.disconnect();
+                    }
+                }, { threshold: 0.3 });
+                stepsObserver.observe(stepsSection);
+            }
+
+            // Reviews section animation
+            const reviewsSection = document.querySelector('.reviews-section');
+            if (reviewsSection) {
+                const reviewsObserver = new IntersectionObserver((entries) => {
+                    if (entries[0].isIntersecting) {
+                        entries[0].target.classList.add('animate-in');
+                        reviewsObserver.disconnect();
+                    }
+                }, { threshold: 0.2 });
+                reviewsObserver.observe(reviewsSection);
+            }
+
+            // Color section line animation
+            const colorSection = document.querySelector('.colors-section');
+            if (colorSection) {
+                const colorObserver = new IntersectionObserver((entries) => {
+                    if (entries[0].isIntersecting) {
+                        entries[0].target.classList.add('animate-in');
+                        colorObserver.disconnect();
+                    }
+                }, { threshold: 0.2 });
+                colorObserver.observe(colorSection);
+            }
+
+            // Hotspot click logic
+            const mobileHotspotDisplay = document.querySelector('.mobile-hotspot-text');
+            hotspots.forEach(hs => {
+                hs.addEventListener('click', () => {
+                    hotspots.forEach(h => {
+                        if(h !== hs) h.classList.remove('active');
+                    });
+                    hs.classList.toggle('active');
+                    
+                    // Update text below image on mobile
+                    if (window.innerWidth <= 768 && mobileHotspotDisplay) {
+                        if (hs.classList.contains('active')) {
+                            const textContent = hs.querySelector('.text').innerText;
+                            mobileHotspotDisplay.innerText = textContent;
+                        } else {
+                            mobileHotspotDisplay.innerText = "Tocá un número en la cafetera para ver los detalles.";
+                        }
+                    }
+                });
+            });
+
+            // Header scroll effect
+            const header = document.querySelector('.header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // ScrollSpy for navigation links
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-links a');
+
+            const scrollSpyOptions = {
+                root: null,
+                rootMargin: '-30% 0px -50% 0px',
+                threshold: 0
+            };
+
+            const scrollSpyObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => link.classList.remove('active'));
+                        const id = entry.target.getAttribute('id');
+                        const activeLink = document.querySelector(`.nav-links a[href="#${id}"]`);
+                        if (activeLink) {
+                            activeLink.classList.add('active');
+                        }
+                    }
+                });
+            }, scrollSpyOptions);
+
+            sections.forEach(section => {
+                scrollSpyObserver.observe(section);
+            });
+            
+            // Mobile Autoplay for horizontal carousels
+            const setupMobileAutoplay = (containerSelector, itemSelector, intervalMs) => {
+                const container = document.querySelector(containerSelector);
+                if (!container) return;
+                let autoPlayInterval;
+                
+                const startAutoplay = () => {
+                    if (window.innerWidth <= 768) {
+                        autoPlayInterval = setInterval(() => {
+                            const scrollWidth = container.scrollWidth;
+                            const clientWidth = container.clientWidth;
+                            let currentScroll = container.scrollLeft;
+                            const firstItem = container.querySelector(itemSelector);
+                            if (!firstItem) return;
+                            const itemWidth = firstItem.offsetWidth;
+                            
+                            // If reached the end, loop back to start
+                            if (currentScroll + clientWidth >= scrollWidth - 10) {
+                                container.scrollTo({ left: 0, behavior: 'smooth' });
+                            } else {
+                                container.scrollBy({ left: itemWidth, behavior: 'smooth' });
+                            }
+                        }, intervalMs);
+                    }
                 };
 
-                productoPrev.addEventListener("click", () => moverProductos(-1));
-                productoNext.addEventListener("click", () => moverProductos(1));
+                const stopAutoplay = () => clearInterval(autoPlayInterval);
+                
+                // Pause on manual touch interaction
+                container.addEventListener('touchstart', stopAutoplay, { passive: true });
+                container.addEventListener('touchend', () => {
+                    setTimeout(stopAutoplay, 10);
+                    setTimeout(startAutoplay, intervalMs); // Resume after interval
+                });
+                
+                startAutoplay();
+                window.addEventListener('resize', () => {
+                    stopAutoplay();
+                    startAutoplay();
+                });
+            };
 
-                productosLinea.addEventListener("wheel", (event) => {
-                    if (Math.abs(event.deltaY) > Math.abs(event.deltaX)) {
-                        event.preventDefault();
-                        productosLinea.scrollLeft += event.deltaY;
-                    }
-                }, { passive: false });
-            }
-
-            const datosSection = document.querySelector("#features");
-
-            if (datosSection) {
-                const datosObserver = new IntersectionObserver((entries) => {
-                    entries.forEach((entry) => {
-                        if (entry.isIntersecting) {
-                            datosSection.classList.add("datos-visible");
-                        } else {
-                            datosSection.classList.remove("datos-visible");
-                        }
-                    });
-                }, { rootMargin: "-35% 0px -35% 0px", threshold: 0.1 });
-
-                datosObserver.observe(datosSection);
-            }
-        </script>
-
-        
-        <!-- JavaScript del sitio-->
-        <script src="js/scripts.js"></script>
-    </body>
+            setupMobileAutoplay('.cards-container', '.feature-card', 3500);
+            setupMobileAutoplay('.reviews-container', '.review-card', 4000);
+            setupMobileAutoplay('.steps-container', '.step-item', 3000);
+            setupMobileAutoplay('#productCarousel', '.product-card', 3500);
+        });
+    </script>
+</body>
 </html>
