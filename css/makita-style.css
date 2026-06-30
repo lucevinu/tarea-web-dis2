@@ -838,7 +838,8 @@ h1, h2, h3, h4, .anton-font {
         text-align: center;
         gap: 10px; /* Reduced gap to bring animation closer */
     }
-    .split-image video {
+    .split-image video,
+    .split-image img {
         margin: 0 auto;
         display: block;
         max-width: 100%;
