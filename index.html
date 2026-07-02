@@ -287,7 +287,6 @@
             </div>
         </div>
         <div class="carousel-wrapper" style="max-width: 1200px; margin: 40px auto 0; justify-content: space-between;">
-            <button class="carousel-btn prev" id="reviewPrevBtn"><i class="fas fa-chevron-left"></i></button>
             <div class="reviews-container" id="reviewsCarousel" style="max-width: 850px;">
                 <div class="review-card">
                     <div class="stars">
@@ -318,7 +317,6 @@
                     <div class="review-author">- Esteban V.</div>
                 </div>
             </div>
-            <button class="carousel-btn next" id="reviewNextBtn"><i class="fas fa-chevron-right"></i></button>
         </div>
     </section>
 
@@ -468,7 +466,7 @@
             const startAutoplay = () => {
                 autoplayInterval = setInterval(() => {
                     moveNext();
-                }, 2500); // 2.5 seconds for snappier feeling
+                }, 5000); // Slower interval
             };
 
             const resetAutoplay = () => {
@@ -774,10 +772,10 @@
                 });
             };
 
-            setupMobileAutoplay('.cards-container', '.feature-card', 3500);
-            setupMobileAutoplay('.reviews-container', '.review-card', 4000);
-            setupMobileAutoplay('.steps-container', '.step-item', 3000);
-            setupMobileAutoplay('#productCarousel', '.product-card', 3500);
+            setupMobileAutoplay('.cards-container', '.feature-card', 6000);
+            setupMobileAutoplay('.reviews-container', '.review-card', 7000);
+            setupMobileAutoplay('.steps-container', '.step-item', 6000);
+            setupMobileAutoplay('#productCarousel', '.product-card', 6000);
             
             const reviewCarousel = document.getElementById('reviewsCarousel');
             const reviewBtnPrev = document.getElementById('reviewPrevBtn');
