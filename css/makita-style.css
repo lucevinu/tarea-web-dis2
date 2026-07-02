@@ -1104,6 +1104,14 @@ h1, h2, h3, h4, .anton-font {
     z-index: 2;
 }
 
+.colors-text p.color-desc-1 {
+    margin-top: -10px; /* Subi un poco el primer texto */
+}
+
+.colors-text p.color-desc-2 {
+    margin-top: 30px; /* Baja el segundo texto */
+}
+
 .colors-text p {
     color: var(--text-muted);
     margin-bottom: 30px;
@@ -1117,8 +1125,8 @@ h1, h2, h3, h4, .anton-font {
 }
 
 .color-btn {
-    width: 40px;
-    height: 40px;
+    width: 30px; /* Achicado de 40px */
+    height: 30px;
     border-radius: 50%;
     border: 2px solid transparent;
     cursor: pointer;
