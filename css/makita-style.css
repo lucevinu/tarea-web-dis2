@@ -236,7 +236,7 @@ h1, h2, h3, h4, .anton-font {
     text-align: center;
     background-image: url('../img/ChatGPT Image 22 jun 2026, 01_24_36.png');
     background-size: cover;
-    background-position: center;
+    background-position: 70% center; /* Shifted to the right */
     background-attachment: fixed;
 }
 
@@ -258,7 +258,15 @@ h1, h2, h3, h4, .anton-font {
     color: var(--makita-yellow);
     margin-bottom: 5px;
     letter-spacing: 2px;
-    line-height: 1.1;
+}
+.banner-large {
+    font-size: 7.5rem;
+}
+.banner-desc {
+    color: #fff;
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .banner p {
@@ -354,9 +362,9 @@ h1, h2, h3, h4, .anton-font {
 .separator-line {
     flex-grow: 1;
     max-width: 0;
-    height: 3px;
+    height: 2px;
     background-color: var(--makita-yellow);
-    box-shadow: 0 0 8px var(--makita-yellow);
+    box-shadow: 0 0 4px var(--makita-yellow);
     border-radius: 2px;
     transition: max-width 1.5s ease-out 0.4s;
     margin-bottom: 8px; /* Align visually with the baseline of the typography */
@@ -878,14 +886,14 @@ h1, h2, h3, h4, .anton-font {
     
     .title-with-line {
         display: flex;
-        justify-content: center;
-        align-items: center;
+        justify-content: flex-start;
+        align-items: flex-start;
         flex-direction: column;
         gap: 15px;
     }
     .title-with-line h2 {
         white-space: normal;
-        text-align: center;
+        text-align: left;
     }
     .separator-line {
         flex-grow: 0;
@@ -896,11 +904,11 @@ h1, h2, h3, h4, .anton-font {
         max-width: 150px;
     }
     
-    .split-text h2 { font-size: 25px; }
-    .split-text p { font-size: 0.85rem; }
+    .split-text h2 { font-size: 25px !important; text-align: left; }
+    .split-text p { font-size: 0.85rem; text-align: left; }
     
-    .section-title { font-size: 25px; text-align: center; line-height: 1.1; }
-    .subtitle { font-size: 0.85rem; text-align: center; }
+    .section-title { font-size: 25px !important; text-align: left; line-height: 1.1; }
+    .subtitle { font-size: 0.85rem; text-align: left; }
     
     .feature-card h3, .review-card h3 { font-size: 1.1rem; margin-bottom: 10px; }
     .product-card h3 { font-size: 0.8rem; margin-bottom: 5px; }
@@ -909,8 +917,8 @@ h1, h2, h3, h4, .anton-font {
     .step-item h3 { font-size: 1.1rem; }
     .step-item p { font-size: 0.85rem; }
     
-    .colors-text h2 { font-size: 25px; text-align: center; }
-    .colors-text p { font-size: 0.95rem; text-align: center; }
+    .colors-text h2 { font-size: 25px !important; text-align: left; }
+    .colors-text p { font-size: 0.95rem; text-align: left; }
     
     .cards-container, .reviews-container {
         display: flex !important;
@@ -949,49 +957,72 @@ h1, h2, h3, h4, .anton-font {
         justify-content: flex-start;
     }
     
-    .banner h2.banner-title { font-size: 25px; }
-    .banner p { font-size: 1.1rem; }
+    .banner h2.banner-title { font-size: 25px !important; text-align: left; }
+    .banner .banner-large { font-size: 45px !important; display: block; margin-top: 5px; line-height: 1; }
+    .banner-desc { font-size: 0.85rem; text-align: left; }
     
     .footer-content {
         flex-direction: column;
-        text-align: center;
+        text-align: left;
     }
     
     /* Shrink reviews title */
-    #resenas .section-title { font-size: 25px; }
+    #resenas .section-title { font-size: 25px !important; text-align: left; }
     
-    /* Instructivo Carousel */
+    .steps-section {
+        align-items: flex-start !important;
+    }
+    
+    /* Instructivo Vertical Timeline (Mobile) */
     .steps-container {
         display: flex;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        scrollbar-width: none;
-        gap: 0;
+        flex-direction: column;
+        gap: 30px;
         position: relative;
         padding-bottom: 20px;
+        padding-left: 20px;
+        align-items: flex-start;
+        width: 100%;
     }
-    .steps-container::-webkit-scrollbar { display: none; }
     .step-item {
-        flex: 0 0 100%;
-        min-width: 100%;
-        scroll-snap-align: center;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
-        text-align: center;
-        gap: 10px;
+        text-align: left;
+        gap: 20px;
+        z-index: 1;
+        width: 100%;
     }
     .step-circle { 
         width: 50px !important;
         height: 50px !important;
         font-size: 1.5rem !important;
         line-height: 44px !important;
-        margin: 0 auto; 
+        margin: 0; 
+        flex-shrink: 0;
+        position: relative;
+        z-index: 2;
     }
     .step-item p.anton-font {
         font-size: 0.9rem !important;
     }
-    .connecting-line { display: none !important; }
+    .step-item p { margin: 0; }
+    .connecting-line { 
+        display: block !important; 
+        position: absolute;
+        left: 44px; /* 20px padding-left + 24px */
+        top: 0;
+        width: 2px !important;
+        height: 0;
+        max-width: none !important;
+        background-color: var(--makita-yellow);
+        box-shadow: 0 0 4px var(--makita-yellow);
+        transition: height 1.5s ease-out 0.4s !important;
+        z-index: 0;
+    }
+    .steps-section.animate-in .connecting-line {
+        height: 100% !important;
+    }
     
     /* Reorder colors section */
     .colors-section {
@@ -1181,6 +1212,8 @@ h1, h2, h3, h4, .anton-font {
     padding: 100px 5% 120px;
     background-color: var(--bg-dark);
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     position: relative;
     z-index: 1;
