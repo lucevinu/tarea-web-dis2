@@ -676,9 +676,10 @@
                     if (window.innerWidth <= 768 && mobileHotspotDisplay) {
                         if (hs.classList.contains('active')) {
                             const textContent = hs.querySelector('.text').innerText;
-                            mobileHotspotDisplay.innerText = textContent;
+                            const numContent = hs.querySelector('.hotspot-number').innerText;
+                            mobileHotspotDisplay.innerHTML = `<span style="display:inline-block; width:24px; height:24px; background:var(--makita-yellow); color:#000; border-radius:50%; text-align:center; line-height:24px; margin-right:10px; font-weight:bold;">${numContent}</span> ${textContent}`;
                         } else {
-                            mobileHotspotDisplay.innerText = "Tocá un número en la cafetera para ver los detalles.";
+                            mobileHotspotDisplay.innerHTML = "Tocá un número en la cafetera para ver los detalles.";
                         }
                     }
                 });

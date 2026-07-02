@@ -1067,6 +1067,11 @@ p.banner-desc {
         flex-direction: column;
         align-items: center;
         width: 100%;
+        overflow: hidden;
+    }
+    .interactive-specs {
+        margin: 0 -25px;
+        width: calc(100% + 50px);
     }
     .specs-image-wrapper {
         width: 100%;
@@ -1077,12 +1082,14 @@ p.banner-desc {
     }
     .mobile-hotspot-display {
         display: block !important;
-        background: none;
-        padding: 0;
-        border: none;
+        background: #0b0d10;
+        padding: 15px;
+        border: 1px solid #222;
+        border-radius: 8px;
         margin-top: 20px;
         text-align: center;
         width: 100%;
+        box-sizing: border-box;
     }
     .mobile-hotspot-text { font-size: 1rem; color: var(--text-light); }
     .hotspot-content { display: none !important; }
