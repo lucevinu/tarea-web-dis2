@@ -516,47 +516,49 @@ h1, h2, h3, h4, .anton-font {
     opacity: 1;
 }
 
+/* Uniform Right-Side Hotspots */
 /* HS 1: down-right */
-#hs-1 .diag { transform: rotate(40deg); }
-#hs-1.active .diag { width: 140px; }
-#hs-1 .horiz { top: 90px; left: 107px; transform: rotate(0deg); }
-#hs-1.active .horiz { width: 50px; }
-#hs-1 .text { top: 81px; left: 165px; text-align: left; }
+#hs-1 .diag { transform: rotate(30deg); }
+#hs-1.active .diag { width: 60px; }
+#hs-1 .horiz { top: 30px; left: 52px; transform: rotate(0deg); }
+#hs-1.active .horiz { width: 60px; }
+#hs-1 .text { top: 21px; left: 122px; text-align: left; }
 
 /* HS 2: up-right */
-#hs-2 .diag { transform: rotate(-20deg); }
-#hs-2.active .diag { width: 100px; }
-#hs-2 .horiz { top: -34px; left: 94px; transform: rotate(0deg); }
-#hs-2.active .horiz { width: 80px; }
-#hs-2 .text { top: -43px; left: 182px; text-align: left; }
+#hs-2 .diag { transform: rotate(-30deg); }
+#hs-2.active .diag { width: 60px; }
+#hs-2 .horiz { top: -30px; left: 52px; transform: rotate(0deg); }
+#hs-2.active .horiz { width: 60px; }
+#hs-2 .text { top: -39px; left: 122px; text-align: left; }
 
 /* HS 3: up-right */
-#hs-3 .diag { transform: rotate(-25deg); }
+#hs-3 .diag { transform: rotate(-30deg); }
 #hs-3.active .diag { width: 60px; }
-#hs-3 .horiz { top: -25px; left: 54px; transform: rotate(0deg); }
-#hs-3.active .horiz { width: 50px; }
-#hs-3 .text { top: -34px; left: 112px; text-align: left; }
+#hs-3 .horiz { top: -30px; left: 52px; transform: rotate(0deg); }
+#hs-3.active .horiz { width: 60px; }
+#hs-3 .text { top: -39px; left: 122px; text-align: left; }
 
+/* Uniform Left-Side Hotspots */
 /* HS 4: up-left */
-#hs-4 .diag { transform: rotate(-160deg); }
-#hs-4.active .diag { width: 80px; }
-#hs-4 .horiz { top: -27px; left: -75px; transform: rotate(180deg); }
-#hs-4.active .horiz { width: 120px; }
-#hs-4 .text { top: -36px; left: -205px; transform: translateX(-100%); text-align: right; }
+#hs-4 .diag { transform: rotate(-150deg); }
+#hs-4.active .diag { width: 60px; }
+#hs-4 .horiz { top: -30px; left: -52px; transform: rotate(180deg); }
+#hs-4.active .horiz { width: 60px; }
+#hs-4 .text { top: -39px; left: -122px; transform: translateX(-100%); text-align: right; }
 
-/* HS 5: up-left */
-#hs-5 .diag { transform: rotate(-135deg); }
-#hs-5.active .diag { width: 150px; }
-#hs-5 .horiz { top: -106px; left: -106px; transform: rotate(180deg); }
-#hs-5.active .horiz { width: 210px; }
-#hs-5 .text { top: -115px; left: -326px; transform: translateX(-100%); text-align: right; }
+/* HS 5: up-left (extended to clear the image) */
+#hs-5 .diag { transform: rotate(-160deg); }
+#hs-5.active .diag { width: 180px; }
+#hs-5 .horiz { top: -61px; left: -169px; transform: rotate(180deg); }
+#hs-5.active .horiz { width: 120px; }
+#hs-5 .text { top: -70px; left: -299px; transform: translateX(-100%); text-align: right; }
 
 /* HS 6: up-left */
 #hs-6 .diag { transform: rotate(-150deg); }
-#hs-6.active .diag { width: 80px; }
-#hs-6 .horiz { top: -40px; left: -69px; transform: rotate(180deg); }
-#hs-6.active .horiz { width: 50px; }
-#hs-6 .text { top: -49px; left: -129px; transform: translateX(-100%); text-align: right; }
+#hs-6.active .diag { width: 60px; }
+#hs-6 .horiz { top: -30px; left: -52px; transform: rotate(180deg); }
+#hs-6.active .horiz { width: 60px; }
+#hs-6 .text { top: -39px; left: -122px; transform: translateX(-100%); text-align: right; }
 
 /* Products Carousel Section */
 .products-carousel-section {
@@ -663,16 +665,17 @@ h1, h2, h3, h4, .anton-font {
 
 .product-card h3 {
     color: #ffffff;
-    font-family: 'Oswald', sans-serif;
-    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
     text-transform: uppercase;
     margin-bottom: 5px;
-    font-size: 0.95rem;
+    font-size: 0.8rem;
     text-align: center;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 100%;
+    width: 100%;
 }
 
 .btn-yellow-pill {
@@ -887,7 +890,7 @@ h1, h2, h3, h4, .anton-font {
     .subtitle { font-size: 1rem; text-align: center; }
     
     .feature-card h3, .review-card h3 { font-size: 1.1rem; margin-bottom: 10px; }
-    .product-card h3 { font-size: 0.95rem; margin-bottom: 5px; }
+    .product-card h3 { font-size: 0.8rem; margin-bottom: 5px; }
     .feature-card p, .review-card p, .product-card p { font-size: 0.85rem; line-height: 1.15; margin-top: 0; }
     
     .step-item h3 { font-size: 1.3rem; }
@@ -1115,15 +1118,11 @@ h1, h2, h3, h4, .anton-font {
     left: 50%;
     width: 150%;
     height: 150%;
-    transform: translate(-50%, -50%) scale(1) rotate(0deg);
-    background: url('../img/stone_explosion_bg.png') center/cover no-repeat;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle at center, #1a1e24 0%, #000000 70%);
     z-index: 0;
-    opacity: 0.9; /* Slightly higher opacity for the new texture */
-    mix-blend-mode: screen; /* Makes the black background of the image transparent */
+    opacity: 1;
     pointer-events: none;
-    mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 60%);
-    -webkit-mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 60%);
-    animation: floatRocks 15s ease-in-out infinite;
 }
 
 .rocks-texture.zoom {
