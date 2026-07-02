@@ -1489,3 +1489,64 @@ html {
     scroll-padding-top: 35vh; /* Leaves enough space at the top so sections feel centered in the viewport */
 }
 
+/* Fix mobile steps vertical timeline being overridden by global rules */
+@media (max-width: 768px) {
+    .steps-section {
+        align-items: flex-start !important;
+    }
+    .steps-container {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 30px !important;
+        position: relative !important;
+        padding-bottom: 20px !important;
+        padding-left: 20px !important;
+        align-items: flex-start !important;
+        width: 100% !important;
+    }
+    .step-item {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        text-align: left !important;
+        gap: 20px !important;
+        z-index: 1 !important;
+        width: 100% !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+    .step-circle { 
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 1.5rem !important;
+        line-height: 44px !important;
+        margin: 0 !important; 
+        flex-shrink: 0 !important;
+        position: relative !important;
+        z-index: 2 !important;
+    }
+    .step-item p.anton-font {
+        font-size: 0.9rem !important;
+    }
+    .step-item p { margin: 0 !important; }
+    .connecting-line { 
+        display: block !important; 
+        position: absolute !important;
+        left: 44px !important;
+        top: 0 !important;
+        width: 2px !important;
+        height: 0 !important;
+        max-width: none !important;
+        background-color: var(--makita-yellow) !important;
+        box-shadow: 0 0 4px var(--makita-yellow) !important;
+        transition: height 1.5s ease-out 0.4s !important;
+        z-index: 0 !important;
+    }
+    .steps-section.animate-in .connecting-line {
+        height: 100% !important;
+    }
+    .steps-section.animate-in .step-item {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
