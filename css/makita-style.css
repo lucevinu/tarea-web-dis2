@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap');
 
 :root {
     --makita-yellow: #f8e12e;
@@ -19,11 +19,11 @@ body {
 }
 
 h1, h2, h3, h4, .anton-font {
-    font-family: 'Anton', sans-serif;
+    font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
-    font-weight: normal;
+    font-weight: 600; /* Default bold for headings */
     margin: 0;
-    line-height: 1.1;
+    line-height: 1.2; /* Slightly more breathing room for Oswald */
 }
 
 /* Header */
@@ -64,9 +64,10 @@ h1, h2, h3, h4, .anton-font {
 .nav-links a {
     color: var(--text-light);
     text-decoration: none;
-    font-size: 0.75rem; /* Reduced font size */
+    font-size: 0.9rem;
+    font-family: 'Inter', sans-serif;
     letter-spacing: 1px;
-    font-weight: 600;
+    font-weight: 500;
     transition: color 0.3s, text-shadow 0.3s;
 }
 
@@ -94,14 +95,14 @@ h1, h2, h3, h4, .anton-font {
 /* Hero Section */
 .hero {
     position: relative;
-    padding: 150px 5% 100px;
-    min-height: 80vh;
+    padding: 150px 5% 0;
+    min-height: 90vh;
     display: flex;
     align-items: center;
-    background-color: #0b0d10; /* Fallback to blend left side */
-    background-image: url('../img/ChatGPT Image 22 jun 2026, 01_24_12.png');
-    background-size: auto 75%; /* Shrink further to clear the menu */
-    background-position: right center;
+    background-color: var(--bg-dark);
+    background-image: url('../img/Hero%20probar.png');
+    background-size: auto 95%;
+    background-position: right -40px center;
     background-repeat: no-repeat;
 }
 
@@ -109,30 +110,37 @@ h1, h2, h3, h4, .anton-font {
     content: '';
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(90deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 30%, rgba(0,0,0,0) 55%);
+    background: 
+        linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 10%, rgba(0,0,0,0) 75%, rgba(0,0,0,1) 95%, rgba(0,0,0,1) 100%),
+        linear-gradient(90deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,0) 65%);
     z-index: 1;
+    pointer-events: none;
 }
 
 .hero-content {
     flex: 1;
     z-index: 2;
     position: relative;
+    transform: translateY(-70px);
 }
 
 .hero h1 {
-    font-size: 6.5rem;
-    color: var(--makita-yellow);
+    font-size: 5rem;
+    font-weight: 700;
+    color: var(--text-light);
     margin-bottom: 10px;
+    line-height: 1;
 }
 
 .hero h2 {
-    font-size: 2.5rem;
-    color: var(--text-light);
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--makita-yellow);
 }
 
 /* Features Section */
 .features {
-    padding: 80px 5%;
+    padding: 0 5% 80px;
 }
 
 .section-title-wrapper {
@@ -209,15 +217,15 @@ h1, h2, h3, h4, .anton-font {
 .feature-card h3 {
     font-size: 1.2rem;
     color: var(--text-light);
-    margin-bottom: 15px;
-    font-family: 'Anton', sans-serif;
-    letter-spacing: 1px;
+    margin-bottom: 5px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
 }
 
 .feature-card p {
     color: var(--text-muted);
     font-size: 0.9rem;
-    line-height: 1.5;
+    line-height: 1.15;
 }
 
 /* Full Width Banner */
@@ -244,18 +252,22 @@ h1, h2, h3, h4, .anton-font {
 }
 
 .banner h2.banner-title {
-    font-size: 6rem;
+    font-size: 5.5rem;
+    font-weight: 700;
     color: var(--makita-yellow);
-    margin-bottom: 10px;
-    text-transform: uppercase;
+    margin-bottom: 5px;
+    letter-spacing: 2px;
     line-height: 1.1;
 }
 
 .banner p {
-    font-family: 'Anton', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
     color: var(--text-light);
     font-size: 1.5rem;
     letter-spacing: 2px;
+    line-height: 1.2;
+    margin-top: 0;
 }
 
 /* Split Section */
@@ -332,9 +344,10 @@ h1, h2, h3, h4, .anton-font {
 }
 
 .title-with-line h2 {
-    font-size: 3rem;
+    font-size: 2.8rem;
+    font-weight: 700;
     color: var(--text-light);
-    margin-bottom: 0;
+    margin-bottom: 10px;
     letter-spacing: 1px;
     line-height: 1;
     white-space: nowrap;
@@ -564,7 +577,7 @@ h1, h2, h3, h4, .anton-font {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    gap: 30px;
+    gap: 15px;
     padding: 40px calc(50% - 160px) 60px; /* 40px top padding, 60px bottom padding */
     margin-top: 0px;
     scrollbar-width: none;
@@ -602,10 +615,10 @@ h1, h2, h3, h4, .anton-font {
 
 .product-card img {
     width: 100%;
-    max-width: 220px; /* Constrain width so wide tools don't look gigantic */
-    height: 140px; /* Reduced height */
+    max-width: 100%;
+    height: 160px;
     object-fit: contain;
-    margin: 0 auto 15px; /* Reduced bottom margin and centered */
+    margin: 0 auto 15px;
     filter: drop-shadow(0 15px 20px rgba(0,0,0,0.9));
     transition: transform 0.4s ease;
 }
@@ -649,11 +662,12 @@ h1, h2, h3, h4, .anton-font {
 
 .product-card h3 {
     color: #ffffff;
-    font-family: 'Anton', sans-serif;
-    margin-bottom: 15px; /* Reduced bottom margin */
-    font-size: 1.1rem;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    font-size: 0.95rem;
     text-align: center;
-    letter-spacing: 1px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -662,14 +676,14 @@ h1, h2, h3, h4, .anton-font {
 
 .btn-yellow-pill {
     display: inline-block;
-    padding: 6px 16px;
+    padding: 4px 12px;
     background-color: var(--makita-yellow);
     color: #000;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 15px;
+    border-radius: 12px;
     transition: background-color 0.3s, transform 0.3s;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     letter-spacing: 0.5px;
 }
 
@@ -871,8 +885,9 @@ h1, h2, h3, h4, .anton-font {
     .section-title { font-size: 2.2rem; text-align: center; line-height: 1.1; }
     .subtitle { font-size: 1rem; text-align: center; }
     
-    .feature-card h3, .review-card h3, .product-card h3 { font-size: 1.1rem !important; margin-bottom: 10px !important; }
-    .feature-card p, .review-card p, .product-card p { font-size: 0.85rem !important; line-height: 1.4 !important; }
+    .feature-card h3, .review-card h3 { font-size: 1.1rem; margin-bottom: 5px; }
+    .product-card h3 { font-size: 0.95rem; margin-bottom: 5px; }
+    .feature-card p, .review-card p, .product-card p { font-size: 0.85rem; line-height: 1.15; }
     
     .step-item h3 { font-size: 1.3rem; }
     .step-item p { font-size: 0.9rem; }
@@ -1130,7 +1145,7 @@ h1, h2, h3, h4, .anton-font {
     transform-origin: center;
 }
 
-/* Positions for rotary animation */
+/* Positions for horizontal entering/exiting animation */
 .machine.center {
     top: 50%;
     left: 50%;
@@ -1139,27 +1154,18 @@ h1, h2, h3, h4, .anton-font {
     z-index: 3;
 }
 
-.machine.peek-top {
-    top: 0%;
-    left: 80%;
-    transform: translate(-50%, -50%) rotate(45deg) scale(0.4);
-    opacity: 0.5;
-    z-index: 2;
-    cursor: pointer;
-}
-
-.machine.peek-bottom {
-    top: 100%;
-    left: 80%;
-    transform: translate(-50%, -50%) rotate(-45deg) scale(0.4);
-    opacity: 0.5;
+.machine.out-right {
+    top: 50%;
+    left: 150%;
+    transform: translate(-50%, -50%) rotate(0deg) scale(0.4);
+    opacity: 0;
     z-index: 2;
     cursor: pointer;
 }
 /* Steps Section */
 .steps-section {
     padding: 100px 5% 50px;
-    background-color: transparent;
+    background-color: #121316;
     display: flex;
     justify-content: center;
     position: relative;
@@ -1206,7 +1212,8 @@ h1, h2, h3, h4, .anton-font {
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
-    font-family: 'Anton', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
     box-shadow: 0 0 15px rgba(255, 204, 0, 0.1);
     transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -1220,9 +1227,9 @@ h1, h2, h3, h4, .anton-font {
 
 .step-item p {
     color: var(--text-light);
-    font-size: 1.1rem;
+    font-size: 1rem;
     line-height: 1.5;
-    font-weight: 500;
+    font-weight: 400;
 }
 /* Reviews Section */
 .reviews-section {
@@ -1231,11 +1238,18 @@ h1, h2, h3, h4, .anton-font {
 }
 
 .reviews-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
     gap: 30px;
-    max-width: 1200px;
-    margin: 40px auto 0;
+    scrollbar-width: none;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+.reviews-container::-webkit-scrollbar {
+    display: none;
 }
 
 .review-card {
@@ -1249,6 +1263,9 @@ h1, h2, h3, h4, .anton-font {
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     opacity: 0;
     transform: translateY(30px);
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+    box-sizing: border-box;
 }
 
 .reviews-section.animate-in .review-card {
@@ -1364,7 +1381,8 @@ h1, h2, h3, h4, .anton-font {
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
-    font-family: 'Anton', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
     box-shadow: none !important;
     transition: border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease !important;
 }
