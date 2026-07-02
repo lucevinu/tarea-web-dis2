@@ -480,9 +480,10 @@
             };
 
             const startAutoplay = () => {
+                const intervalTime = window.innerWidth <= 768 ? 10000 : 5000; // Much slower on mobile
                 autoplayInterval = setInterval(() => {
                     moveNext();
-                }, 5000); // Slower interval
+                }, intervalTime); 
             };
 
             const resetAutoplay = () => {
@@ -791,7 +792,6 @@
             setupMobileAutoplay('.cards-container', '.feature-card', 6000);
             setupMobileAutoplay('.reviews-container', '.review-card', 7000);
             setupMobileAutoplay('.steps-container', '.step-item', 6000);
-            setupMobileAutoplay('#productCarousel', '.product-card', 6000);
             
             const reviewCarousel = document.getElementById('reviewsCarousel');
             const reviewBtnPrev = document.getElementById('reviewPrevBtn');
