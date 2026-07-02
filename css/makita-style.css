@@ -264,7 +264,7 @@ h1, h2, h3, h4, .anton-font {
 }
 .banner-desc {
     color: #fff;
-    font-size: 1rem;
+    font-size: 0.5rem;
     max-width: 800px;
     margin: 0 auto;
     font-family: 'Inter', sans-serif;
@@ -960,7 +960,7 @@ h1, h2, h3, h4, .anton-font {
     
     .banner h2.banner-title { font-size: 45px !important; text-align: center; line-height: 1.1; }
     .banner .banner-large { font-size: inherit; display: block; margin-top: 5px; line-height: 1; }
-    .banner-desc { font-size: 0.75rem; text-align: center; }
+    .banner-desc { font-size: 0.4rem; text-align: center; }
     
     .footer-content {
         flex-direction: column;
