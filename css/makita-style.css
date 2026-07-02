@@ -236,7 +236,7 @@ h1, h2, h3, h4, .anton-font {
     text-align: center;
     background-image: url('../img/ChatGPT Image 22 jun 2026, 01_24_36.png');
     background-size: cover;
-    background-position: center;
+    background-position: calc(50% + 20px) center;
     background-attachment: fixed;
 }
 
