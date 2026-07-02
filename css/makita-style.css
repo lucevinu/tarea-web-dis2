@@ -463,7 +463,8 @@ h1, h2, h3, h4, .anton-font {
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
-.hotspot:hover .hotspot-number {
+.hotspot:hover .hotspot-number,
+.hotspot.active .hotspot-number {
     background-color: var(--makita-yellow);
     color: #000;
 }
@@ -543,19 +544,20 @@ h1, h2, h3, h4, .anton-font {
 #hs-4.active .horiz { width: 60px; }
 #hs-4 .text { top: -39px; left: -122px; transform: translateX(-100%); text-align: right; }
 
-/* HS 5: up-left (extended to clear the image) */
-#hs-5 .diag { transform: rotate(-160deg); }
-#hs-5.active .diag { width: 180px; }
-#hs-5 .horiz { top: -61px; left: -169px; transform: rotate(180deg); }
-#hs-5.active .horiz { width: 120px; }
-#hs-5 .text { top: -70px; left: -299px; transform: translateX(-100%); text-align: right; }
+/* HS 5: up-right */
+/* HS 5: down-right */
+#hs-5 .diag { transform: rotate(30deg); }
+#hs-5.active .diag { width: 60px; }
+#hs-5 .horiz { top: 30px; left: 52px; transform: rotate(0deg); }
+#hs-5.active .horiz { width: 60px; }
+#hs-5 .text { top: 21px; left: 122px; text-align: left; }
 
-/* HS 6: up-left */
+/* HS 6: up-left (shorter to fit inside left margin) */
 #hs-6 .diag { transform: rotate(-150deg); }
-#hs-6.active .diag { width: 60px; }
-#hs-6 .horiz { top: -30px; left: -52px; transform: rotate(180deg); }
-#hs-6.active .horiz { width: 60px; }
-#hs-6 .text { top: -39px; left: -122px; transform: translateX(-100%); text-align: right; }
+#hs-6.active .diag { width: 40px; }
+#hs-6 .horiz { top: -20px; left: -35px; transform: rotate(180deg); }
+#hs-6.active .horiz { width: 30px; }
+#hs-6 .text { top: -29px; left: -75px; transform: translateX(-100%); text-align: right; }
 
 /* Products Carousel Section */
 .products-carousel-section {
@@ -671,7 +673,6 @@ h1, h2, h3, h4, .anton-font {
     overflow: hidden;
     text-overflow: ellipsis;
     width: 100%;
-    text-transform: lowercase;
 }
 
 .btn-yellow-pill {
