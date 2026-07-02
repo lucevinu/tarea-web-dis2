@@ -1499,6 +1499,7 @@ html {
         flex-direction: column !important;
         gap: 30px !important;
         position: relative !important;
+        padding-top: 20px !important;
         padding-bottom: 20px !important;
         padding-left: 20px !important;
         align-items: flex-start !important;
@@ -1532,9 +1533,10 @@ html {
     .connecting-line { 
         display: block !important; 
         position: absolute !important;
-        left: 44px !important;
-        top: 0 !important;
-        width: 2px !important;
+        left: 45px !important; /* 20px padding + 25px center of circle */
+        transform: translateX(-50%) !important; /* Center the line perfectly */
+        top: 0 !important; /* Will start at top of padding, i.e. 20px above first circle */
+        width: 3px !important;
         height: 0 !important;
         max-width: none !important;
         background-color: var(--makita-yellow) !important;
@@ -1543,7 +1545,7 @@ html {
         z-index: 0 !important;
     }
     .steps-section.animate-in .connecting-line {
-        height: 100% !important;
+        height: 100% !important; /* Fills container, going 20px below last circle due to padding */
     }
     .steps-section.animate-in .step-item {
         opacity: 1 !important;
