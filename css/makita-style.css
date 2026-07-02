@@ -253,21 +253,21 @@ h1, h2, h3, h4, .anton-font {
 }
 
 .banner h2.banner-title {
-    font-size: 7.5rem;
+    font-size: 5.5rem;
     font-weight: 700;
     color: var(--makita-yellow);
     margin-bottom: 5px;
     letter-spacing: 2px;
 }
 .banner-large {
-    font-size: inherit;
+    font-size: 7.5rem;
 }
 p.banner-desc {
     color: #fff;
-    font-size: 0.8rem !important;
+    font-size: 1.2rem !important;
     max-width: 800px;
     margin: 0 auto;
-    font-family: 'Inter', sans-serif !important;
+    font-family: 'Oswald', sans-serif !important;
     letter-spacing: 1px;
 }
 
@@ -960,7 +960,7 @@ p.banner-desc {
     
     .banner h2.banner-title { font-size: 45px !important; text-align: center; line-height: 1.1; }
     .banner .banner-large { font-size: inherit; display: block; margin-top: 5px; line-height: 1; }
-    p.banner-desc { font-size: 0.75rem !important; text-align: center; }
+    p.banner-desc { font-size: 0.75rem !important; text-align: center; font-family: 'Inter', sans-serif !important; }
     
     .footer-content {
         flex-direction: column;
