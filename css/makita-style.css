@@ -253,24 +253,25 @@ h1, h2, h3, h4, .anton-font {
 }
 
 .banner h2.banner-title {
-    font-size: 5.5rem;
+    font-size: 7.5rem;
     font-weight: 700;
     color: var(--makita-yellow);
     margin-bottom: 5px;
     letter-spacing: 2px;
 }
 .banner-large {
-    font-size: 7.5rem;
+    font-size: inherit;
 }
 .banner-desc {
     color: #fff;
-    font-size: 1.2rem;
+    font-size: 1rem;
     max-width: 800px;
     margin: 0 auto;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 1px;
 }
 
 .banner p {
-    font-family: 'Oswald', sans-serif;
     font-weight: 400;
     color: var(--text-light);
     font-size: 1.5rem;
@@ -957,9 +958,9 @@ h1, h2, h3, h4, .anton-font {
         justify-content: flex-start;
     }
     
-    .banner h2.banner-title { font-size: 25px !important; text-align: left; }
-    .banner .banner-large { font-size: 45px !important; display: block; margin-top: 5px; line-height: 1; }
-    .banner-desc { font-size: 0.85rem; text-align: left; }
+    .banner h2.banner-title { font-size: 45px !important; text-align: center; line-height: 1.1; }
+    .banner .banner-large { font-size: inherit; display: block; margin-top: 5px; line-height: 1; }
+    .banner-desc { font-size: 0.75rem; text-align: center; }
     
     .footer-content {
         flex-direction: column;
