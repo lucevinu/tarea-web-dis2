@@ -253,7 +253,7 @@ h1, h2, h3, h4, .anton-font {
 }
 
 .banner h2.banner-title {
-    font-size: 7.5rem;
+    font-size: 4.5rem;
     font-weight: 700;
     color: var(--makita-yellow);
     margin-bottom: 5px;
@@ -264,11 +264,11 @@ h1, h2, h3, h4, .anton-font {
 }
 p.banner-desc {
     color: #fff;
-    font-size: 1.5rem !important;
+    font-size: 1.2rem !important;
     max-width: 1200px;
     margin: 0 auto;
     font-family: 'Oswald', sans-serif !important;
-    letter-spacing: 2.5px;
+    letter-spacing: 2px;
 }
 
 .banner p {
