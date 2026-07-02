@@ -744,7 +744,14 @@ p.banner-desc {
     margin-bottom: 15px;
     letter-spacing: 1px;
 }
-
+.accordion-icon {
+    display: none;
+}
+.accordion-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
 .footer-col a {
     color: #999;
     text-decoration: none;
@@ -994,6 +1001,7 @@ p.banner-desc {
         transform: rotate(180deg);
     }
     .accordion-icon {
+        display: inline-block;
         transition: transform 0.3s;
     }
     
