@@ -327,24 +327,30 @@
                 <img src="img/TP WEB-02.png" alt="Makita Logo" style="max-width: 150px;">
             </div>
             <div class="footer-columns">
-                <div class="footer-col">
-                    <h4>SOBRE NOSOTROS</h4>
-                    <a href="#">Historia</a>
-                    <a href="#">Novedades</a>
-                    <a href="#">Noticias</a>
+                <div class="footer-col accordion">
+                    <h4 class="accordion-header">SOBRE NOSOTROS <i class="fas fa-chevron-down accordion-icon"></i></h4>
+                    <div class="accordion-content">
+                        <a href="#">Historia</a>
+                        <a href="#">Novedades</a>
+                        <a href="#">Noticias</a>
+                    </div>
                 </div>
-                <div class="footer-col">
-                    <h4>SOPORTE</h4>
-                    <a href="#">Contacto</a>
-                    <a href="#">Servicio técnico</a>
-                    <a href="#">Garantía</a>
+                <div class="footer-col accordion">
+                    <h4 class="accordion-header">SOPORTE <i class="fas fa-chevron-down accordion-icon"></i></h4>
+                    <div class="accordion-content">
+                        <a href="#">Contacto</a>
+                        <a href="#">Servicio técnico</a>
+                        <a href="#">Garantía</a>
+                    </div>
                 </div>
-                <div class="footer-col">
-                    <h4>NAVEGACIÓN</h4>
-                    <a href="#hero">Inicio</a>
-                    <a href="#features">Características</a>
-                    <a href="#specs">Especificaciones</a>
-                    <a href="#">Privacidad</a>
+                <div class="footer-col accordion">
+                    <h4 class="accordion-header">NAVEGACIÓN <i class="fas fa-chevron-down accordion-icon"></i></h4>
+                    <div class="accordion-content">
+                        <a href="#hero">Inicio</a>
+                        <a href="#features">Características</a>
+                        <a href="#specs">Especificaciones</a>
+                        <a href="#">Privacidad</a>
+                    </div>
                 </div>
             </div>
             <div class="footer-social">
@@ -372,6 +378,16 @@
             item.addEventListener('click', () => {
                 navLinks.classList.remove('active');
                 mobileMenu.classList.remove('is-active');
+            });
+        });
+
+        // Footer accordion logic
+        const accordions = document.querySelectorAll('.accordion-header');
+        accordions.forEach(acc => {
+            acc.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    this.parentElement.classList.toggle('active');
+                }
             });
         });
     </script>
