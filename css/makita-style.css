@@ -779,17 +779,24 @@ h1, h2, h3, h4, .anton-font {
     }
     .header {
         flex-direction: row;
-        justify-content: space-between;
-        padding: 10px 5%; /* Thinner header */
+        justify-content: center;
+        padding: 10px 15px;
         position: fixed;
         background-color: rgba(0, 0, 0, 0.95);
         top: 0; left: 0; right: 0;
     }
+    .logo {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
     .header .logo img {
-        height: 30px !important; /* Standard mobile logo size */
+        height: 30px !important;
     }
     .menu-toggle {
         display: flex;
+        position: absolute;
+        right: 15px;
     }
     .nav-links {
         flex-direction: column;
@@ -826,18 +833,27 @@ h1, h2, h3, h4, .anton-font {
         flex-direction: column;
         text-align: center;
         padding-top: 140px;
-        background-image: url('../img/hero_vertical.png');
+        background-image: url('../img/Hero%20vertical.png');
         background-size: cover;
-        background-position: center 85%;
-        align-items: flex-start;
+        background-position: center;
+        align-items: center;
     }
     .hero-content {
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin: 0 auto;
+        transform: translateY(-25px); /* Raised 15px as requested */
     }
     /* Global mobile padding for coherence */
     .split-section, .split-section.reverse, .colors-section, .features, .steps-section, .reviews-section, #herramientas, .banner {
         padding-top: 60px !important;
         padding-bottom: 60px !important;
+    }
+    .hero::before {
+        display: none;
     }
     
     .hero h1 { font-size: 3.5rem; }
@@ -880,20 +896,20 @@ h1, h2, h3, h4, .anton-font {
         max-width: 150px;
     }
     
-    .split-text h2 { font-size: 1.8rem; }
-    .split-text p { font-size: 0.95rem; }
+    .split-text h2 { font-size: 25px; }
+    .split-text p { font-size: 0.85rem; }
     
-    .section-title { font-size: 2.2rem; text-align: center; line-height: 1.1; }
-    .subtitle { font-size: 1rem; text-align: center; }
+    .section-title { font-size: 25px; text-align: center; line-height: 1.1; }
+    .subtitle { font-size: 0.85rem; text-align: center; }
     
     .feature-card h3, .review-card h3 { font-size: 1.1rem; margin-bottom: 10px; }
     .product-card h3 { font-size: 0.8rem; margin-bottom: 5px; }
     .feature-card p, .review-card p, .product-card p { font-size: 0.85rem; line-height: 1.15; margin-top: 0; }
     
-    .step-item h3 { font-size: 1.3rem; }
-    .step-item p { font-size: 0.9rem; }
+    .step-item h3 { font-size: 1.1rem; }
+    .step-item p { font-size: 0.85rem; }
     
-    .colors-text h2 { font-size: 2.2rem; text-align: center; }
+    .colors-text h2 { font-size: 25px; text-align: center; }
     .colors-text p { font-size: 0.95rem; text-align: center; }
     
     .cards-container, .reviews-container {
@@ -933,7 +949,7 @@ h1, h2, h3, h4, .anton-font {
         justify-content: flex-start;
     }
     
-    .banner h2.banner-title { font-size: 2.5rem; }
+    .banner h2.banner-title { font-size: 25px; }
     .banner p { font-size: 1.1rem; }
     
     .footer-content {
@@ -942,7 +958,7 @@ h1, h2, h3, h4, .anton-font {
     }
     
     /* Shrink reviews title */
-    #resenas .section-title { font-size: 1.8rem; }
+    #resenas .section-title { font-size: 25px; }
     
     /* Instructivo Carousel */
     .steps-container {
