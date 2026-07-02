@@ -211,13 +211,13 @@ h1, h2, h3, h4, .anton-font {
 .feature-icon {
     color: var(--makita-yellow);
     font-size: 2rem;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .feature-card h3 {
     font-size: 1.2rem;
     color: var(--text-light);
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     font-family: 'Oswald', sans-serif;
     font-weight: 400;
 }
@@ -226,6 +226,7 @@ h1, h2, h3, h4, .anton-font {
     color: var(--text-muted);
     font-size: 0.9rem;
     line-height: 1.15;
+    margin-top: 0;
 }
 
 /* Full Width Banner */
@@ -885,9 +886,9 @@ h1, h2, h3, h4, .anton-font {
     .section-title { font-size: 2.2rem; text-align: center; line-height: 1.1; }
     .subtitle { font-size: 1rem; text-align: center; }
     
-    .feature-card h3, .review-card h3 { font-size: 1.1rem; margin-bottom: 5px; }
+    .feature-card h3, .review-card h3 { font-size: 1.1rem; margin-bottom: 10px; }
     .product-card h3 { font-size: 0.95rem; margin-bottom: 5px; }
-    .feature-card p, .review-card p, .product-card p { font-size: 0.85rem; line-height: 1.15; }
+    .feature-card p, .review-card p, .product-card p { font-size: 0.85rem; line-height: 1.15; margin-top: 0; }
     
     .step-item h3 { font-size: 1.3rem; }
     .step-item p { font-size: 0.9rem; }
