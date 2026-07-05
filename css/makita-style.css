@@ -947,6 +947,8 @@ p.banner-desc {
         scroll-snap-type: none !important;
         gap: 10px !important;
         padding-bottom: 0 !important;
+        padding-left: 25px !important;
+        padding-right: 25px !important;
     }
 
     .review-card, .product-card {
