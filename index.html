@@ -8,7 +8,7 @@
     <meta content="La cafetera de tu jornada. Alimentada por el mismo sistema de baterías que tus herramientas Makita." name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="img/Favicoin_squared.png" rel="icon">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -46,28 +46,29 @@
 
     <!-- Features Section -->
     <section id="features" class="features">
+        <!-- TÍTULO OCULTO ("DISEÑO QUE NOS DIFERENCIA")
         <div class="section-title-wrapper">
-            <div class="subtitle">RENDIMIENTO INDUSTRIAL</div>
             <div class="title-with-line">
                 <h2 class="section-title anton-font">DISEÑO QUE NOS DIFERENCIA</h2>
                 <div class="separator-line"></div>
             </div>
         </div>
+        -->
         <div class="cards-container">
             <div class="feature-card">
-                <div class="feature-icon"><i class="fas fa-briefcase"></i></div>
+                <div class="feature-icon"><img src="img/screen%203.png" alt="Icono" class="screen-icon"></div>
                 <h3>DISEÑO PORTÁTIL</h3>
                 <p>Pensada para moverse con vos, liviana y con manija para no ocupar espacio en tu caja de herramientas.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon"><i class="fas fa-wrench"></i></div>
+                <div class="feature-icon"><img src="img/screen2.png" alt="Icono" class="screen-icon"></div>
                 <h3>CONSTRUCCIÓN RESISTENTE</h3>
-                <p>Pensada para soportar el ritmo exigente de la jornada laboral, resistente a polvo, golpes y mucho más.</p>
+                <p>Diseñada para soportar el ritmo exigente de la jornada laboral, resistente a polvo, golpes y más.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                <div class="feature-icon"><img src="img/screen.png" alt="Icono" class="screen-icon"></div>
                 <h3>PROTECCIÓN ACTIVA</h3>
-                <p>Sistema de apagado automático por bajo nivel de agua y protección de batería, garantizando la máxima seguridad.</p>
+                <p>Sistema de apagado automático por bajo nivel de agua y protección de batería, garantizando seguridad.</p>
             </div>
         </div>
     </section>
@@ -76,11 +77,12 @@
     <section id="bateria" class="banner">
         <div class="banner-content">
             <h2 class="anton-font banner-title">SIN CABLES, <span class="banner-large">SIN LÍMITES</span></h2>
-            <p class="banner-desc">ALIMENTADA POR EL MISMO SISTEMA DE BATERÍAS QUE TUS HERRAMIENTAS MAKITA</p>
+            <p class="banner-desc">ALIMENTADA POR EL MISMO SISTEMA DE<br class="mobile-break"> BATERÍAS QUE TUS HERRAMIENTAS MAKITA</p>
         </div>
     </section>
 
     <!-- Split Sections -->
+    <!-- SECCIÓN OCULTA ("LA ENERGÍA QUE NECESITAS") 
     <section id="especificaciones" class="split-section">
         <div class="split-image">
             <img src="img/Animacion%201%20gif.gif" alt="Animacion 1" style="width: 100%; height: auto; object-fit: cover;">
@@ -93,24 +95,97 @@
             <p>Para esos días largos en la obra, tu café es el combustible que te mantiene en marcha. Nuestra cafetera está diseñada para darte el mejor rendimiento y sabor en cada taza.</p>
         </div>
     </section>
+    -->
 
-    <section class="split-section reverse">
+    <section class="split-section">
         <div class="split-image">
-            <img src="img/Animacion%202%20gif.gif" alt="Animacion 2" style="width: 100%; height: auto; object-fit: cover;">
+            <picture>
+                <source media="(max-width: 768px)" srcset="img/Animacion%202%20-%20vertical.gif">
+                <img src="img/Animacion%202%20gif.gif" alt="Animacion 2" style="width: 100%; height: auto; object-fit: cover;">
+            </picture>
         </div>
         <div class="split-text">
             <div class="title-with-line">
                 <h2 class="anton-font">TU CAFÉ A TU MANERA</h2>
                 <div class="separator-line"></div>
             </div>
-            <p>Se adapta a tus preferencias, podes elegir entre café molido gracias a su filtro re utilizable, fácil de lavar o con cápsula ya que también las admite.</p>
+            <p>Se adapta a tus preferencias, podés elegir utilizarla con café molido gracias a su filtro reutilizable y fácil de lavar. O utilizarla con cápsulas gracias a los adaptadores incluidos.</p>
         </div>
     </section>
 
     <!-- Parallax Wrapper (Steps + Specs) -->
     <div class="parallax-wrapper">
-    <!-- Steps Section (Sticky) -->
-    <section id="instructivo" class="steps-section sticky-scroll-section" style="padding-top: 60px; flex-direction: column;">
+    <!-- Specs Section (Now Accessories & Slides Over Steps) -->
+    <section id="accesorios" class="specs full-width-specs">
+        <div class="interactive-specs-container">
+            <div class="interactive-specs">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="img/Desplegable%20vertical.png">
+                    <img src="img/Img%20desplegable.png" alt="Cafetera Makita y partes" class="specs-base-img">
+                </picture>
+                
+                <!-- Hotspot 1 -->
+                <div class="hotspot" id="hs-1" style="top: 13%; left: 51%;">
+                    <div class="hotspot-number">1</div>
+                    <div class="hotspot-content">
+                        <div class="diag"></div><div class="horiz"></div>
+                        <div class="text">Manija para transportarla</div>
+                    </div>
+                </div>
+
+                <!-- Hotspot 2 -->
+                <div class="hotspot" id="hs-2" style="top: 57%; left: 58%;">
+                    <div class="hotspot-number">2</div>
+                    <div class="hotspot-content">
+                        <div class="diag"></div><div class="horiz"></div>
+                        <div class="text">Taza con tapa</div>
+                    </div>
+                </div>
+
+                <!-- Hotspot 3 -->
+                <div class="hotspot" id="hs-3" style="top: 69%; left: 72%;">
+                    <div class="hotspot-number">3</div>
+                    <div class="hotspot-content">
+                        <div class="diag"></div><div class="horiz"></div>
+                        <div class="text">Adaptadores para filtro y cápsula</div>
+                    </div>
+                </div>
+
+                <!-- Hotspot 4 -->
+                <div class="hotspot" id="hs-4" style="top: 61%; left: 41%;">
+                    <div class="hotspot-number">4</div>
+                    <div class="hotspot-content">
+                        <div class="diag"></div><div class="horiz"></div>
+                        <div class="text">Espacio para baterías de 18V y 12V</div>
+                    </div>
+                </div>
+
+                <!-- Hotspot 5 -->
+                <div class="hotspot" id="hs-5" style="top: 83%; left: 58%;">
+                    <div class="hotspot-number">5</div>
+                    <div class="hotspot-content">
+                        <div class="diag"></div><div class="horiz"></div>
+                        <div class="text">Cuchara medidora</div>
+                    </div>
+                </div>
+
+                <!-- Hotspot 6 -->
+                <div class="hotspot" id="hs-6" style="top: 72%; left: 28%;">
+                    <div class="hotspot-number">6</div>
+                    <div class="hotspot-content">
+                        <div class="diag"></div><div class="horiz"></div>
+                        <div class="text">Depósito con capacidad de 240ml</div>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-hotspot-display" style="display: none;">
+                <p class="mobile-hotspot-text">Tocá un número en la cafetera para ver los detalles.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Steps Section -->
+    <section id="instructivo" class="steps-section" style="padding-top: 150px; flex-direction: column;">
         <div class="section-title-wrapper">
             <div class="title-with-line">
                 <h2 class="section-title anton-font">LISTO EN 4 PASOS</h2>
@@ -137,85 +212,26 @@
             </div>
         </div>
     </section>
+    </div> <!-- End Parallax Wrapper -->
 
-    <!-- Specs Section (Now Accessories & Slides Over Steps) -->
-    <section id="accesorios" class="specs full-width-specs">
-        <div class="interactive-specs-container">
-            <div class="interactive-specs">
-                <picture>
-                    <source media="(max-width: 768px)" srcset="img/Desplegable%20vertical.png">
-                    <img src="img/Img%20desplegable.png" alt="Cafetera Makita y partes" class="specs-base-img">
-                </picture>
-                
-                <!-- Hotspot 1 -->
-                <div class="hotspot" id="hs-1" style="top: 14%; left: 51%;">
-                    <div class="hotspot-number">1</div>
-                    <div class="hotspot-content">
-                        <div class="diag"></div><div class="horiz"></div>
-                        <div class="text">Manija para transportarla</div>
-                    </div>
-                </div>
-
-                <!-- Hotspot 2 -->
-                <div class="hotspot" id="hs-2" style="top: 52%; left: 57%;">
-                    <div class="hotspot-number">2</div>
-                    <div class="hotspot-content">
-                        <div class="diag"></div><div class="horiz"></div>
-                        <div class="text">Taza con tapa</div>
-                    </div>
-                </div>
-
-                <!-- Hotspot 3 -->
-                <div class="hotspot" id="hs-3" style="top: 69%; left: 69%;">
-                    <div class="hotspot-number">3</div>
-                    <div class="hotspot-content">
-                        <div class="diag"></div><div class="horiz"></div>
-                        <div class="text">Adaptadores para filtro y capsula</div>
-                    </div>
-                </div>
-
-                <!-- Hotspot 4 -->
-                <div class="hotspot" id="hs-4" style="top: 52%; left: 42%;">
-                    <div class="hotspot-number">4</div>
-                    <div class="hotspot-content">
-                        <div class="diag"></div><div class="horiz"></div>
-                        <div class="text">Espacio para baterias de 18V y 12V</div>
-                    </div>
-                </div>
-
-                <!-- Hotspot 5 -->
-                <div class="hotspot" id="hs-5" style="top: 83%; left: 56%;">
-                    <div class="hotspot-number">5</div>
-                    <div class="hotspot-content">
-                        <div class="diag"></div><div class="horiz"></div>
-                        <div class="text">Cuchara medidora</div>
-                    </div>
-                </div>
-
-                <!-- Hotspot 6 -->
-                <div class="hotspot" id="hs-6" style="top: 64%; left: 31%;">
-                    <div class="hotspot-number">6</div>
-                    <div class="hotspot-content">
-                        <div class="diag"></div><div class="horiz"></div>
-                        <div class="text">Deposito con capacidad de 240ml</div>
-                    </div>
-                </div>
-            </div>
-            <div class="mobile-hotspot-display" style="display: none;">
-                <p class="mobile-hotspot-text">Tocá un número en la cafetera para ver los detalles.</p>
-            </div>
+    <!-- Context Banner Section (Moved to before Estética) -->
+    <section class="context-banner framed">
+        <div class="context-image">
+            <picture>
+                <source media="(max-width: 768px)" srcset="img/Nueva%20foto%20contexto%20vertical%202.png">
+                <img src="img/Nueva%20foto%20contexto%202.png" alt="Contexto">
+            </picture>
         </div>
     </section>
-    </div> <!-- End Parallax Wrapper -->
+
     <!-- Colors Section -->
-    <section id="colores" class="colors-section">
+    <section id="colores" class="colors-section" data-active-color="cyan">
         <div class="colors-text">
             <div class="title-with-line">
                 <h2 class="anton-font">ESTÉTICA UNIFICADA</h2>
                 <div class="separator-line"></div>
             </div>
-            <p class="color-desc-1">Nuestras herramientas y accesorios están disponibles en una gama de colores pensada para que tu equipo no solo sea eficiente, sino también un reflejo de tu identidad.</p>
-            <p class="color-desc-2">Elegí tu color preferido y creá tu kit combinado.</p>
+            <p class="color-desc-1">Personalizá tu espacio de trabajo. Elegí el color que mejor represente tu identidad y armá tu kit perfecto con la calidad que ya conocés.</p>
             <div class="color-selectors">
                 <button class="color-btn active" data-color="cyan" style="background-color: #00b1cc;"></button>
                 <button class="color-btn" data-color="olive" style="background-color: #6a6a4f;"></button>
@@ -223,13 +239,21 @@
             </div>
         </div>
         <div class="colors-showcase">
-            <div class="rocks-texture"></div>
             <div class="machines-container">
                 <!-- Main machine -->
-                <img src="img/Color 1.png" alt="Cyan Coffee Maker" class="machine center" data-index="0">
+                <div class="machine center" data-index="0">
+                    <div class="machine-glow" style="background: #00b1cc; opacity: 0.3;"></div>
+                    <img src="img/Color 1.png" alt="Cyan Coffee Maker">
+                </div>
                 <!-- Secondary machines (hidden on right) -->
-                <img src="img/Color 2.png" alt="Olive Coffee Maker" class="machine out-right" data-index="1">
-                <img src="img/Color 3.png" alt="Burgundy Coffee Maker" class="machine out-right" data-index="2">
+                <div class="machine out-right" data-index="1">
+                    <div class="machine-glow" style="background: #6a6a4f; opacity: 0.4;"></div>
+                    <img src="img/Color 2.png" alt="Olive Coffee Maker">
+                </div>
+                <div class="machine out-right" data-index="2">
+                    <div class="machine-glow" style="background: #cc1a3c; opacity: 0.5;"></div>
+                    <img src="img/Color 3.png" alt="Burgundy Coffee Maker">
+                </div>
             </div>
         </div>
     </section>
@@ -237,9 +261,8 @@
     <!-- Products Carousel Section -->
     <section id="productos" class="products-carousel-section">
         <div class="section-title-wrapper">
-            <div class="subtitle">MÁS HERRAMIENTAS</div>
             <div class="title-with-line">
-                <h2 class="section-title anton-font">COMPLETA TU EQUIPO</h2>
+                <h2 class="section-title anton-font">COMPLETÁ TU EQUIPO</h2>
                 <div class="separator-line"></div>
             </div>
         </div>
@@ -289,37 +312,51 @@
                 <div class="separator-line"></div>
             </div>
         </div>
-        <div class="carousel-wrapper" style="max-width: 1200px; margin: 40px auto 0; justify-content: space-between;">
+        <div class="carousel-wrapper" style="max-width: 1200px; margin: 10px auto 0; justify-content: space-between; position: relative;">
+            <button class="carousel-btn prev" id="reviewPrevBtn"><i class="fas fa-chevron-left"></i></button>
             <div class="reviews-container" id="reviewsCarousel" style="max-width: 850px;">
                 <div class="review-card">
-                    <div class="stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <div class="review-header">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Marcelo G." class="review-photo">
+                        <div class="review-author">Marcelo G.</div>
                     </div>
                     <p class="review-text">"La compré para llevarla a la obra y es un antes y un después. Tener un café recién hecho en el medio de la jornada, sin tener que ir a buscar uno, no tiene precio. ¡Un golazo!"</p>
-                    <div class="review-author">- Marcelo G.</div>
-                </div>
-                <div class="review-card">
                     <div class="stars">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <img src="https://randomuser.me/api/portraits/men/44.jpg" alt="Javier R." class="review-photo">
+                        <div class="review-author">Javier R.</div>
                     </div>
                     <p class="review-text">"¡Me encanta que todo combine! Ya tenía el taladro y la amoladora en este color, así que cuando vi la cafetera no dudé. Es robusta, fácil de limpiar y queda perfecta al lado de mis otras herramientas."</p>
-                    <div class="review-author">- Javier R.</div>
-                </div>
-                <div class="review-card">
                     <div class="stars">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <img src="https://randomuser.me/api/portraits/men/68.jpg" alt="Carlos M." class="review-photo">
+                        <div class="review-author">Carlos M.</div>
                     </div>
                     <p class="review-text">"Tenía mis dudas por ser a batería, pero la calidad del café es increíble. Se nota que es un producto bien hecho y pensado para durar. Makita nunca falla."</p>
-                    <div class="review-author">- Carlos M.</div>
-                </div>
-                <div class="review-card">
                     <div class="stars">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <img src="https://randomuser.me/api/portraits/men/90.jpg" alt="Esteban V." class="review-photo">
+                        <div class="review-author">Esteban V.</div>
+                    </div>
                     <p class="review-text">"La mejor compra del año. La uso en las obras sin electricidad. Es súper práctica, me encanta el diseño y lo mejor es que pude combinarla con todas mis otras herramientas."</p>
-                    <div class="review-author">- Esteban V.</div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
                 </div>
             </div>
+            <button class="carousel-btn next" id="reviewNextBtn"><i class="fas fa-chevron-right"></i></button>
         </div>
     </section>
 
@@ -328,6 +365,14 @@
         <div class="footer-content">
             <div class="footer-logo">
                 <img src="img/TP WEB-02.png" alt="Makita Logo" style="max-width: 150px;">
+                <div class="footer-social" style="margin-top: 5px;">
+                    <a href="https://www.facebook.com/MakitaLatinAmerica" target="_blank" aria-label="Facebook">
+                        <svg class="opt-fb" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                    <a href="https://www.instagram.com/makita.ar/" target="_blank" aria-label="Instagram">
+                        <svg class="opt-ig" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                </div>
             </div>
             <div class="footer-columns">
                 <div class="footer-col accordion">
@@ -355,11 +400,6 @@
                         <a href="#">Privacidad</a>
                     </div>
                 </div>
-            </div>
-            <div class="footer-social">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -584,22 +624,23 @@
             });
 
             // Color Selector Logic
+            const colorsSection = document.querySelector('.colors-section');
             const colorBtns = document.querySelectorAll('.colors-section .color-btn');
             const machines = document.querySelectorAll('.colors-section .machine');
-            const texture = document.querySelector('.colors-section .rocks-texture');
             let currentColorIndex = 0;
             let colorAutoplayInterval;
 
             const updateColorCarousel = (activeIndex) => {
                 currentColorIndex = activeIndex;
-                // Trigger texture zoom
-                texture.classList.add('zoom');
-                setTimeout(() => texture.classList.remove('zoom'), 600);
 
-                // Update buttons
+                // Update buttons and section background color
                 colorBtns.forEach((btn, idx) => {
-                    if (idx === activeIndex) btn.classList.add('active');
-                    else btn.classList.remove('active');
+                    if (idx === activeIndex) {
+                        btn.classList.add('active');
+                        if (colorsSection) colorsSection.setAttribute('data-active-color', btn.getAttribute('data-color'));
+                    } else {
+                        btn.classList.remove('active');
+                    }
                 });
 
                 // Update machines positions
