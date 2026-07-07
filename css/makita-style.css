@@ -993,18 +993,22 @@ p.banner-desc {
     }
     
     .title-with-line {
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
-        flex-direction: column;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        flex-direction: column !important;
         gap: 15px;
+        width: 100% !important;
     }
     .section-title-wrapper {
         margin-bottom: 20px !important;
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
     .title-with-line h2 {
         white-space: normal;
-        text-align: left;
+        text-align: center !important;
     }
     .separator-line {
         flex-grow: 0;
@@ -1015,10 +1019,10 @@ p.banner-desc {
         max-width: 150px;
     }
     
-    .split-text h2 { font-size: 25px !important; text-align: left; }
+    .split-text h2 { font-size: 25px !important; text-align: center; }
     .split-text p { font-size: 0.85rem; text-align: left; }
     
-    .section-title { font-size: 6.5vw !important; text-align: left; line-height: 1 !important; margin-bottom: 0 !important; padding-top: 10px; white-space: nowrap !important; }
+    .section-title { font-size: 6.5vw !important; text-align: center; line-height: 1 !important; margin-bottom: 0 !important; padding-top: 10px; white-space: normal !important; }
     .subtitle { font-size: 0.85rem; text-align: left; }
     
     .feature-card h3, .review-card h3 { font-size: 1.1rem; margin-bottom: 10px; }
@@ -1028,7 +1032,7 @@ p.banner-desc {
     .step-item h3 { font-size: 1.1rem; }
     .step-item p { font-size: 0.85rem; }
     
-    .colors-text h2 { font-size: 25px !important; text-align: left; }
+    .colors-text h2 { font-size: 25px !important; text-align: center; }
     .colors-text p { font-size: 0.95rem; text-align: left; }
     
     .reviews-container {
@@ -1269,7 +1273,7 @@ p.banner-desc {
         gap: 15px !important;
     }
     .colors-text { display: contents; }
-    .colors-section .title-with-line { order: 1; width: 100%; align-items: flex-start; position: relative; z-index: 5; }
+    .colors-section .title-with-line { order: 1; width: 100%; align-items: center; position: relative; z-index: 5; }
     .colors-section .color-desc-1 { order: 2; margin-top: -5px !important; margin-bottom: 60px !important; text-align: left; width: 100%; position: relative; z-index: 5; }
     .colors-showcase { 
         order: 3; 
@@ -1300,10 +1304,10 @@ p.banner-desc {
         position: relative;
     }
     .machine-glow {
-        width: 250px;
-        height: 250px;
+        width: 230px;
+        height: 230px;
         border-radius: 50%;
-        background: radial-gradient(circle, rgba(248, 225, 46, 0.25) 0%, rgba(248, 225, 46, 0) 70%) !important;
+        background: radial-gradient(circle, rgba(248, 225, 46, 0.5) 0%, rgba(248, 225, 46, 0) 70%) !important;
         filter: none !important;
         opacity: 1 !important;
         display: block !important;
@@ -1359,6 +1363,15 @@ p.banner-desc {
 .colors-text {
     flex: 1;
     z-index: 2;
+}
+
+@media (min-width: 769px) {
+    .colors-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        transform: translateY(25px);
+    }
 }
 
 .colors-text p.color-desc-1 {
@@ -1446,19 +1459,21 @@ p.banner-desc {
     z-index: 1;
 }
 
-.machine-glow {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 600px;
-    height: 600px;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(248, 225, 46, 0.7) 0%, rgba(248, 225, 46, 0) 60%) !important;
-    filter: blur(40px) !important;
-    opacity: 1 !important;
-    z-index: 0;
-    pointer-events: none;
+@media (min-width: 769px) {
+    .machine-glow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 600px;
+        height: 600px;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(248, 225, 46, 0.7) 0%, rgba(248, 225, 46, 0) 60%) !important;
+        filter: blur(40px) !important;
+        opacity: 1 !important;
+        z-index: 0;
+        pointer-events: none;
+    }
 }
 
 /* Positions for horizontal entering/exiting animation */
