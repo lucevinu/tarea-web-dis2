@@ -290,10 +290,10 @@
 
     <!-- Reviews Section -->
     <section id="resenas" class="reviews-section">
-        <div class="section-title-wrapper" style="text-align: center; margin-bottom: 50px;">
-            <h2 class="section-title anton-font" style="margin-bottom: 20px; border-bottom: none;">NUESTROS CLIENTES</h2>
+        <div class="section-title-wrapper" style="text-align: center;">
+            <h2 class="section-title anton-font" style="border-bottom: none;">NUESTROS CLIENTES</h2>
         </div>
-        <div class="carousel-wrapper" style="max-width: 1200px; margin: 10px auto 0; position: relative;">
+        <div class="carousel-wrapper" style="max-width: 1200px; margin: 0 auto; position: relative;">
             <button class="carousel-btn prev" id="reviewPrevBtn"><i class="fas fa-chevron-left"></i></button>
             <div class="reviews-container" id="reviewsCarousel" style="max-width: 580px; margin: 0 auto;">
                 <div class="review-card">
@@ -374,7 +374,7 @@
             <div class="footer-logo">
                 <div style="display: flex; flex-direction: column; align-items: center; width: max-content;">
                     <img src="img/TP WEB-02.png" alt="Makita Logo" style="max-width: 150px;">
-                    <div class="footer-social" style="margin-top: 10px; width: 85%; justify-content: space-between;">
+                    <div class="footer-social" style="margin-top: 15px; justify-content: center;">
                         <a href="https://www.facebook.com/MakitaLatinAmerica" target="_blank" aria-label="Facebook">
                             <svg class="opt-fb" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
                         </a>
@@ -420,6 +420,7 @@
         </div>
         <div class="footer-bottom">
             <p>&copy; 2026 Makita Corporación. Todos los derechos reservados.</p>
+            <p style="font-size: 0.75rem; margin-top: 5px; color: #666;">Lucero Viñuales - Comisión 3 - Belluccia Diseño 2</p>
         </div>
     </footer>
 
@@ -929,25 +930,17 @@
                             let currentScroll = container.scrollLeft;
                             const firstItem = container.querySelector(itemSelector);
                             if (!firstItem) return;
-                            const itemWidth = firstItem.offsetWidth;
+                            const itemWidth = firstItem.offsetWidth + 15;
                             
-                            // If reached the end, loop back to start seamlessly
-                            if (currentScroll + clientWidth >= scrollWidth - 10) {
-                                container.style.scrollBehavior = 'auto';
-                                container.style.scrollSnapType = 'none';
-                                container.appendChild(firstItem);
-                                container.scrollLeft -= itemWidth;
-                                void container.offsetWidth;
-                                requestAnimationFrame(() => {
-                                    container.style.scrollBehavior = 'smooth';
-                                    container.scrollLeft += itemWidth;
-                                    setTimeout(() => {
-                                        container.style.scrollSnapType = 'x mandatory';
-                                    }, 500);
-                                });
-                            } else {
-                                container.scrollBy({ left: itemWidth, behavior: 'smooth' });
-                            }
+                            container.scrollBy({ left: itemWidth, behavior: 'smooth' });
+                            
+                            setTimeout(() => {
+                                if (container.scrollLeft + clientWidth >= container.scrollWidth - itemWidth/2) {
+                                    container.appendChild(container.firstElementChild);
+                                    container.scrollLeft -= itemWidth;
+                                    void container.offsetWidth;
+                                }
+                            }, 600);
                         }, intervalMs);
                     }
                 };
@@ -1036,47 +1029,31 @@
                     });
                 }
                 reviewBtnNext.addEventListener('click', () => {
-                    const cardWidth = reviewCarousel.firstElementChild.offsetWidth + 30;
+                    const cardWidth = reviewCarousel.firstElementChild.offsetWidth + 15;
                     
-                    // If near the end, move the first card to the back
-                    if (reviewCarousel.scrollLeft + reviewCarousel.clientWidth >= reviewCarousel.scrollWidth - cardWidth/2) {
-                        reviewCarousel.style.scrollBehavior = 'auto';
-                        reviewCarousel.style.scrollSnapType = 'none';
-                        reviewCarousel.appendChild(reviewCarousel.firstElementChild);
-                        reviewCarousel.scrollLeft -= cardWidth;
-                        void reviewCarousel.offsetWidth;
-                    }
+                    reviewCarousel.scrollBy({ left: cardWidth, behavior: 'smooth' });
                     
-                    requestAnimationFrame(() => {
-                        reviewCarousel.style.scrollBehavior = 'smooth';
-                        reviewCarousel.style.scrollSnapType = 'none';
-                        reviewCarousel.scrollLeft += cardWidth;
-                        setTimeout(() => {
-                            reviewCarousel.style.scrollSnapType = 'x mandatory';
-                        }, 500);
-                    });
+                    setTimeout(() => {
+                        if (reviewCarousel.scrollLeft + reviewCarousel.clientWidth >= reviewCarousel.scrollWidth - cardWidth/2) {
+                            reviewCarousel.appendChild(reviewCarousel.firstElementChild);
+                            reviewCarousel.scrollLeft -= cardWidth;
+                            void reviewCarousel.offsetWidth;
+                        }
+                    }, 600);
                 });
                 
                 reviewBtnPrev.addEventListener('click', () => {
-                    const cardWidth = reviewCarousel.firstElementChild.offsetWidth + 30;
+                    const cardWidth = reviewCarousel.firstElementChild.offsetWidth + 15;
                     
-                    // If at the beginning, move the last card to the front
-                    if (reviewCarousel.scrollLeft <= 10) {
-                        reviewCarousel.style.scrollBehavior = 'auto';
-                        reviewCarousel.style.scrollSnapType = 'none';
-                        reviewCarousel.prepend(reviewCarousel.lastElementChild);
-                        reviewCarousel.scrollLeft += cardWidth;
-                        void reviewCarousel.offsetWidth;
-                    }
+                    reviewCarousel.scrollBy({ left: -cardWidth, behavior: 'smooth' });
                     
-                    requestAnimationFrame(() => {
-                        reviewCarousel.style.scrollBehavior = 'smooth';
-                        reviewCarousel.style.scrollSnapType = 'none';
-                        reviewCarousel.scrollLeft -= cardWidth;
-                        setTimeout(() => {
-                            reviewCarousel.style.scrollSnapType = 'x mandatory';
-                        }, 500);
-                    });
+                    setTimeout(() => {
+                        if (reviewCarousel.scrollLeft <= 10) {
+                            reviewCarousel.prepend(reviewCarousel.lastElementChild);
+                            reviewCarousel.scrollLeft += cardWidth;
+                            void reviewCarousel.offsetWidth;
+                        }
+                    }, 600);
                 });
             }
             // Context Banner Interactive Color Selector

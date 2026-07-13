@@ -771,6 +771,17 @@ p.banner-desc {
 }
 
 
+.products-carousel-section .section-title-wrapper,
+.reviews-section .section-title-wrapper {
+    margin-top: 30px;
+    margin-bottom: 30px !important;
+}
+
+.products-carousel-section .carousel-dots,
+.reviews-section .carousel-dots {
+    margin-top: 15px;
+}
+
 .carousel-dots {
     display: flex;
     justify-content: center;
@@ -1239,6 +1250,9 @@ p.banner-desc {
         padding-left: 40px !important;
         padding-right: 40px !important;
     }
+    .context-banner.framed {
+        padding-bottom: 80px !important;
+    }
     .features {
         margin-top: -30vh;
         position: relative;
@@ -1536,9 +1550,8 @@ p.banner-desc {
         text-align: left;
     }
     .footer-columns { order: 1; width: 100%; flex-direction: column; gap: 0; }
-    .footer-social { order: 2; margin-top: 20px; justify-content: center; }
-    .footer-logo { order: 3; margin-top: 30px; text-align: center; width: 100%; }
-    .footer-logo img { max-width: 100px !important; }
+    .footer-logo { order: 3; margin-top: 30px; display: flex; justify-content: center; width: 100%; }
+    .footer-logo img { max-width: 130px !important; }
 
     /* Footer Accordion */
     .accordion-header {
@@ -2460,3 +2473,4 @@ html {
         margin-right: 5% !important;
     }
 }
+
