@@ -569,6 +569,8 @@ p.banner-desc {
 .hotspot-number {
     width: 25px;
     height: 25px;
+    font-family: 'Figtree', sans-serif;
+    font-weight: 600;
     background-color: var(--makita-yellow);
     border: 1.2px solid var(--makita-yellow);
     border-radius: 50%;
@@ -2519,6 +2521,7 @@ html {
         transition: none !important;
     }
 }
+
 
 
 
