@@ -2388,12 +2388,12 @@ html {
 
 /* iPhone 12 Pro and taller mobile screens */
 @media (max-width: 768px) and (min-height: 750px) {
-        .hero {
-        background-position: center calc(100% - 18vh);
+            .hero {
+        background-position: center calc(100% - 21vh);
         padding-top: 28vh;
     }
     .hero::before {
-        background: linear-gradient(to bottom, var(--bg-dark) 0%, var(--bg-dark) 44vh, transparent 51vh);
+        background: radial-gradient(160% 72vh at top center, var(--bg-dark) 65%, transparent 100%);
     }
     .hero::after {
         height: 35vh;
@@ -2518,6 +2518,7 @@ html {
         transition: none !important;
     }
 }
+
 
 
 
