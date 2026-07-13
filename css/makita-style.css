@@ -2338,7 +2338,7 @@ html {
         z-index: 1 !important;
         width: 100% !important;
         opacity: 0 !important;
-        transform: translateX(50px) !important;
+        transform: none !important;
         transition: opacity 0.4s ease-out, transform 0.4s ease-out !important;
     }
     .step-circle { 
@@ -2540,6 +2540,7 @@ html {
         transition: none !important;
     }
 }
+
 
 
 
