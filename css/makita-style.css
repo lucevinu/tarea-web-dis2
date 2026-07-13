@@ -883,6 +883,16 @@ p.banner-desc {
     right: 0;
 }
 
+@media (min-width: 769px) {
+    .carousel-btn.prev {
+        left: -40px;
+    }
+    
+    .carousel-btn.next {
+        right: -40px;
+    }
+}
+
 .product-card h3 {
     color: #ffffff;
     font-family: 'Figtree', sans-serif;
@@ -2531,6 +2541,8 @@ html {
         transition: none !important;
     }
 }
+
+
 
 
 
