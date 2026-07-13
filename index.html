@@ -994,16 +994,22 @@
                         }
                     });
                 }
-                reviewBtnNext.addEventListener('click', () => {
+                                reviewBtnNext.addEventListener('click', () => {
                     const cardWidth = reviewCarousel.firstElementChild.offsetWidth + 15;
-                    
-                    reviewCarousel.scrollBy({ left: cardWidth, behavior: 'smooth' });
+                    if (reviewCarousel.scrollLeft + reviewCarousel.clientWidth >= reviewCarousel.scrollWidth - 10) {
+                        reviewCarousel.scrollTo({ left: 0, behavior: 'smooth' });
+                    } else {
+                        reviewCarousel.scrollBy({ left: cardWidth, behavior: 'smooth' });
+                    }
                 });
                 
-                reviewBtnPrev.addEventListener('click', () => {
+                                reviewBtnPrev.addEventListener('click', () => {
                     const cardWidth = reviewCarousel.firstElementChild.offsetWidth + 15;
-                    
-                    reviewCarousel.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+                    if (reviewCarousel.scrollLeft <= 10) {
+                        reviewCarousel.scrollTo({ left: reviewCarousel.scrollWidth, behavior: 'smooth' });
+                    } else {
+                        reviewCarousel.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+                    }
                 });
             }
             // Context Banner Interactive Color Selector
@@ -1031,6 +1037,7 @@
     </script>
 </body>
 </html>
+
 
 
 
