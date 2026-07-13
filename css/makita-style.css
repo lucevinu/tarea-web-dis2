@@ -151,7 +151,7 @@ h1, h2, h3, h4, .anton-font {
     font-family: 'Figtree', sans-serif;
     font-size: 1rem;
     color: #e0e0e0;
-    margin-top: 15px;
+    margin-top: 10px;
     margin-left: 3px;
     max-width: 500px;
     line-height: 1.5;
@@ -772,17 +772,20 @@ p.banner-desc {
 
 
 .products-carousel-section .section-title-wrapper {
+        margin-top: 35px !important;
+    display: flex; justify-content: center; width: 100%;
     margin-top: 30px;
     margin-bottom: 30px !important;
 }
 .reviews-section .section-title-wrapper {
+    display: flex; justify-content: center; width: 100%;
     margin-top: 30px;
-    margin-bottom: 40px !important;
+    margin-bottom: 45px !important;
 }
 
 .products-carousel-section .carousel-dots,
 .reviews-section .carousel-dots {
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 .carousel-dots {
@@ -1036,7 +1039,7 @@ p.banner-desc {
 }
 
 @media (max-width: 768px) {
-    .product-card img { position: relative; margin: auto 0 !important; }
+    .product-card img { position: relative; margin: auto auto !important; top: -15px !important; }
     .context-title-pill {
         padding: 8px 15px;
     }
@@ -1464,12 +1467,14 @@ p.banner-desc {
         padding-bottom: 100px !important;
     }
     .products-carousel-section .section-title-wrapper {
+        margin-top: 35px !important;
+    display: flex; justify-content: center; width: 100%;
         text-align: center !important;
         justify-content: center !important;
         margin-left: 0 !important;
         margin-right: 0 !important;
-        margin-bottom: 30px !important;
-        padding-left: 0;
+        margin-bottom: 60px !important;
+          padding-left: 0;
         padding-right: 0;
         width: 100% !important;
         box-sizing: border-box !important;
@@ -1492,11 +1497,7 @@ p.banner-desc {
         padding-left: 0 !important;
         padding-right: 0 !important;
     }
-    .reviews-section .section-title-wrapper {
-        margin-left: 5% !important;
-        margin-right: 5% !important;
-    }
-    .interactive-specs {
+.interactive-specs {
         padding-top: 150px;
         padding-bottom: 60px;
         position: relative;
@@ -1584,7 +1585,7 @@ p.banner-desc {
     }
     
     /* Shrink reviews title */
-    #resenas .section-title { font-size: 25px !important; text-align: center; }
+    #resenas .section-title { font-size: 25px !important; text-align: center !important; display: block !important; width: 100% !important; margin: 0 auto !important; padding: 0 !important; }
     
     .steps-section {
         align-items: flex-start !important;
@@ -2437,8 +2438,8 @@ html {
         box-sizing: border-box;
     }
     .products-carousel-section .carousel-container {
-        padding-top: 40px !important;
-        padding-bottom: 40px !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
         align-items: center !important;
     }
     .products-carousel-section .product-card {
@@ -2446,10 +2447,11 @@ html {
         max-width: calc(100% - 80px) !important;
         box-sizing: border-box !important;
         height: auto !important;
-        padding: 27.5px 20px !important;
-        margin: 25px 0 !important;
-        justify-content: space-between !important;
+        padding: 42.5px 20px 27.5px 20px !important;
+        margin: 0 !important;
+        justify-content: flex-end !important;
     }
+    .products-carousel-section .carousel-dots { margin-top: 50px !important; }
     .products-carousel-section .product-card.active {
         transform: none !important;
         border-width: 1.2px !important;
@@ -2462,7 +2464,7 @@ html {
 
 @media (min-width: 769px) {
     #productCarouselDots {
-        margin-top: 15px;
+        margin-top: 10px;
     }
 }
 
@@ -2471,10 +2473,25 @@ html {
         padding-left: 0 !important;
         padding-right: 0 !important;
     }
-    .reviews-section .section-title-wrapper {
-        margin-left: 5% !important;
-        margin-right: 5% !important;
-    }
 }
 
+
+
+
+
+
+.reviews-section .section-title { opacity: 0; transform: translateY(-20px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.reviews-section.animate-in .section-title { opacity: 1; transform: translateY(0); }
+
+
+
+
+
+
+
+
+
+
+.products-carousel-section .section-title { opacity: 0; transform: translateY(-20px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.products-carousel-section.animate-in .section-title { opacity: 1; transform: translateY(0); }
 
