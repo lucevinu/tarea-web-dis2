@@ -483,10 +483,18 @@
             }
 
               // Initialize: wait a bit for layout to settle then find the center card
-              const initCarousel = () => {
-                  
-                  requestAnimationFrame(() => {
-                      const centerCardInit = carousel.children[0];
+                          const initCarousel = () => {
+                let centerCardInit;
+                if (window.innerWidth > 768) {
+                    const initLastCard = carousel.lastElementChild;
+                    carousel.style.scrollSnapType = 'none';
+                    carousel.insertBefore(initLastCard, carousel.firstElementChild);
+                    centerCardInit = carousel.children[1];
+                } else {
+                    centerCardInit = carousel.children[0];
+                }
+                
+                requestAnimationFrame(() => {
                       let initScrollPos = centerCardInit.offsetLeft - (carousel.clientWidth / 2) + (centerCardInit.offsetWidth / 2);
                       carousel.scrollLeft = initScrollPos;
                       setTimeout(() => {
@@ -557,9 +565,17 @@
             // Small timeout to let CSS layout calculate offsetLeft first
             setTimeout(updateCenterCard, 100); 
             
-            const moveNext = () => {
+                        const moveNext = () => {
                 let cardsList = Array.from(carousel.children);
                 let activeIndex = cardsList.findIndex(card => card.classList.contains('active'));
+                
+                if (window.innerWidth > 768 && activeIndex >= cardsList.length - 2) {
+                    const firstCard = carousel.firstElementChild;
+                    carousel.style.scrollSnapType = 'none';
+                    carousel.appendChild(firstCard);
+                    carousel.scrollLeft -= (firstCard.offsetWidth + 15);
+                    void carousel.offsetWidth;
+                }
                 
                 requestAnimationFrame(() => {
                     carousel.style.scrollSnapType = 'x mandatory';
@@ -573,9 +589,17 @@
                 });
             };
             
-            const movePrev = () => {
+                        const movePrev = () => {
                 let cardsList = Array.from(carousel.children);
                 let activeIndex = cardsList.findIndex(card => card.classList.contains('active'));
+                
+                if (window.innerWidth > 768 && activeIndex <= 1) {
+                    const lastCard = carousel.lastElementChild;
+                    carousel.style.scrollSnapType = 'none';
+                    carousel.insertBefore(lastCard, carousel.firstElementChild);
+                    carousel.scrollLeft += (lastCard.offsetWidth + 15);
+                    void carousel.offsetWidth;
+                }
                 
                 requestAnimationFrame(() => {
                     carousel.style.scrollSnapType = 'x mandatory';
@@ -1007,6 +1031,8 @@
     </script>
 </body>
 </html>
+
+
 
 
 
