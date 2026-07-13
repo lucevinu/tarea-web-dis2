@@ -2433,12 +2433,20 @@ html {
         padding: 0 !important; /* Removed 50px margins to stop clipping */
         box-sizing: border-box;
     }
-        .products-carousel-section .carousel-container {
+            .products-carousel-section .carousel-container {
         padding-top: 0 !important;
         padding-bottom: 0 !important;
-        padding-left: 40px !important;
-        padding-right: 40px !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
         align-items: center !important;
+    }
+    
+        /* Extra space at the ends to allow cards to center without squishing */
+    .products-carousel-section .carousel-container::before,
+    .products-carousel-section .carousel-container::after {
+        content: '';
+        flex: 0 0 25px; /* 25px + 15px gap = 40px total */
+        display: block;
     }
     .products-carousel-section .product-card {
         flex: 0 0 calc(100% - 80px) !important;
@@ -2523,6 +2531,9 @@ html {
         transition: none !important;
     }
 }
+
+
+
 
 
 
