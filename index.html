@@ -259,7 +259,7 @@
             <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
             <div class="carousel-container" id="productCarousel">
             <div class="product-card">
-                <img src="img/UC012GZ01-Photoroom.png" alt="Mini motosierra" style="transform: scale(1.45); position: relative; top: 10px;">
+                <img src="img/UC012GZ01-Photoroom.png" alt="Mini motosierra" style="transform: scale(1.45); position: relative; top: 20px;">
                 <h3>Motosierra a batería 40v</h3>
             </div>
             <div class="product-card">
@@ -290,7 +290,7 @@
 
     <!-- Reviews Section -->
     <section id="resenas" class="reviews-section">
-        <div class="section-title-wrapper" style="text-align: center;">
+        <div class="section-title-wrapper">
             <h2 class="section-title anton-font" style="border-bottom: none;">NUESTROS CLIENTES</h2>
         </div>
         <div class="carousel-wrapper" style="max-width: 1200px; margin: 0 auto; position: relative;">
@@ -775,8 +775,13 @@
                 const stepsObserver = new IntersectionObserver((entries) => {
                     if (entries[0].isIntersecting) {
                         entries[0].target.classList.add('animate-in');
+                        if (window.innerWidth <= 768) {
+                            stepsObserver.unobserve(entries[0].target);
+                        }
                     } else {
-                        entries[0].target.classList.remove('animate-in');
+                        if (window.innerWidth > 768) {
+                            entries[0].target.classList.remove('animate-in');
+                        }
                     }
                 }, { threshold: 0.3 });
                 stepsObserver.observe(stepsSection);
@@ -1081,3 +1086,4 @@
     </script>
 </body>
 </html>
+
