@@ -433,11 +433,23 @@
             mobileMenu.classList.toggle('is-active');
         });
 
-        const navItems = document.querySelectorAll('.nav-links a');
+                const navItems = document.querySelectorAll('.nav-links a');
         navItems.forEach(item => {
-            item.addEventListener('click', () => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
                 navLinks.classList.remove('active');
                 mobileMenu.classList.remove('is-active');
+                
+                const targetId = item.getAttribute('href');
+                if (targetId && targetId !== '#') {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'center'
+                        });
+                    }
+                }
             });
         });
 
@@ -1084,5 +1096,6 @@
     </script>
 </body>
 </html>
+
 
 
