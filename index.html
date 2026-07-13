@@ -290,12 +290,12 @@
 
     <!-- Reviews Section -->
     <section id="resenas" class="reviews-section">
-        <div class="section-title-wrapper" style="text-align: center;">
+        <div class="section-title-wrapper" style="text-align: center; margin-bottom: 50px;">
             <h2 class="section-title anton-font" style="margin-bottom: 20px; border-bottom: none;">NUESTROS CLIENTES</h2>
         </div>
-        <div class="carousel-wrapper" style="max-width: 1200px; margin: 10px auto 0; justify-content: space-between; position: relative;">
+        <div class="carousel-wrapper" style="max-width: 1200px; margin: 10px auto 0; position: relative;">
             <button class="carousel-btn prev" id="reviewPrevBtn"><i class="fas fa-chevron-left"></i></button>
-            <div class="reviews-container" id="reviewsCarousel" style="max-width: 580px;">
+            <div class="reviews-container" id="reviewsCarousel" style="max-width: 580px; margin: 0 auto;">
                 <div class="review-card">
                     <div class="review-header">
                         <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Marcelo G." class="review-photo">
@@ -836,8 +836,20 @@
                     // Update text below image on mobile
                     if (window.innerWidth <= 768 && mobileHotspotDisplay) {
                         if (hs.classList.contains('active')) {
-                            const textContent = hs.querySelector('.text').innerText;
+                            let textContent = hs.querySelector('.text').innerText;
                             const numContent = hs.querySelector('.hotspot-number').innerText;
+                            
+                            // Mobile text mapping for specific hotspots
+                            if (numContent === "3") {
+                                textContent = document.getElementById('hs-4').querySelector('.text').innerText;
+                            } else if (numContent === "4") {
+                                textContent = document.getElementById('hs-6').querySelector('.text').innerText;
+                            } else if (numContent === "5") {
+                                textContent = document.getElementById('hs-3').querySelector('.text').innerText;
+                            } else if (numContent === "6") {
+                                textContent = document.getElementById('hs-5').querySelector('.text').innerText;
+                            }
+                            
                             mobileHotspotDisplay.innerHTML = `<span style="display:inline-block; width:24px; height:24px; background:var(--makita-yellow); color:#000; border-radius:50%; text-align:center; line-height:24px; margin-right:10px; font-weight:bold;">${numContent}</span> ${textContent}`;
                         } else {
                             mobileHotspotDisplay.innerHTML = "Tocá un número en la cafetera para ver los detalles.";
@@ -990,9 +1002,14 @@
                         void reviewCarousel.offsetWidth;
                     }
                     
-                    reviewCarousel.style.scrollBehavior = 'smooth';
-                    reviewCarousel.style.scrollSnapType = 'x mandatory';
-                    reviewCarousel.scrollBy({ left: cardWidth, behavior: 'smooth' });
+                    requestAnimationFrame(() => {
+                        reviewCarousel.style.scrollBehavior = 'smooth';
+                        reviewCarousel.style.scrollSnapType = 'none';
+                        reviewCarousel.scrollLeft += cardWidth;
+                        setTimeout(() => {
+                            reviewCarousel.style.scrollSnapType = 'x mandatory';
+                        }, 500);
+                    });
                 });
                 
                 reviewBtnPrev.addEventListener('click', () => {
@@ -1007,9 +1024,14 @@
                         void reviewCarousel.offsetWidth;
                     }
                     
-                    reviewCarousel.style.scrollBehavior = 'smooth';
-                    reviewCarousel.style.scrollSnapType = 'x mandatory';
-                    reviewCarousel.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+                    requestAnimationFrame(() => {
+                        reviewCarousel.style.scrollBehavior = 'smooth';
+                        reviewCarousel.style.scrollSnapType = 'none';
+                        reviewCarousel.scrollLeft -= cardWidth;
+                        setTimeout(() => {
+                            reviewCarousel.style.scrollSnapType = 'x mandatory';
+                        }, 500);
+                    });
                 });
             }
             // Context Banner Interactive Color Selector

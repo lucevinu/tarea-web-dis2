@@ -1,0 +1,2386 @@
+﻿diff --git a/css/makita-style.css b/css/makita-style.css
+index 3230b2b..e022fb6 100644
+--- a/css/makita-style.css
++++ b/css/makita-style.css
+@@ -31,7 +31,7 @@ h1, h2, h3, h4, .anton-font {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+-    padding: 0.4rem 3%;
++    padding: 0.4rem 5.5vw;
+     border-bottom: none;
+     box-shadow: 0 4px 15px rgba(248, 225, 46, 0.4);
+     background-color: rgba(0, 0, 0, 0.9);
+@@ -95,14 +95,14 @@ h1, h2, h3, h4, .anton-font {
+ /* Hero Section */
+ .hero {
+     position: relative;
+-    padding: 150px 5% 0;
+-    min-height: 90vh;
++    padding: 150px 8% 0;
++    min-height: 100vh;
+     display: flex;
+     align-items: center;
+     background-color: var(--bg-dark);
+-    background-image: url('../img/Prueba%20hero6del7.png');
+-    background-size: cover;
+-    background-position: right -40px center;
++    background-image: url('../img/Img%20Hero%20F.webp');
++    background-size: 96%;
++    background-position: right 0% top;
+     background-repeat: no-repeat;
+ }
+ 
+@@ -121,7 +121,16 @@ h1, h2, h3, h4, .anton-font {
+     flex: 1;
+     z-index: 2;
+     position: relative;
+-    transform: translateY(-70px);
++    opacity: 0;
++    transform: translateY(-60px);
++    animation: heroFadeIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s forwards;
++}
++
++@keyframes heroFadeIn {
++    to {
++        opacity: 1;
++        transform: translateY(-100px);
++    }
+ }
+ 
+ .hero h1 {
+@@ -138,9 +147,47 @@ h1, h2, h3, h4, .anton-font {
+     color: var(--makita-yellow);
+ }
+ 
++.hero-subtitle {
++    font-family: 'Figtree', sans-serif;
++    font-size: 1rem;
++    color: #e0e0e0;
++    margin-top: 15px;
++    margin-left: 3px;
++    max-width: 500px;
++    line-height: 1.5;
++    font-weight: 400;
++}
++
++.mobile-break {
++    display: none;
++}
++
++.btn-outline {
++    display: inline-block;
++    margin-top: 35px;
++    padding: 8px 24px;
++    border: 1.2px solid var(--makita-yellow);
++    border-radius: 50px;
++    color: var(--makita-yellow);
++    text-decoration: none;
++    font-family: 'Figtree', sans-serif;
++    font-weight: 600;
++    font-size: 0.95rem;
++    letter-spacing: 1.5px;
++    transition: all 0.3s ease;
++    background: transparent;
++    cursor: pointer;
++}
++
++.btn-outline:hover {
++    box-shadow: 0 0 20px rgba(248, 225, 46, 0.4) !important;
++    border-color: var(--makita-yellow) !important;
++    color: var(--makita-yellow);
++}
++
+ /* Features Section */
+ .features {
+-    padding: 60px 5% 140px;
++    padding: 80px 8% 80px;
+ }
+ 
+ .section-title-wrapper {
+@@ -177,11 +224,11 @@ h1, h2, h3, h4, .anton-font {
+     background-color: var(--card-bg);
+     padding: 30px;
+     border-radius: 10px;
+-    border: 1px solid #222;
++    border: 1.2px solid #222;
+     text-align: center;
+     opacity: 0;
+     transform: translateY(50px);
+-    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.6s ease-out, border-color 0.3s;
++    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.6s ease-out, border-color 0.3s, box-shadow 0.3s;
+     height: 100%;
+     box-sizing: border-box;
+ }
+@@ -189,14 +236,13 @@ h1, h2, h3, h4, .anton-font {
+ .feature-card.animate-in {
+     opacity: 1;
+     transform: translateY(0);
+-    border-color: rgba(248, 225, 46, 0.6);
++    border-color: var(--makita-yellow);
+     box-shadow: 0 0 15px rgba(248, 225, 46, 0.15);
+ }
+ 
+ .feature-card.animate-in:hover {
+-    transform: translateY(-10px);
+-    border-color: var(--makita-yellow);
+-    box-shadow: 0 0 20px rgba(248, 225, 46, 0.4);
++    border-color: var(--makita-yellow) !important;
++    box-shadow: 0 0 20px rgba(248, 225, 46, 0.4) !important;
+ }
+ 
+ .feature-icon {
+@@ -217,7 +263,7 @@ h1, h2, h3, h4, .anton-font {
+     color: var(--text-light);
+     margin-bottom: 10px;
+     font-family: 'Barlow Semi Condensed', sans-serif;
+-    font-weight: 400;
++    font-weight: 500;
+ }
+ 
+ .feature-card p {
+@@ -227,15 +273,27 @@ h1, h2, h3, h4, .anton-font {
+     margin-top: 0;
+ }
+ 
++.mobile-text {
++    display: none;
++}
++
+ /* Full Width Banner */
+ .banner {
+     position: relative;
+-    padding: 220px 5%;
++    padding: 220px 8%;
++    box-sizing: border-box;
++    display: flex;
++    justify-content: center;
++    align-items: center;
+     text-align: center;
+-    background-image: url('../img/ChatGPT Image 22 jun 2026, 01_24_36.png');
++    background-image: url('../img/Img llevando la cafetera.png');
+     background-size: cover;
+-    background-position: calc(50% + 30px) center;
++    background-position: center 85%;
+     background-attachment: fixed;
++    background-repeat: no-repeat;
++    background-color: var(--bg-dark);
++    width: 100%;
++    overflow: hidden;
+ }
+ 
+ .banner::before {
+@@ -248,6 +306,18 @@ h1, h2, h3, h4, .anton-font {
+ .banner-content {
+     position: relative;
+     z-index: 2;
++    width: 100%;
++    max-width: 1200px;
++    margin: 0 auto;
++    text-align: center;
++    opacity: 0;
++    transform: translateY(30px);
++    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
++}
++
++.banner.animate-in .banner-content {
++    opacity: 1;
++    transform: translateY(0);
+ }
+ 
+ .banner h2.banner-title {
+@@ -256,6 +326,8 @@ h1, h2, h3, h4, .anton-font {
+     color: var(--makita-yellow);
+     margin-bottom: 5px;
+     letter-spacing: 2px;
++    text-align: center;
++    white-space: nowrap;
+ }
+ .banner-large {
+     font-size: inherit;
+@@ -285,7 +357,8 @@ p.banner-desc {
+ .split-section {
+     display: flex;
+     align-items: center;
+-    padding: 150px 5% 80px;
++    justify-content: center;
++    padding: 120px calc(8% + 20px) 200px;
+     gap: 50px;
+     background-color: var(--bg-dark);
+ }
+@@ -301,7 +374,7 @@ p.banner-desc {
+ }
+ 
+ .split-image {
+-    flex: 1;
++    flex: 1.2;
+     border-radius: 20px;
+     overflow: hidden;
+     opacity: 0;
+@@ -315,6 +388,10 @@ p.banner-desc {
+ 
+ .split-text {
+     flex: 1;
++    display: flex;
++    flex-direction: column;
++    justify-content: center;
++    align-items: flex-end;
+     opacity: 0;
+     transform: translateX(50px);
+     transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.8s ease-out;
+@@ -324,6 +401,20 @@ p.banner-desc {
+     transform: translateX(-50px);
+ }
+ 
++.split-text-inner {
++    width: min-content;
++    max-width: 100%;
++}
++.split-text-inner .title-with-line {
++    width: max-content;
++    max-width: 100%;
++}
++.split-text-inner p {
++    text-align: left;
++    line-height: 1.6;
++    margin-top: -15px;
++}
++
+ .split-section.animate-in .split-image,
+ .split-section.animate-in .split-text {
+     opacity: 1;
+@@ -405,7 +496,7 @@ p.banner-desc {
+ 
+ /* Specs Section */
+ .specs {
+-    padding: 80px 5%;
++    padding: 80px 8%;
+     text-align: center;
+     position: relative;
+ }
+@@ -437,6 +528,27 @@ p.banner-desc {
+ .interactive-specs {
+     position: relative;
+     width: 100%;
++    padding-top: 150px;
++    padding-bottom: 60px;
++    background-color: #000000;
++}
++.interactive-specs::before,
++.interactive-specs::after {
++    content: '';
++    position: absolute;
++    left: 0;
++    width: 100%;
++    height: 140px;
++    z-index: 5;
++    pointer-events: none;
++}
++.interactive-specs::before {
++    top: 0;
++    background: linear-gradient(to bottom, #000000 0%, #000000 40%, rgba(0,0,0,0) 100%);
++}
++.interactive-specs::after {
++    bottom: 0;
++    background: linear-gradient(to top, #000000 0%, #000000 40%, rgba(0,0,0,0) 100%);
+ }
+ 
+ .specs-base-img {
+@@ -456,10 +568,10 @@ p.banner-desc {
+ .hotspot-number {
+     width: 25px;
+     height: 25px;
+-    background-color: transparent;
+-    border: 1.5px solid var(--makita-yellow);
++    background-color: var(--makita-yellow);
++    border: 1.2px solid var(--makita-yellow);
+     border-radius: 50%;
+-    color: var(--makita-yellow);
++    color: #000;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+@@ -469,12 +581,28 @@ p.banner-desc {
+     z-index: 2;
+     transition: all 0.3s ease;
+     box-shadow: 0 0 10px rgba(0,0,0,0.5);
++    opacity: 0;
++    transform: scale(0);
++}
++
++@keyframes popInGlow {
++    0% { transform: scale(0); opacity: 0; box-shadow: 0 0 0px var(--makita-yellow); }
++    50% { transform: scale(1.1); opacity: 1; box-shadow: 0 0 10px 1px var(--makita-yellow); }
++    100% { transform: scale(1); opacity: 1; box-shadow: 0 0 10px rgba(0,0,0,0.5); }
++}
++
++.hotspot.is-visible .hotspot-number {
++    opacity: 1;
++    transform: scale(1);
++    animation: popInGlow 0.4s ease forwards;
++}
++
++.hotspot:hover .hotspot-number {
++    box-shadow: 0 0 8px 1px var(--makita-yellow) !important;
+ }
+ 
+-.hotspot:hover .hotspot-number,
+ .hotspot.active .hotspot-number {
+-    background-color: var(--makita-yellow);
+-    color: #000;
++    box-shadow: 0 0 8px 1px var(--makita-yellow) !important;
+ }
+ 
+ .hotspot-content {
+@@ -491,23 +619,34 @@ p.banner-desc {
+ }
+ 
+ 
+-.diag, .horiz {
++.line-svg {
+     position: absolute;
+-    background-color: var(--makita-yellow);
+-    height: 1.5px;
+-    width: 0;
+-    box-shadow: 0 0 8px var(--makita-yellow);
++    top: 0; left: 0;
++    width: 2px; height: 2px;
++    overflow: visible;
++    pointer-events: none;
++    z-index: 0;
+ }
+ 
+-.diag {
+-    top: 0; left: 0;
+-    transform-origin: 0 50%;
+-    transition: width 0.2s linear;
++.line-svg polyline {
++    fill: none;
++    stroke: var(--makita-yellow);
++    stroke-width: 1.2;
++    stroke-linecap: round;
++    stroke-linejoin: round;
++    filter: drop-shadow(0 0 8px var(--makita-yellow));
++    stroke-dasharray: var(--line-length) 999;
++    stroke-dashoffset: var(--line-length);
++    opacity: 0;
++    transition: stroke-dashoffset 0.4s linear, opacity 0s linear 0.4s;
+ }
+ 
+-.horiz {
+-    transform-origin: 0 50%;
+-    transition: width 0.2s linear 0.2s;
++.hotspot:hover .line-svg polyline,
++.hotspot.active .line-svg polyline {
++    stroke-dashoffset: 0;
++    opacity: 1;
++    transition: stroke-dashoffset 0.4s linear, opacity 0s linear 0s;
++    filter: drop-shadow(0 0 4px var(--makita-yellow)) drop-shadow(0 0 8px var(--makita-yellow));
+ }
+ 
+ .text {
+@@ -516,62 +655,27 @@ p.banner-desc {
+     font-size: 0.9rem;
+     white-space: nowrap;
+     opacity: 0;
+-    transition: opacity 0.2s ease 0.4s;
++    transition: opacity 0.2s ease 0s;
+     text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+ }
+ 
++.hotspot:hover .text,
+ .hotspot.active .text {
++    transition: opacity 0.2s ease 0.4s;
+     opacity: 1;
+ }
+ 
+-/* Uniform Right-Side Hotspots */
+-/* HS 1: down-right */
+-#hs-1 .diag { transform: rotate(30deg); }
+-#hs-1.active .diag { width: 60px; }
+-#hs-1 .horiz { top: 30px; left: 52px; transform: rotate(0deg); }
+-#hs-1.active .horiz { width: 60px; }
++/* Hotspots text coordinates */
+ #hs-1 .text { top: 21px; left: 122px; text-align: left; }
+-
+-/* HS 2: steeper up-right */
+-#hs-2 .diag { transform: rotate(-60deg); }
+-#hs-2.active .diag { width: 80px; }
+-#hs-2 .horiz { top: -69px; left: 40px; transform: rotate(0deg); }
+-#hs-2.active .horiz { width: 60px; }
+ #hs-2 .text { top: -78px; left: 110px; text-align: left; }
+-
+-/* HS 3: steeper up-right to fit margin */
+-#hs-3 .diag { transform: rotate(-60deg); }
+-#hs-3.active .diag { width: 50px; }
+-#hs-3 .horiz { top: -43px; left: 25px; transform: rotate(0deg); }
+-#hs-3.active .horiz { width: 30px; }
+-#hs-3 .text { top: -52px; left: 65px; text-align: left; }
+-
+-/* Uniform Left-Side Hotspots */
+-/* HS 4: up-left */
+-#hs-4 .diag { transform: rotate(-150deg); }
+-#hs-4.active .diag { width: 60px; }
+-#hs-4 .horiz { top: -30px; left: -52px; transform: rotate(180deg); }
+-#hs-4.active .horiz { width: 60px; }
+-#hs-4 .text { top: -39px; left: -122px; transform: translateX(-100%); text-align: right; }
+-
+-/* HS 5: up-right */
+-/* HS 5: down-right */
+-#hs-5 .diag { transform: rotate(30deg); }
+-#hs-5.active .diag { width: 60px; }
+-#hs-5 .horiz { top: 30px; left: 52px; transform: rotate(0deg); }
+-#hs-5.active .horiz { width: 60px; }
+-#hs-5 .text { top: 21px; left: 122px; text-align: left; }
+-
+-/* HS 6: steeper up-left to fit margin */
+-#hs-6 .diag { transform: rotate(-105deg); }
+-#hs-6.active .diag { width: 60px; }
+-#hs-6 .horiz { top: -58px; left: -16px; transform: rotate(180deg); }
+-#hs-6.active .horiz { width: 30px; }
+-#hs-6 .text { top: -67px; left: -56px; transform: translateX(-100%); text-align: right; }
++#hs-3 .text { top: 21px; left: 122px; text-align: left; }
++#hs-4 .text { top: -52px; left: 65px; text-align: left; }
++#hs-5 .text { top: -67px; left: -56px; transform: translateX(-100%); text-align: right; }
++#hs-6 .text { top: -39px; left: -122px; transform: translateX(-100%); text-align: right; }
+ 
+ /* Products Carousel Section */
+ .products-carousel-section {
+-    padding: 80px 5%;
++    padding: 80px 8%;
+     background-color: #000000; /* Pure black */
+     overflow: hidden;
+ }
+@@ -607,22 +711,49 @@ p.banner-desc {
+     border-radius: 12px;
+     padding: 15px; /* Reduced padding */
+     scroll-snap-align: center;
+-    border: 1px solid transparent;
++    border: 1.41px solid #111; /* 1.41 * 0.85 = 1.2px visual */
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: flex-end;
+-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
++    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease, visibility 0.4s ease;
+     transform: scale(0.85);
+-    opacity: 0.6; /* Reduced brightness/opacity for inactive cards */
++    opacity: 0; /* Hidden by default */
++    pointer-events: none;
++    visibility: hidden;
++}
++
++@keyframes flashYellowBorder {
++    0% { border-color: var(--makita-yellow); box-shadow: 0 0 20px rgba(248, 225, 46, 0.4); }
++    20% { border-color: var(--makita-yellow); box-shadow: 0 0 20px rgba(248, 225, 46, 0.4); }
++    100% { border-color: var(--makita-yellow); box-shadow: 0 0 15px rgba(248, 225, 46, 0.15); }
++}
++
++@keyframes flashYellowArrow {
++    0% { border-color: var(--makita-yellow); filter: drop-shadow(0 0 5px var(--makita-yellow)); }
++    20% { border-color: var(--makita-yellow); filter: drop-shadow(0 0 5px var(--makita-yellow)); }
++    100% { border-color: var(--makita-yellow); filter: none; }
+ }
+ 
+ .product-card.active {
+     transform: scale(1.1);
++    border-width: 1.09px !important; /* Compensate for scale(1.1) so it visually matches 1.2px */
+     opacity: 1;
++    visibility: visible;
++    pointer-events: auto;
+     z-index: 2;
+-    border-color: rgba(248, 225, 46, 0.6);
+-    box-shadow: 0 0 8px rgba(248, 225, 46, 0.6), inset 0 0 5px rgba(248, 225, 46, 0.1);
++    animation: flashYellowBorder 1s ease-out forwards;
++}
++
++.product-card.adjacent {
++    opacity: 0.6;
++    visibility: visible;
++    pointer-events: auto;
++}
++
++.product-card:hover {
++    border-color: var(--makita-yellow) !important;
++    box-shadow: 0 0 20px rgba(248, 225, 46, 0.4) !important;
+ }
+ 
+ .product-card img {
+@@ -667,11 +798,11 @@ p.banner-desc {
+     display: block;
+     width: 16px;
+     height: 16px;
+-    border-top: 1.5px solid var(--makita-yellow);
+-    border-left: 1.5px solid var(--makita-yellow);
++    border-top: 1.2px solid var(--makita-yellow);
++    border-left: 1.2px solid var(--makita-yellow);
+     transform: rotate(-45deg);
+     margin-left: 8px; /* Visual centering adjustment */
+-    filter: drop-shadow(0 0 3px rgba(255, 204, 0, 0.6));
++    filter: none;
+     transition: all 0.3s ease;
+ }
+ 
+@@ -680,24 +811,29 @@ p.banner-desc {
+     display: block;
+     width: 16px;
+     height: 16px;
+-    border-top: 1.5px solid var(--makita-yellow);
+-    border-right: 1.5px solid var(--makita-yellow);
++    border-top: 1.2px solid var(--makita-yellow);
++    border-right: 1.2px solid var(--makita-yellow);
+     transform: rotate(45deg);
+     margin-right: 8px; /* Visual centering adjustment */
+-    filter: drop-shadow(0 0 3px rgba(255, 204, 0, 0.6));
++    filter: none;
+     transition: all 0.3s ease;
+ }
+ 
++.products-carousel-section.animate-in .carousel-btn::after,
++.reviews-section.animate-in .carousel-btn::after {
++    animation: flashYellowArrow 1.5s ease-out forwards;
++}
++
+ .carousel-btn:hover.prev::after {
+-    border-color: #fff;
+-    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
++    border-color: var(--makita-yellow) !important;
+     transform: rotate(-45deg) scale(1.1);
++    filter: drop-shadow(0 0 5px var(--makita-yellow)) !important;
+ }
+ 
+ .carousel-btn:hover.next::after {
+-    border-color: #fff;
+-    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
++    border-color: var(--makita-yellow) !important;
+     transform: rotate(45deg) scale(1.1);
++    filter: drop-shadow(0 0 5px var(--makita-yellow)) !important;
+ }
+ 
+ .carousel-btn.prev {
+@@ -749,28 +885,140 @@ p.banner-desc {
+ }
+ 
+ .context-banner.framed {
+-    padding: 80px 5% 40px !important;
++    padding: 80px 8% 40px !important;
+     background-color: var(--bg-dark);
+     box-sizing: border-box;
+ }
+ 
++.context-banner .context-image {
++    width: 100%;
++    max-width: 1200px;
++    border-radius: 12px;
++    overflow: hidden;
++    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
++    opacity: 0;
++    transform: scale(0.95);
++    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
++}
++
++.context-banner.animate-in .context-image {
++    opacity: 1;
++    transform: scale(1);
++}
++
+ .context-banner.framed .context-image {
+     border-radius: 20px;
+     overflow: hidden;
+     max-width: 1200px;
+     margin: 0 auto;
+     box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+-    border: 1px solid #222;
++    border: 1.2px solid #222;
+ }
+ .context-image {
+     width: 100%;
++    position: relative;
+ }
+ .context-image img {
+     width: 100%;
+     height: auto;
+     display: block;
+-    image-rendering: -webkit-optimize-contrast;
+-    image-rendering: crisp-edges;
++}
++
++/* Interactive Context Overlay */
++.interactive-context-overlay {
++    position: absolute;
++    top: 0;
++    left: 0;
++    width: 100%;
++    height: 100%;
++    z-index: 5;
++    pointer-events: none; 
++    display: flex;
++    flex-direction: column;
++    justify-content: space-between;
++    align-items: center;
++    padding: 4% 0;
++    box-sizing: border-box;
++}
++
++.context-title-pill {
++    background-color: rgba(0, 0, 0, 0.7);
++    padding: 12px 30px;
++    border-radius: 50px;
++    backdrop-filter: blur(5px);
++    pointer-events: auto;
++}
++
++.context-title-pill h2 {
++    color: #fff;
++    margin: 0;
++    font-size: 2.2rem;
++    letter-spacing: 1px;
++}
++
++.context-image img.context-machine-overlay {
++    position: absolute;
++    top: 58%; 
++    left: 28%;
++    width: 16%;
++    height: auto;
++    transform: translate(-50%, -50%);
++    pointer-events: auto;
++    transition: opacity 0.3s ease;
++}
++
++.context-image img.context-machine-overlay.fade-out {
++    opacity: 0;
++}
++
++.context-color-selectors {
++    display: flex;
++    gap: 20px;
++    pointer-events: auto;
++    background-color: rgba(0,0,0,0.6);
++    padding: 10px 20px;
++    border-radius: 30px;
++}
++
++.context-color-btn {
++    width: 35px;
++    height: 35px;
++    border-radius: 50%;
++    border: 3px solid transparent;
++    cursor: pointer;
++    transition: transform 0.3s ease, border-color 0.3s ease;
++    box-shadow: 0 0 10px rgba(0,0,0,0.5);
++}
++
++.context-color-btn:hover {
++    transform: scale(1.1);
++}
++
++.context-color-btn.active {
++    border-color: var(--makita-yellow);
++    transform: scale(1.2);
++    box-shadow: 0 0 15px var(--makita-yellow);
++}
++
++@media (max-width: 768px) {
++    .context-title-pill {
++        padding: 8px 15px;
++    }
++    .context-title-pill h2 {
++        font-size: 1.2rem;
++    }
++    .context-image img.context-machine-overlay {
++        top: 65%; 
++        left: 50%;
++        width: 35%;
++    }
++    .context-color-selectors {
++        gap: 15px;
++    }
++    .context-color-btn {
++        width: 30px;
++        height: 30px;
++    }
+ }
+ .context-title {
+     font-size: 3.5rem;
+@@ -783,8 +1031,8 @@ p.banner-desc {
+ /* Footer */
+ .footer {
+     background-color: #0b0d10;
+-    padding: 60px 5% 80px;
+-    border-top: 1px solid #222;
++    padding: 60px 8% 80px;
++    border-top: 1.2px solid #222;
+ }
+ 
+ .footer-content {
+@@ -795,12 +1043,13 @@ p.banner-desc {
+     max-width: 1200px;
+     margin: 0 auto;
+     gap: 40px;
+-    padding-bottom: 20px;
++    padding-bottom: 55px;
+ }
+ 
+ .footer-logo {
+     flex: 1;
+     min-width: 300px;
++    margin-top: -30px;
+ }
+ 
+ .footer-columns {
+@@ -814,13 +1063,13 @@ p.banner-desc {
+ .footer-col {
+     display: flex;
+     flex-direction: column;
+-    gap: 12px;
++    gap: 8px;
+ }
+ 
+ .footer-col h4 {
+     color: var(--makita-yellow);
+     font-size: 0.9rem;
+-    margin-bottom: 15px;
++    margin-bottom: 0;
+     letter-spacing: 1px;
+ }
+ .accordion-icon {
+@@ -868,7 +1117,7 @@ p.banner-desc {
+ .footer-bottom {
+     text-align: center;
+     padding-top: 20px;
+-    border-top: 1px solid #222;
++    border-top: 1.2px solid #222;
+     color: var(--text-muted);
+     font-size: 0.8rem;
+ }
+@@ -896,16 +1145,21 @@ p.banner-desc {
+         width: 100%;
+     }
+     .header .logo img {
+-        height: 40px !important;
++        height: 32px !important;
+     }
+     .header {
+-        padding: 15px 30px !important;
++        padding: 10px 20px !important;
+     }
+     .menu-toggle {
+         display: flex;
+         position: absolute;
+         left: 20px;
+     }
++    .menu-toggle .bar {
++        width: 20px;
++        height: 2px;
++        margin: 3.5px 0;
++    }
+     .nav-links {
+         flex-direction: column;
+         position: fixed;
+@@ -916,7 +1170,7 @@ p.banner-desc {
+         background-color: var(--bg-dark);
+         padding-top: 70px;
+         transition: right 0.3s ease;
+-        border-left: 2px solid var(--makita-yellow);
++        border-left: 1.5px solid var(--makita-yellow);
+         align-items: center;
+         gap: 15px; /* Comfortable gap */
+     }
+@@ -938,12 +1192,13 @@ p.banner-desc {
+     }
+     
+     .hero {
++        min-height: 100vh;
+         flex-direction: column;
+         text-align: center;
+-        padding-top: 140px;
+-        background-image: url('../img/Prueba%20hero%206del7%20verical.png');
+-        background-size: cover;
+-        background-position: center;
++        padding-top: 26vh;
++        background-image: url('../img/Img%20Hero%20Vertical%20F.png');
++        background-size: 130% auto;
++        background-position: center calc(100% - 13vh);
+         align-items: center;
+     }
+     .hero-content {
+@@ -953,18 +1208,40 @@ p.banner-desc {
+         align-items: center;
+         text-align: center;
+         margin: 0 auto;
+-        transform: translateY(-25px); /* Raised 15px as requested */
++        transform: none;
+     }
+     /* Global mobile padding for coherence */
+     .split-section, .split-section.reverse, .colors-section, .features, .steps-section, .reviews-section, .products-carousel-section, .footer {
+         padding-top: 60px !important;
+         padding-bottom: 60px !important;
+-        padding-left: 30px !important;
+-        padding-right: 30px !important;
++        padding-left: 40px !important;
++        padding-right: 40px !important;
++    }
++    .features {
++        margin-top: -30vh;
++        position: relative;
++        z-index: 10;
+     }
+     .hero::before {
+         display: block;
+-        background: linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 25%, rgba(0,0,0,0) 45%);
++        background: radial-gradient(160% 68vh at top center, var(--bg-dark) 65%, transparent 100%);
++        height: 100%;
++        width: 100%;
++        position: absolute;
++        top: 0;
++        left: 0;
++        z-index: 1;
++    }
++    .hero::after {
++        content: '';
++        position: absolute;
++        bottom: 0;
++        left: 0;
++        width: 100%;
++        height: 22vh;
++        background: linear-gradient(to top, var(--bg-dark) 0%, var(--bg-dark) 13vh, transparent 100%);
++        z-index: 1;
++        pointer-events: none;
+     }
+     
+     .context-title {
+@@ -972,19 +1249,47 @@ p.banner-desc {
+         line-height: 1.1;
+     }
+     
+-    .hero h1 { font-size: 3.5rem; }
+-    .hero h2 { font-size: 1.8rem; }
++    .mobile-break { display: block; }
++    
++    .hero h1 { font-size: 3.2rem; margin-bottom: 5px; line-height: 1; }
++    .hero h2 { font-size: 1.1rem !important; margin-bottom: 5px !important; }
++    .hero-subtitle { font-size: 0.85rem; margin-top: 10px; line-height: 1.4; max-width: 280px; margin-left: auto; margin-right: auto; }
+     
+     .split-section {
+         flex-direction: column-reverse;
+         text-align: center;
+-        gap: 10px; /* Reduced gap to bring animation closer */
++        gap: 40px; /* Increased gap to push the GIF down */
++        padding-bottom: 140px !important; /* Extra bottom margin */
++        padding-top: 55px !important; /* Lowered 25px from previous state */
++    }
++    .split-section h2 {
++        white-space: nowrap !important;
++        font-size: 6.5vw !important; /* Forces a perfect fit on mobile screens */
++    }
++    .split-text {
++        align-items: center !important;
++    }
++    .split-text-inner {
++        margin: 0 auto;
++        width: 100% !important;
++    }
++    .split-text-inner .title-with-line {
++        max-width: 100%;
++        width: 100%;
++        margin-bottom: 0 !important;
++    }
++    .split-text-inner p {
++        margin-top: 0;
++        text-align: center !important;
+     }
+     .split-section.reverse {
+         flex-direction: column-reverse;
+         text-align: center;
+         gap: 10px; /* Reduced gap to bring animation closer */
+     }
++    .split-image {
++        margin-bottom: 60px;
++    }
+     .split-image video,
+     .split-image img {
+         margin: 0 auto;
+@@ -1007,7 +1312,6 @@ p.banner-desc {
+         justify-content: center;
+     }
+     .title-with-line h2 {
+-        white-space: normal;
+         text-align: center !important;
+     }
+     .separator-line {
+@@ -1019,7 +1323,6 @@ p.banner-desc {
+         max-width: 150px;
+     }
+     
+-    .split-text h2 { font-size: 25px !important; text-align: center; }
+     .split-text p { font-size: 0.85rem; text-align: left; }
+     
+     .section-title { font-size: 6.5vw !important; text-align: center; line-height: 1 !important; margin-bottom: 0 !important; padding-top: 10px; white-space: normal !important; }
+@@ -1033,7 +1336,8 @@ p.banner-desc {
+     .step-item p { font-size: 0.85rem; }
+     
+     .colors-text h2 { font-size: 25px !important; text-align: center; }
+-    .colors-text p { font-size: 0.95rem; text-align: left; }
++    .colors-title-wrapper { width: 100% !important; max-width: none !important; }
++    .colors-text p { font-size: 0.95rem; text-align: center !important; width: 100% !important; max-width: 100% !important; }
+     
+     .reviews-container {
+         display: flex !important;
+@@ -1041,9 +1345,9 @@ p.banner-desc {
+         scroll-snap-type: x mandatory !important;
+         scrollbar-width: none;
+         padding-bottom: 20px;
+-        padding-left: 5% !important;
+-        padding-right: 5% !important;
+-        scroll-padding-left: 5% !important;
++        padding-left: 40px !important;
++        padding-right: 40px !important;
++        scroll-padding-left: 40px !important;
+         width: 100% !important;
+         box-sizing: border-box;
+         gap: 15px;
+@@ -1074,41 +1378,30 @@ p.banner-desc {
+     }
+ 
+     .feature-card {
+-        flex: 0 0 auto !important;
+-        display: grid !important;
+-        grid-template-columns: 40px 1fr !important;
+-        grid-template-rows: auto auto !important;
+-        gap: 10px 15px !important;
+-        text-align: left !important;
+-        padding: 18px 15px !important;
+-        box-sizing: border-box;
+-        width: 100% !important;
++        padding: 30px 24px !important;
++        text-align: center !important;
++    }
++    .feature-card .screen-icon {
++        width: 40px !important;
+     }
+     .feature-card .feature-icon {
+-        grid-row: 1 / 3;
+-        grid-column: 1;
+-        margin-bottom: 0 !important;
+-        font-size: 1.5rem !important;
+-        display: flex;
+-        align-items: center;
+-        justify-content: center;
++        margin-bottom: 12px !important;
++        display: flex !important;
++        justify-content: center !important;
+     }
+     .feature-card h3 {
+-        grid-row: 1;
+-        grid-column: 2;
+-        margin: 0 !important;
+-        font-size: 1rem !important;
+-        align-self: end;
++        font-size: 1.15rem !important;
++        margin-bottom: 10px !important;
+     }
+     .feature-card p {
+-        grid-row: 2;
+-        grid-column: 2;
+-        margin: 0 !important;
+-        font-size: 0.8rem !important;
+-        line-height: 1.15;
+-        align-self: start;
++        font-size: 0.85rem !important;
++        margin-bottom: 0 !important;
++        margin-top: 0 !important;
+     }
+     
++    .desktop-text { display: none !important; }
++    .mobile-text { display: block !important; }
++    
+     .specs-content {
+         flex-direction: column;
+         gap: 40px;
+@@ -1147,6 +1440,31 @@ p.banner-desc {
+         margin-left: 5% !important;
+         margin-right: 5% !important;
+     }
++    .interactive-specs {
++        padding-top: 150px;
++        padding-bottom: 60px;
++        position: relative;
++        background-color: #000000;
++    }
++    .interactive-specs::before,
++    .interactive-specs::after {
++        content: '';
++        position: absolute;
++        left: 0;
++        width: 100%;
++        height: 140px;
++        z-index: 5;
++        pointer-events: none;
++    }
++    .interactive-specs::before {
++        top: 0;
++        background: linear-gradient(to bottom, #000000 0%, #000000 40%, rgba(0,0,0,0) 100%);
++    }
++    .interactive-specs::after {
++        bottom: 0;
++        background: linear-gradient(to top, #000000 0%, #000000 40%, rgba(0,0,0,0) 100%);
++    }
++    
+     .specs-image {
+         order: -1;
+         max-width: 100%;
+@@ -1164,12 +1482,15 @@ p.banner-desc {
+     }
+     
+     .banner {
+-        padding: 180px 2% !important;
++        padding: 230px 2% !important; /* Enlarged window to see more photo */
++        background-image: url('../img/ChatGPT Image 22 jun 2026, 01_24_36.png') !important;
++        background-position: center !important;
+     }
+-    .banner h2.banner-title { font-size: 16vw !important; text-align: center; line-height: 1; margin: 0; }
++    .banner h2.banner-title { font-size: 16vw !important; text-align: center; line-height: 1; margin: 0; white-space: normal !important; }
+     .banner .banner-large { font-size: inherit; display: block; margin-top: 0; line-height: 1; }
+     p.banner-desc { font-size: 0.75rem !important; text-align: center; font-family: 'Figtree', sans-serif !important; }
+     .mobile-break { display: block; }
++    .desktop-comma { display: none !important; }
+     
+     .footer-content {
+         flex-direction: column;
+@@ -1208,7 +1529,7 @@ p.banner-desc {
+     }
+     
+     /* Shrink reviews title */
+-    #resenas .section-title { font-size: 25px !important; text-align: left; }
++    #resenas .section-title { font-size: 25px !important; text-align: center; }
+     
+     .steps-section {
+         align-items: flex-start !important;
+@@ -1268,18 +1589,18 @@ p.banner-desc {
+     /* Reorder colors section */
+     .colors-section {
+         flex-direction: column;
+-        padding-top: 60px;
++        padding-top: 30px;
+         padding-bottom: 60px;
+         gap: 15px !important;
+     }
+     .colors-text { display: contents; }
+-    .colors-section .title-with-line { order: 1; width: 100%; align-items: center; position: relative; z-index: 5; }
+-    .colors-section .color-desc-1 { order: 2; margin-top: -5px !important; margin-bottom: 60px !important; text-align: left; width: 100%; position: relative; z-index: 5; }
++    .colors-section .title-with-line { order: 1; width: 100%; align-items: center; position: relative; z-index: 5; margin-bottom: 0 !important; }
++    .colors-section .color-desc-1 { order: 2; margin-top: 0 !important; margin-bottom: 60px !important; text-align: left; width: 100%; position: relative; z-index: 5; }
+     .colors-showcase { 
+         order: 3; 
+-        margin: 50px auto 60px !important; 
++        margin: 80px auto 60px !important; 
+         width: 100%; 
+-        height: 250px !important; 
++        height: 270px !important; 
+         flex: none; 
+         display: block;
+         position: relative;
+@@ -1289,8 +1610,8 @@ p.banner-desc {
+         top: 0; left: 0; width: 100%; height: 100%;
+     }
+     .colors-showcase .machine {
+-        height: 200px !important;
+-        width: 200px !important;
++        height: 250px !important;
++        width: 250px !important;
+         max-height: none !important;
+         display: flex !important;
+         justify-content: center;
+@@ -1304,15 +1625,22 @@ p.banner-desc {
+         position: relative;
+     }
+     .machine-glow {
+-        width: 230px;
+-        height: 230px;
++        position: absolute;
++        top: 50%;
++        left: 50%;
++        transform: translate(-50%, -50%);
++        width: 280px;
++        height: 280px;
+         border-radius: 50%;
+-        background: radial-gradient(circle, rgba(248, 225, 46, 0.5) 0%, rgba(248, 225, 46, 0) 70%) !important;
+-        filter: none !important;
++        background: radial-gradient(circle, rgba(248, 225, 46, 0.4) 0%, rgba(248, 225, 46, 0) 70%) !important;
++        filter: blur(20px) !important;
+         opacity: 1 !important;
+         display: block !important;
++        z-index: 0;
++        pointer-events: none;
+     }
+     .colors-section .color-selectors { order: 4; margin-top: 80px !important; margin-bottom: 0 !important; justify-content: center; width: 100%; position: relative; z-index: 5; }
++    .color-btn { width: 26px !important; height: 26px !important; }
+     
+     /* Interactive specs mobile */
+     .interactive-specs-container {
+@@ -1332,15 +1660,19 @@ p.banner-desc {
+         width: 100%;
+         max-width: 100%;
+     }
+-    #hs-3 { left: 85% !important; }
+-    #hs-6 { left: 15% !important; }
++    #hs-1 { top: 38% !important; }
++    #hs-2 { top: calc(57% + 10px) !important; left: calc(58% + 10px) !important; }
++    #hs-3 { top: 69% !important; left: 85% !important; }
++    #hs-4 { top: calc(61% + 10px) !important; left: calc(41% - 10px) !important; }
++    #hs-5 { top: 83% !important; left: calc(58% + 25px) !important; }
++    #hs-6 { top: 67% !important; left: 15% !important; }
+     .mobile-hotspot-display {
+         display: block !important;
+-        background: #000;
+-        padding: 15px 20px;
++        background: #000000;
++        padding: 15px 40px;
+         border: none;
+         margin-top: 0;
+-        text-align: left;
++        text-align: center;
+         width: 100%;
+         box-sizing: border-box;
+     }
+@@ -1351,7 +1683,7 @@ p.banner-desc {
+ .colors-section {
+     display: flex;
+     align-items: center;
+-    padding: 100px 5%;
++    padding: 100px 8%;
+     gap: 50px;
+     background-color: var(--bg-dark);
+     position: relative;
+@@ -1405,9 +1737,9 @@ p.banner-desc {
+ }
+ 
+ .color-btn.active {
+-    border-color: var(--makita-yellow);
++    border-color: transparent;
+     transform: scale(1.2);
+-    box-shadow: 0 0 15px var(--makita-yellow);
++    box-shadow: 0 0 15px rgba(248, 225, 46, 0.4);
+ }
+ 
+ .colors-showcase {
+@@ -1415,8 +1747,8 @@ p.banner-desc {
+     position: relative;
+     height: 450px;
+     display: flex;
+-    align-items: center;
+     justify-content: center;
++    align-items: center;
+ }
+ 
+ @keyframes floatRocks {
+@@ -1464,12 +1796,12 @@ p.banner-desc {
+         position: absolute;
+         top: 50%;
+         left: 50%;
+-        width: 600px;
+-        height: 600px;
++        width: 500px;
++        height: 500px;
+         transform: translate(-50%, -50%);
+         border-radius: 50%;
+-        background: radial-gradient(circle, rgba(248, 225, 46, 0.7) 0%, rgba(248, 225, 46, 0) 60%) !important;
+-        filter: blur(40px) !important;
++        background: radial-gradient(circle, rgba(248, 225, 46, 0.4) 0%, rgba(248, 225, 46, 0) 70%) !important;
++        filter: blur(45px) !important;
+         opacity: 1 !important;
+         z-index: 0;
+         pointer-events: none;
+@@ -1494,7 +1826,7 @@ p.banner-desc {
+     cursor: pointer;
+ }
+ .steps-section {
+-    padding: 100px 5% 120px;
++    padding: 300px 8% 120px;
+     background-color: var(--bg-dark);
+     display: flex;
+     flex-direction: column;
+@@ -1528,16 +1860,16 @@ p.banner-desc {
+     transform: translateY(0);
+ }
+ 
+-.steps-section.animate-in .step-item:nth-child(1) { transition-delay: 0s; }
+-.steps-section.animate-in .step-item:nth-child(2) { transition-delay: 0.2s; }
+-.steps-section.animate-in .step-item:nth-child(3) { transition-delay: 0.4s; }
+-.steps-section.animate-in .step-item:nth-child(4) { transition-delay: 0.6s; }
++.steps-section.animate-in .step-item:nth-child(2) { transition-delay: 0s; }
++.steps-section.animate-in .step-item:nth-child(3) { transition-delay: 0.2s; }
++.steps-section.animate-in .step-item:nth-child(4) { transition-delay: 0.4s; }
++.steps-section.animate-in .step-item:nth-child(5) { transition-delay: 0.6s; }
+ 
+ .step-circle {
+     width: 70px;
+     height: 70px;
+     border-radius: 50%;
+-    border: 3px solid var(--makita-yellow);
++    border: 1.2px solid var(--makita-yellow);
+     color: var(--makita-yellow);
+     font-size: 2rem;
+     display: flex;
+@@ -1563,9 +1895,78 @@ p.banner-desc {
+     line-height: 1.5;
+     font-weight: 400;
+ }
++
++/* Animated Connecting Line & Glow Effect */
++.steps-container {
++    position: relative;
++}
++.connecting-line {
++    position: absolute;
++    top: 35px;
++    left: 0;
++    height: 1.2px;
++    background-color: transparent;
++    width: 100%;
++    z-index: 0;
++}
++.connecting-line::after {
++    content: '';
++    position: absolute;
++    top: 0;
++    left: 0;
++    height: 100%;
++    width: 0;
++    background-color: var(--makita-yellow);
++    box-shadow: 0 0 10px var(--makita-yellow), 0 0 20px var(--makita-yellow);
++    transition: width 0s;
++}
++.steps-section.animate-in .connecting-line::after {
++    width: 100%;
++    transition: width 2s linear;
++}
++.step-item {
++    z-index: 1;
++}
++.step-circle {
++    border: 1.2px solid var(--makita-yellow) !important;
++    background-color: transparent !important;
++    color: var(--makita-yellow) !important;
++    transition: border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease !important;
++}
++.steps-section.animate-in .step-item:nth-child(2) .step-circle {
++    transition-delay: 0.07s !important;
++    border-color: var(--makita-yellow) !important;
++    background-color: var(--makita-yellow) !important;
++    color: #000 !important;
++    box-shadow: 0 0 20px rgba(255, 204, 0, 0.4) !important;
++}
++
++.steps-section.animate-in .step-item:nth-child(3) .step-circle {
++    transition-delay: 0.69s !important;
++    border-color: var(--makita-yellow) !important;
++    background-color: var(--makita-yellow) !important;
++    color: #000 !important;
++    box-shadow: 0 0 20px rgba(255, 204, 0, 0.4) !important;
++}
++
++.steps-section.animate-in .step-item:nth-child(4) .step-circle {
++    transition-delay: 1.31s !important;
++    border-color: var(--makita-yellow) !important;
++    background-color: var(--makita-yellow) !important;
++    color: #000 !important;
++    box-shadow: 0 0 20px rgba(255, 204, 0, 0.4) !important;
++}
++
++.steps-section.animate-in .step-item:nth-child(5) .step-circle {
++    transition-delay: 1.93s !important;
++    border-color: var(--makita-yellow) !important;
++    background-color: var(--makita-yellow) !important;
++    color: #000 !important;
++    box-shadow: 0 0 20px rgba(255, 204, 0, 0.4) !important;
++}
+ /* Reviews Section */
+ .reviews-section {
+-    padding: 80px 5%;
++    padding: 80px 8%;
+     background-color: var(--bg-dark);
+ }
+ 
+@@ -1576,9 +1977,10 @@ p.banner-desc {
+     gap: 30px;
+     scrollbar-width: none;
+     width: 100%;
++    max-width: 750px;
+     margin: 0 auto;
+-    padding-top: 20px;
+-    padding-bottom: 30px;
++    padding: 20px 20px 30px;
++    box-sizing: border-box;
+ }
+ .reviews-container::-webkit-scrollbar {
+     display: none;
+@@ -1586,14 +1988,14 @@ p.banner-desc {
+ 
+ .review-card {
+     background-color: #15181c;
+-    border: 1px solid rgba(248, 225, 46, 0.6);
++    border: 1.2px solid var(--makita-yellow);
+     border-radius: 10px;
+-    box-shadow: 0 0 15px rgba(248, 225, 46, 0.15);
++    box-shadow: none;
+     padding: 30px;
++    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+     opacity: 0;
+     transform: translateY(30px);
+     flex: 0 0 100%;
+@@ -1604,6 +2006,7 @@ p.banner-desc {
+ .reviews-section.animate-in .review-card {
+     opacity: 1;
+     transform: translateY(0);
++    box-shadow: 0 0 15px rgba(248, 225, 46, 0.15);
+ }
+ 
+ .reviews-section.animate-in .review-card:nth-child(1) { transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s; }
+@@ -1612,9 +2015,8 @@ p.banner-desc {
+ .reviews-section.animate-in .review-card:nth-child(4) { transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.6s; }
+ 
+ .review-card:hover {
+-    transform: translateY(-10px) !important;
+-    box-shadow: 0 10px 20px rgba(0,0,0,0.5), 0 0 20px rgba(248, 225, 46, 0.4);
+-    border-color: var(--makita-yellow);
++    box-shadow: 0 0 20px rgba(248, 225, 46, 0.4) !important;
++    border-color: var(--makita-yellow) !important;
+ }
+ 
+ .review-header {
+@@ -1622,7 +2024,7 @@ p.banner-desc {
+     align-items: center;
+     gap: 15px;
+     margin-bottom: 20px;
+-    border-bottom: 1px solid #2a2a2a;
++    border-bottom: 1.2px solid #2a2a2a;
+     padding-bottom: 15px;
+ }
+ 
+@@ -1631,7 +2033,7 @@ p.banner-desc {
+     height: 50px;
+     border-radius: 50%;
+     object-fit: cover;
+-    border: 2px solid var(--makita-yellow);
++    border: 1.2px solid var(--makita-yellow);
+ }
+ 
+ .review-author {
+@@ -1651,32 +2053,33 @@ p.banner-desc {
+ }
+ 
+ .stars {
+-    margin-top: 20px;
++    margin-top: 0;
+     font-size: 1.2rem;
+     display: flex;
+     gap: 5px;
+     justify-content: flex-end;
+ }
+ 
+-.stars i {
++.stars i, .stars svg {
+     color: var(--makita-yellow);
+-    -webkit-text-stroke: 0;
+-    text-shadow: 0 0 10px rgba(255, 204, 0, 0.6);
++    filter: drop-shadow(0 0 8px rgba(248, 225, 46, 0.8));
++    font-size: 1.1rem;
++    margin-right: 3px;
+     opacity: 0;
+-    transform: scale(0.5);
+-    transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
++    transform: scale(0);
++    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease;
+ }
+ 
+-.reviews-section.animate-in .review-card .stars i {
++.reviews-section.animate-in .review-card .stars svg {
+     opacity: 1;
+     transform: scale(1);
+ }
+ 
+-.reviews-section.animate-in .review-card .stars i:nth-child(1) { transition-delay: 0.1s; }
+-.reviews-section.animate-in .review-card .stars i:nth-child(2) { transition-delay: 0.2s; }
+-.reviews-section.animate-in .review-card .stars i:nth-child(3) { transition-delay: 0.3s; }
+-.reviews-section.animate-in .review-card .stars i:nth-child(4) { transition-delay: 0.4s; }
+-.reviews-section.animate-in .review-card .stars i:nth-child(5) { transition-delay: 0.5s; }
++.reviews-section.animate-in .review-card .stars svg:nth-child(1) { transition-delay: 0.1s; }
++.reviews-section.animate-in .review-card .stars svg:nth-child(2) { transition-delay: 0.2s; }
++.reviews-section.animate-in .review-card .stars svg:nth-child(3) { transition-delay: 0.3s; }
++.reviews-section.animate-in .review-card .stars svg:nth-child(4) { transition-delay: 0.4s; }
++.reviews-section.animate-in .review-card .stars svg:nth-child(5) { transition-delay: 0.5s; }
+ 
+ #resenas .title-with-line {
+     flex-direction: column;
+@@ -1705,12 +2108,27 @@ p.banner-desc {
+ /* Overwriting the old steps-section styles at the bottom to ensure precedence */
+ 
+ .steps-section {
+-    padding: 100px 5% 120px;
+-    background-color: var(--bg-dark) !important;
++    padding-top: 200px;
++    padding-bottom: 100px;
+     display: flex;
+     justify-content: center;
+     position: relative;
+-    z-index: 1;
++    z-index: 5;
++    background-color: var(--bg-dark);
++}
++
++.steps-section .section-title-wrapper {
++    margin-bottom: 60px;
++}
++
++.steps-section .section-title {
++    opacity: 0;
++    transform: translateY(-20px);
++    transition: opacity 0.8s ease, transform 0.8s ease;
++}
++.steps-section.animate-in .section-title {
++    opacity: 1;
++    transform: translateY(0);
+ }
+ 
+ .steps-container {
+@@ -1726,8 +2144,8 @@ p.banner-desc {
+     position: absolute;
+     top: 35px;
+     left: 0;
+-    height: 4px;
+-    background-color: #2a2a2a;
++    height: 1.2px;
++    background-color: transparent;
+     width: 100%;
+     z-index: 0;
+ }
+@@ -1741,11 +2159,12 @@ p.banner-desc {
+     width: 0;
+     background-color: var(--makita-yellow);
+     box-shadow: 0 0 10px var(--makita-yellow), 0 0 20px var(--makita-yellow);
+-    transition: width 2s linear;
++    transition: width 0s;
+ }
+ 
+ .steps-section.animate-in .connecting-line::after {
+     width: 100%;
++    transition: width 2s linear;
+ }
+ 
+ .step-item {
+@@ -1755,18 +2174,15 @@ p.banner-desc {
+     text-align: center;
+     flex: 1;
+     z-index: 1;
+-    opacity: 1 !important;
+-    transform: none !important;
+-    transition: none !important;
+ }
+ 
+ .step-circle {
+     width: 70px;
+     height: 70px;
+     border-radius: 50%;
+-    border: 3px solid #2a2a2a !important;
+-    background-color: #0b0d10 !important;
+-    color: #2a2a2a !important;
++    border: 1.2px solid var(--makita-yellow) !important;
++    background-color: transparent !important;
++    color: var(--makita-yellow) !important;
+     font-size: 2rem;
+     display: flex;
+     align-items: center;
+@@ -1787,21 +2203,21 @@ p.banner-desc {
+     box-shadow: 0 0 20px rgba(255, 204, 0, 0.4) !important;
+ }
+ .steps-section.animate-in .step-item:nth-child(3) .step-circle {
+-    transition-delay: 0.6s !important;
++    transition-delay: 0.5s !important;
+     border-color: var(--makita-yellow) !important;
+     background-color: var(--makita-yellow) !important;
+     color: #000 !important;
+     box-shadow: 0 0 20px rgba(255, 204, 0, 0.4) !important;
+ }
+ .steps-section.animate-in .step-item:nth-child(4) .step-circle {
+-    transition-delay: 1.3s !important;
++    transition-delay: 1.1s !important;
+     border-color: var(--makita-yellow) !important;
+     background-color: var(--makita-yellow) !important;
+     color: #000 !important;
+     box-shadow: 0 0 20px rgba(255, 204, 0, 0.4) !important;
+ }
+ .steps-section.animate-in .step-item:nth-child(5) .step-circle {
+-    transition-delay: 2s !important;
++    transition-delay: 1.6s !important;
+     border-color: var(--makita-yellow) !important;
+     background-color: var(--makita-yellow) !important;
+     color: #000 !important;
+@@ -1815,18 +2231,7 @@ p.banner-desc {
+     line-height: 1.2;
+     text-transform: uppercase;
+ }
+-/* Overriding step-circle initial state to be visible but off */
+-.step-circle {
+-    border: 3px solid var(--text-light) !important;
+-    color: var(--text-light) !important;
+-    background-color: #0b0d10 !important;
+-}
+-/* Overriding step-circle initial state to be yellow */
+-.step-circle {
+-    border: 3px solid var(--makita-yellow) !important;
+-    color: var(--makita-yellow) !important;
+-    background-color: #0b0d10 !important;
+-}
++
+ /* Smooth scrolling and centering */
+ html {
+     scroll-behavior: smooth;
+@@ -1843,6 +2248,11 @@ html {
+     }
+     .steps-section {
+         align-items: flex-start !important;
++        padding-top: 200px !important;
++        padding-bottom: 120px !important;
++    }
++    .steps-section .section-title-wrapper {
++        margin-bottom: 60px !important;
+     }
+     .steps-container {
+         display: flex !important;
+@@ -1879,26 +2289,60 @@ html {
+     .step-item p.anton-font {
+         font-size: 0.9rem !important;
+     }
+-    .step-item p { margin: 0 !important; }
++    .step-item p { 
++        margin: 0 !important; 
++        opacity: 0;
++        transform: translateX(50px);
++        transition: opacity 0.3s ease-out, transform 0.3s ease-out;
++    }
++    .steps-section.animate-in .step-item p {
++        opacity: 1;
++        transform: translateX(0);
++        transition-delay: 0.2s;
++    }
+     .connecting-line { 
+         display: block !important; 
+         position: absolute !important;
+         left: 45px !important; /* 20px padding + 25px center of circle */
+         transform: translateX(-50%) !important; /* Center the line perfectly */
+         top: 0 !important; /* Will start at top of padding, i.e. 20px above first circle */
+-        width: 3px !important;
++        width: 1.2px !important;
+         height: 0 !important;
+         max-width: none !important;
+         background-color: var(--makita-yellow) !important;
+         box-shadow: 0 0 4px var(--makita-yellow) !important;
+-        transition: height 1.5s ease-out 0.4s !important;
++        transition: height 0s !important;
+         z-index: 0 !important;
+     }
+     .steps-section.animate-in .connecting-line {
+         height: 100% !important; /* Fills container, going 20px below last circle due to padding */
++        transition: height 2s linear !important;
+     }
+     .steps-section.animate-in .step-item {
+         opacity: 1 !important;
+         transform: none !important;
+     }
++    .steps-section.animate-in .step-item:nth-child(2) .step-circle { transition-delay: 0.15s !important; }
++    .steps-section.animate-in .step-item:nth-child(3) .step-circle { transition-delay: 0.65s !important; }
++    .steps-section.animate-in .step-item:nth-child(4) .step-circle { transition-delay: 1.15s !important; }
++    .steps-section.animate-in .step-item:nth-child(5) .step-circle { transition-delay: 1.65s !important; }
++}
++
++/* iPhone 12 Pro and taller mobile screens */
++@media (max-width: 768px) and (min-height: 750px) {
++    .hero {
++        background-position: center calc(100% - 25vh);
++        padding-top: 22vh;
++    }
++    .hero::before {
++        background: linear-gradient(to bottom, var(--bg-dark) 0%, var(--bg-dark) 38vh, transparent 45vh);
++    }
++    .hero::after {
++        height: 35vh;
++        background: linear-gradient(to top, var(--bg-dark) 0%, var(--bg-dark) 25vh, transparent 100%);
++    }
++    .hero h1 { font-size: 3.6rem; }
++    .hero h2 { font-size: 1.25rem !important; }
++    .hero-subtitle { font-size: 0.95rem; max-width: 320px; }
++    .features { margin-top: -21vh; }
+ }
+diff --git a/index.html b/index.html
+index 2694621..f17b73e 100644
+--- a/index.html
++++ b/index.html
+@@ -21,7 +21,7 @@
+     <!-- Header -->
+     <header class="header">
+         <div class="logo">
+-            <a href="#hero"><img src="img/TP WEB-02.png" alt="Makita Logo" style="height: 45px;"></a>
++            <a href="javascript:void(0);"><img src="img/TP WEB-02.png" alt="Makita Logo" style="height: 45px;"></a>
+         </div>
+         <div class="menu-toggle" id="mobile-menu">
+             <span class="bar"></span>
+@@ -39,8 +39,9 @@
+     <!-- Hero Section -->
+     <section id="hero" class="hero">
+         <div class="hero-content">
+-            <h1>EL CAF├ë DE<br>TU JORNADA</h1>
+-            <h2 class="anton-font">CAFETERA CXT&reg; / LXT&reg;</h2>
++            <h2 class="anton-font" style="margin-bottom: 10px; margin-left: 3px; font-size: 1.35rem; letter-spacing: 2px;">CAFETERA CXT&reg; / LXT&reg;</h2>
++            <h1 style="margin-bottom: 0;">EL CAF├ë DE<br>TU JORNADA</h1>
++            <p class="hero-subtitle">Te da la energ├¡a que necesitas <br class="mobile-break">y sin depender de un enchufe.</p>
+         </div>
+     </section>
+ 
+@@ -56,46 +57,40 @@
+         -->
+         <div class="cards-container">
+             <div class="feature-card">
+-                <div class="feature-icon"><img src="img/screen%203.png" alt="Icono" class="screen-icon"></div>
++                <div class="feature-icon">
++                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="screen-icon">
++                        <rect x="2" y="10" width="20" height="12" rx="2.5"></rect>
++                        <path d="M8 10V6a4 4 0 0 1 8 0v4"></path>
++                        <path d="M2 15h20 M10 15v1.5a2 2 0 0 0 4 0v-1.5"></path>
++                    </svg>
++                </div>
+                 <h3>DISE├æO PORT├üTIL</h3>
+-                <p>Pensada para moverse con vos, liviana y con manija para no ocupar espacio en tu caja de herramientas.</p>
++                <p>Pensada para moverse con vos, liviana, compacta y con manija para no ocupar espacio en tu caja de herramientas.</p>
+             </div>
+             <div class="feature-card">
+-                <div class="feature-icon"><img src="img/screen2.png" alt="Icono" class="screen-icon"></div>
++                <div class="feature-icon">
++                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="screen-icon">
++                        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
++                    </svg>
++                </div>
+                 <h3>CONSTRUCCI├ôN RESISTENTE</h3>
+-                <p>Dise├▒ada para soportar el ritmo exigente de la jornada laboral, resistente a polvo, golpes y m├ís.</p>
++                <p class="desktop-text">Dise├▒ada para soportar el ritmo de la jornada laboral, es resistente al polvo, a golpes y mucho m├ís.</p>
++                <p class="mobile-text">Dise├▒ada para soportar el ritmo de la jornada laboral, es resistente al polvo, a golpes y mucho m├ís.</p>
+             </div>
+             <div class="feature-card">
+-                <div class="feature-icon"><img src="img/screen.png" alt="Icono" class="screen-icon"></div>
++                <div class="feature-icon">
++                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="screen-icon">
++                        <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
++                        <path d="m9 12 2 2 4-4"></path>
++                    </svg>
++                </div>
+                 <h3>PROTECCI├ôN ACTIVA</h3>
+                 <p>Sistema de apagado autom├ítico por bajo nivel de agua y protecci├│n de bater├¡a, garantizando seguridad.</p>
+             </div>
+         </div>
+     </section>
+ 
+-    <!-- Banner Section -->
+-    <section id="bateria" class="banner">
+-        <div class="banner-content">
+-            <h2 class="anton-font banner-title">SIN CABLES, <span class="banner-large">SIN L├ìMITES</span></h2>
+-            <p class="banner-desc">ALIMENTADA POR EL MISMO SISTEMA DE<br class="mobile-break"> BATER├ìAS QUE TUS HERRAMIENTAS MAKITA</p>
+-        </div>
+-    </section>
+-
+     <!-- Split Sections -->
+-    <!-- SECCI├ôN OCULTA ("LA ENERG├ìA QUE NECESITAS") 
+-    <section id="especificaciones" class="split-section">
+-        <div class="split-image">
+-            <img src="img/Animacion%201%20gif.gif" alt="Animacion 1" style="width: 100%; height: auto; object-fit: cover;">
+-        </div>
+-        <div class="split-text">
+-            <div class="title-with-line">
+-                <h2 class="anton-font">LA ENERG├ìA QUE NECESITAS</h2>
+-                <div class="separator-line"></div>
+-            </div>
+-            <p>Para esos d├¡as largos en la obra, tu caf├® es el combustible que te mantiene en marcha. Nuestra cafetera est├í dise├▒ada para darte el mejor rendimiento y sabor en cada taza.</p>
+-        </div>
+-    </section>
+-    -->
+ 
+     <section class="split-section">
+         <div class="split-image">
+@@ -105,16 +100,25 @@
+             </picture>
+         </div>
+         <div class="split-text">
+-            <div class="title-with-line">
+-                <h2 class="anton-font">TU CAF├ë A TU MANERA</h2>
+-                <div class="separator-line"></div>
++            <div class="split-text-inner">
++                <div class="title-with-line">
++                    <h2 class="anton-font">TU CAF├ë A TU MANERA</h2>
++                </div>
++                <p>Se adapta a tus preferencias, podes elegir caf├® molido gracias a su filtro reutilizable de f├ícil limpieza o disfrutar de la rapidez de las c├ípsulas con los adaptadores incluidos.</p>
+             </div>
+-            <p>Se adapta a tus preferencias, pod├®s elegir utilizarla con caf├® molido gracias a su filtro reutilizable y f├ícil de lavar. O utilizarla con c├ípsulas gracias a los adaptadores incluidos.</p>
++        </div>
++    </section>
++
++    <!-- Banner Section -->
++    <section id="bateria" class="banner">
++        <div class="banner-content">
++            <h2 class="anton-font banner-title">SIN CABLES<span class="desktop-comma">, </span><span class="banner-large">SIN L├ìMITES</span></h2>
+         </div>
+     </section>
+ 
+     <!-- Parallax Wrapper (Steps + Specs) -->
+     <div class="parallax-wrapper">
++
+     <!-- Specs Section (Now Accessories & Slides Over Steps) -->
+     <section id="accesorios" class="specs full-width-specs">
+         <div class="interactive-specs-container">
+@@ -125,10 +129,10 @@
+                 </picture>
+                 
+                 <!-- Hotspot 1 -->
+-                <div class="hotspot" id="hs-1" style="top: 13%; left: 51%;">
++                <div class="hotspot" id="hs-1" style="top: 27%; left: 51%;">
+                     <div class="hotspot-number">1</div>
+                     <div class="hotspot-content">
+-                        <div class="diag"></div><div class="horiz"></div>
++                        <svg class="line-svg" style="--line-length: 120;"><polyline points="0,0 52,30 112,30"></polyline></svg>
+                         <div class="text">Manija para transportarla</div>
+                     </div>
+                 </div>
+@@ -137,44 +141,44 @@
+                 <div class="hotspot" id="hs-2" style="top: 57%; left: 58%;">
+                     <div class="hotspot-number">2</div>
+                     <div class="hotspot-content">
+-                        <div class="diag"></div><div class="horiz"></div>
++                        <svg class="line-svg" style="--line-length: 140;"><polyline points="0,0 40,-69 100,-69"></polyline></svg>
+                         <div class="text">Taza con tapa</div>
+                     </div>
+                 </div>
+ 
+                 <!-- Hotspot 3 -->
+-                <div class="hotspot" id="hs-3" style="top: 69%; left: 72%;">
++                <div class="hotspot" id="hs-3" style="top: 83%; left: 58%;">
+                     <div class="hotspot-number">3</div>
+                     <div class="hotspot-content">
+-                        <div class="diag"></div><div class="horiz"></div>
+-                        <div class="text">Adaptadores para filtro y c├ípsula</div>
++                        <svg class="line-svg" style="--line-length: 120;"><polyline points="0,0 52,30 112,30"></polyline></svg>
++                        <div class="text">Cuchara medidora</div>
+                     </div>
+                 </div>
+ 
+                 <!-- Hotspot 4 -->
+-                <div class="hotspot" id="hs-4" style="top: 61%; left: 41%;">
++                <div class="hotspot" id="hs-4" style="top: 69%; left: 72%;">
+                     <div class="hotspot-number">4</div>
+                     <div class="hotspot-content">
+-                        <div class="diag"></div><div class="horiz"></div>
+-                        <div class="text">Espacio para bater├¡as de 18V y 12V</div>
++                        <svg class="line-svg" style="--line-length: 80;"><polyline points="0,0 25,-43 55,-43"></polyline></svg>
++                        <div class="text">Adaptadores para filtro y c├ípsula</div>
+                     </div>
+                 </div>
+ 
+                 <!-- Hotspot 5 -->
+-                <div class="hotspot" id="hs-5" style="top: 83%; left: 58%;">
++                <div class="hotspot" id="hs-5" style="top: 67%; left: 28%;">
+                     <div class="hotspot-number">5</div>
+                     <div class="hotspot-content">
+-                        <div class="diag"></div><div class="horiz"></div>
+-                        <div class="text">Cuchara medidora</div>
++                        <svg class="line-svg" style="--line-length: 90;"><polyline points="0,0 -15,-58 -45,-58"></polyline></svg>
++                        <div class="text">Dep├│sito con capacidad de 240ml</div>
+                     </div>
+                 </div>
+ 
+                 <!-- Hotspot 6 -->
+-                <div class="hotspot" id="hs-6" style="top: 72%; left: 28%;">
++                <div class="hotspot" id="hs-6" style="top: 61%; left: 41%;">
+                     <div class="hotspot-number">6</div>
+                     <div class="hotspot-content">
+-                        <div class="diag"></div><div class="horiz"></div>
+-                        <div class="text">Dep├│sito con capacidad de 240ml</div>
++                        <svg class="line-svg" style="--line-length: 120;"><polyline points="0,0 -52,-30 -112,-30"></polyline></svg>
++                        <div class="text">Espacio para bater├¡as de 18V y 12V</div>
+                     </div>
+                 </div>
+             </div>
+@@ -183,14 +187,12 @@
+             </div>
+         </div>
+     </section>
++    </div> <!-- End Parallax Wrapper -->
+ 
+     <!-- Steps Section -->
+-    <section id="instructivo" class="steps-section" style="padding-top: 150px; flex-direction: column;">
++    <section id="instructivo" class="steps-section" style="flex-direction: column;">
+         <div class="section-title-wrapper">
+-            <div class="title-with-line">
+                 <h2 class="section-title anton-font">LISTO EN 4 PASOS</h2>
+-                <div class="separator-line"></div>
+-            </div>
+         </div>
+         <div class="steps-container">
+             <div class="connecting-line"></div>
+@@ -212,26 +214,16 @@
+             </div>
+         </div>
+     </section>
+-    </div> <!-- End Parallax Wrapper -->
+-
+-    <!-- Context Banner Section (Moved to before Est├®tica) -->
+-    <section class="context-banner framed">
+-        <div class="context-image">
+-            <picture>
+-                <source media="(max-width: 768px)" srcset="img/Nueva%20foto%20contexto%20vertical%202.png">
+-                <img src="img/Nueva%20foto%20contexto%202.png" alt="Contexto">
+-            </picture>
+-        </div>
+-    </section>
+ 
+     <!-- Colors Section -->
+     <section id="colores" class="colors-section" data-active-color="cyan">
+         <div class="colors-text">
+-            <div class="title-with-line">
+-                <h2 class="anton-font">EST├ëTICA UNIFICADA</h2>
+-                <div class="separator-line"></div>
++            <div class="colors-title-wrapper" style="width: min-content; max-width: 100%;">
++                <div class="title-with-line" style="width: max-content; max-width: 100%;">
++                    <h2 class="anton-font">ELEG├ì TU COLOR IDEAL</h2>
++                </div>
++                <p class="color-desc-1" style="text-align: left; line-height: 1.6;">Seleccion├í el que m├ís te guste y dale tu impronta a tu espacio de trabajo. Es la manera perfecta de sumar la calidad de siempre, sin perder la est├®tica.</p>
+             </div>
+-            <p class="color-desc-1">Personaliz├í tu espacio de trabajo. Eleg├¡ el color que mejor represente tu identidad y arm├í tu kit perfecto con la calidad que ya conoc├®s.</p>
+             <div class="color-selectors">
+                 <button class="color-btn active" data-color="cyan" style="background-color: #00b1cc;"></button>
+                 <button class="color-btn" data-color="olive" style="background-color: #6a6a4f;"></button>
+@@ -260,11 +252,8 @@
+ 
+     <!-- Products Carousel Section -->
+     <section id="productos" class="products-carousel-section">
+-        <div class="section-title-wrapper">
+-            <div class="title-with-line">
+-                <h2 class="section-title anton-font">COMPLET├ü TU EQUIPO</h2>
+-                <div class="separator-line"></div>
+-            </div>
++        <div class="section-title-wrapper" style="text-align: center; display: flex; justify-content: center;">
++            <h2 class="section-title anton-font">COMPLET├ü TU EQUIPO</h2>
+         </div>
+         <div class="carousel-wrapper">
+             <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+@@ -272,32 +261,26 @@
+             <div class="product-card">
+                 <img src="img/UC012GZ01-Photoroom.png" alt="Mini motosierra" style="transform: scale(1.45);">
+                 <h3>Motosierra a bater├¡a 40v</h3>
+-                <a href="#" class="btn-yellow-pill">Ver m├ís</a>
+             </div>
+             <div class="product-card">
+                 <img src="img/atornillador-de-impacto-inalambrico-18v-160nm-0-2500rpm-makita-dtd129z-Photoroom.png" alt="Atornillador de impacto" style="transform: scale(0.85);">
+                 <h3>Atornillador de impacto</h3>
+-                <a href="#" class="btn-yellow-pill">Ver m├ís</a>
+             </div>
+             <div class="product-card">
+                 <img src="img/taladro-base-magnetica-1150w-makita-hb500-Photoroom.png" alt="Taladro base magn├®tica">
+                 <h3>Taladro base magn├®tica</h3>
+-                <a href="#" class="btn-yellow-pill">Ver m├ís</a>
+             </div>
+             <div class="product-card">
+                 <img src="img/blower_blackbg-Photoroom.png" alt="Sopladora" style="transform: scale(1.25);">
+                 <h3>Sopladora a bater├¡a</h3>
+-                <a href="#" class="btn-yellow-pill">Ver m├ís</a>
+             </div>
+             <div class="product-card">
+                 <img src="img/grinder_blackbg-Photoroom.png" alt="Amoladora" style="transform: scale(1.35);">
+                 <h3>Amoladora angular</h3>
+-                <a href="#" class="btn-yellow-pill">Ver m├ís</a>
+             </div>
+             <div class="product-card">
+-                <img src="img/jigsaw_blackbg-Photoroom.png" alt="Sierra caladora" style="transform: scale(1.35);">
++                <img src="img/jigsaw_blackbg-Photoroom.png" alt="Sierra caladora" style="transform: scale(1.15);">
+                 <h3>Sierra caladora</h3>
+-                <a href="#" class="btn-yellow-pill">Ver m├ís</a>
+             </div>
+         </div>
+         <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
+@@ -306,98 +289,129 @@
+ 
+     <!-- Reviews Section -->
+     <section id="resenas" class="reviews-section">
+-        <div class="section-title-wrapper">
+-            <div class="title-with-line">
+-                <h2 class="section-title anton-font">NUESTROS CLIENTES</h2>
+-                <div class="separator-line"></div>
+-            </div>
++        <div class="section-title-wrapper" style="text-align: center;">
++            <h2 class="section-title anton-font" style="margin-bottom: 20px; border-bottom: none;">NUESTROS CLIENTES</h2>
+         </div>
+         <div class="carousel-wrapper" style="max-width: 1200px; margin: 10px auto 0; justify-content: space-between; position: relative;">
+             <button class="carousel-btn prev" id="reviewPrevBtn"><i class="fas fa-chevron-left"></i></button>
+-            <div class="reviews-container" id="reviewsCarousel" style="max-width: 850px;">
++            <div class="reviews-container" id="reviewsCarousel" style="max-width: 580px;">
+                 <div class="review-card">
+                     <div class="review-header">
+                         <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Marcelo G." class="review-photo">
+                         <div class="review-author">Marcelo G.</div>
++                        <div class="stars" style="margin-left: auto; display: flex; align-items: center;">
++                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
++                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
++                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
++                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
++                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
++                        </div>
+                     </div>
+-                    <p class="review-text">"La compr├® para llevarla a la obra y es un antes y un despu├®s. Tener un caf├® reci├®n hecho en el medio de la jornada, sin tener que ir a buscar uno, no tiene precio. ┬íUn golazo!"</p>
+-                    <div class="stars">
+-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+-                    </div>
++                    <p class="review-text">"La compr├® para llevarla a la obra y es un antes y un despu├®s. Tener un caf├® reci├®n hecho en el medio de la jornada, sin tener que ir a comprar uno, no tiene precio. ┬íLa verdad que es un golazo!"</p>
+                 </div>
+                 <div class="review-card">
+                     <div class="review-header">
+                         <img src="https://randomuser.me/api/portraits/men/44.jpg" alt="Javier R." class="review-photo">
+                         <div class="review-author">Javier R.</div>
++                        <div class="stars" style="margin-left: auto; display: flex; align-items: center;">
++                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
++                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
++                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
++                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
++                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
++                        </div>
+                     </div>
+-                    <p class="review-text">"┬íMe encanta que todo combine! Ya ten├¡a el taladro y la amoladora en este color, as├¡ que cuando vi la cafetera no dud├®. Es robusta, f├ícil de limpiar y queda perfecta al lado de mis otras herramientas."</p>
+-                    <div class="stars">
+-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+-                    </div>
++                    <p class="review-text">"┬íMe encanta que la pude combinar! Ya ten├¡a el taladro y la amoladora en este color, as├¡ que cuando vi la cafetera no dud├®. Es robusta, f├ícil de limpiar y queda genial con mis otras herramientas."</p>
+                 </div>
+                 <div class="review-card">
+                     <div class="review-header">
+-                        <img src="https://randomuser.me/api/portraits/men/68.jpg" alt="Carlos M." class="review-photo">
+-                        <div class="review-author">Carlos M.</div>
+-                    </div>
+-                    <p class="review-text">"Ten├¡a mis dudas por ser a bater├¡a, pero la calidad del caf├® es incre├¡ble. Se nota que es un producto bien hecho y pensado para durar. Makita nunca falla."</p>
+-                    <div class="stars">
+-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
++                        <img src="https://randomuser.me/api/portraits/men/90.jpg" alt="Esteban V." class="review-photo">
++                        <div class="review-author">Esteban V.</div>
++                        <div class="stars" style="margin-left: auto; display: flex; align-items: center;">
++                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
++                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
++                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
++                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
++                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
++                        </div>
+                     </div>
++                    <p class="review-text">"La mejor compra del a├▒o. La uso en las obras sin electricidad, as├¡ que me salva. Es s├║per pr├íctica, me encanta el dise├▒o y lo mejor es que pude combinarla con el resto de mis herramientas de la marca."</p>
+                 </div>
+                 <div class="review-card">
+                     <div class="review-header">
+-                        <img src="https://randomuser.me/api/portraits/men/90.jpg" alt="Esteban V." class="review-photo">
+-                        <div class="review-author">Esteban V.</div>
+-                    </div>
+-                    <p class="review-text">"La mejor compra del a├▒o. La uso en las obras sin electricidad. Es s├║per pr├íctica, me encanta el dise├▒o y lo mejor es que pude combinarla con todas mis otras herramientas."</p>
+-                    <div class="stars">
+-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
++                        <img src="https://randomuser.me/api/portraits/men/68.jpg" alt="Carlos M." class="review-photo">
++                        <div class="review-author">Carlos M.</div>
++                        <div class="stars" style="margin-left: auto; display: flex; align-items: center;">
++                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
++                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
++                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
++                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
++                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
++                        </div>
+                     </div>
++                    <p class="review-text">"Ten├¡a mis dudas por ser a bater├¡a, pero tiene un muy buen rendimiento y la calidad del caf├® es incre├¡ble. Se nota que es un producto bien hecho y pensado para durar. Makita nunca falla."</p>
+                 </div>
+             </div>
+             <button class="carousel-btn next" id="reviewNextBtn"><i class="fas fa-chevron-right"></i></button>
+         </div>
+     </section>
+ 
++    <!-- Context Banner Section -->
++    <section class="context-banner framed">
++        <div class="context-image">
++            <picture>
++                <source media="(max-width: 768px)" srcset="img/Nueva%20foto%20contexto%20vertical%202.png">
++                <img src="img/Nueva%20foto%20contexto%202.png" alt="Contexto">
++            </picture>
++        </div>
++    </section>
++
+     <!-- Footer -->
+     <footer class="footer">
+         <div class="footer-content">
+             <div class="footer-logo">
+-                <img src="img/TP WEB-02.png" alt="Makita Logo" style="max-width: 150px;">
+-                <div class="footer-social" style="margin-top: 5px;">
+-                    <a href="https://www.facebook.com/MakitaLatinAmerica" target="_blank" aria-label="Facebook">
+-                        <svg class="opt-fb" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+-                    </a>
+-                    <a href="https://www.instagram.com/makita.ar/" target="_blank" aria-label="Instagram">
+-                        <svg class="opt-ig" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+-                    </a>
++                <div style="display: flex; flex-direction: column; align-items: center; width: max-content;">
++                    <img src="img/TP WEB-02.png" alt="Makita Logo" style="max-width: 150px;">
++                    <div class="footer-social" style="margin-top: 10px; width: 85%; justify-content: space-between;">
++                        <a href="https://www.facebook.com/MakitaLatinAmerica" target="_blank" aria-label="Facebook">
++                            <svg class="opt-fb" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
++                        </a>
++                        <a href="https://www.instagram.com/makita.ar/" target="_blank" aria-label="Instagram">
++                            <svg class="opt-ig" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
++                        </a>
++                        <a href="https://x.com/makitaargentina" target="_blank" aria-label="X (Twitter)">
++                            <svg class="opt-tw" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
++                                <path d="M4 4l11.73 16h4.27L8.27 4Z"></path>
++                                <path d="M4 20l6.77-6.77"></path>
++                                <path d="M20 4l-6.77 6.77"></path>
++                            </svg>
++                        </a>
++                    </div>
+                 </div>
+             </div>
+             <div class="footer-columns">
+                 <div class="footer-col accordion">
+                     <h4 class="accordion-header">SOBRE NOSOTROS <i class="fas fa-chevron-down accordion-icon"></i></h4>
+                     <div class="accordion-content">
+-                        <a href="#">Historia</a>
+-                        <a href="#">Novedades</a>
+-                        <a href="#">Noticias</a>
++                        <a href="javascript:void(0);">Historia</a>
++                        <a href="javascript:void(0);">Novedades</a>
++                        <a href="javascript:void(0);">Noticias</a>
+                     </div>
+                 </div>
+                 <div class="footer-col accordion">
+                     <h4 class="accordion-header">SOPORTE <i class="fas fa-chevron-down accordion-icon"></i></h4>
+                     <div class="accordion-content">
+-                        <a href="#">Contacto</a>
+-                        <a href="#">Servicio t├®cnico</a>
+-                        <a href="#">Garant├¡a</a>
++                        <a href="javascript:void(0);">Contacto</a>
++                        <a href="javascript:void(0);">Servicio t├®cnico</a>
++                        <a href="javascript:void(0);">Garant├¡a</a>
+                     </div>
+                 </div>
+                 <div class="footer-col accordion">
+-                    <h4 class="accordion-header">NAVEGACI├ôN <i class="fas fa-chevron-down accordion-icon"></i></h4>
++                    <h4 class="accordion-header">D├ôNDE COMPRAR <i class="fas fa-chevron-down accordion-icon"></i></h4>
+                     <div class="accordion-content">
+-                        <a href="#hero">Inicio</a>
+-                        <a href="#features">Caracter├¡sticas</a>
+-                        <a href="#specs">Especificaciones</a>
+-                        <a href="#">Privacidad</a>
++                        <a href="javascript:void(0);">Sucursales</a>
++                        <a href="javascript:void(0);">Tiendas online</a>
++                        <a href="javascript:void(0);">En mi zona</a>
+                     </div>
+                 </div>
+             </div>
+@@ -441,13 +455,31 @@
+             const btnPrev = document.querySelector('.carousel-btn.prev');
+             const btnNext = document.querySelector('.carousel-btn.next');
+ 
++            // Initialize: move last card to start to fill the left side
++            const initLastCard = carousel.lastElementChild;
++            carousel.style.scrollSnapType = 'none';
++            carousel.insertBefore(initLastCard, carousel.firstElementChild);
++            
++            requestAnimationFrame(() => {
++                const centerCardInit = carousel.children[1];
++                let initScrollPos = centerCardInit.offsetLeft - (carousel.clientWidth / 2) + (centerCardInit.offsetWidth / 2);
++                carousel.scrollLeft = initScrollPos;
++                setTimeout(() => {
++                    carousel.style.scrollSnapType = 'x mandatory';
++                }, 50);
++            });
++
++
+             // Scroll calculation to find the center card
+             const updateCenterCard = () => {
+                 const center = carousel.scrollLeft + carousel.clientWidth / 2;
+                 let closestCard = cards[0];
+                 let minDiff = Infinity;
+                 
+-                cards.forEach(card => {
++                // Get fresh list of children to assign adjacent classes correctly
++                const cardsArray = Array.from(carousel.children);
++                
++                cardsArray.forEach(card => {
+                     // Position relative to the container's scrollable content
+                     const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+                     const diff = Math.abs(center - cardCenter);
+@@ -458,19 +490,30 @@
+                     }
+                 });
+ 
+-                cards.forEach(card => card.classList.remove('active'));
++                cardsArray.forEach(card => card.classList.remove('active', 'adjacent'));
+                 if (closestCard) {
+                     closestCard.classList.add('active');
++                    const idx = cardsArray.indexOf(closestCard);
++                    if (idx > 0) cardsArray[idx - 1].classList.add('adjacent');
++                    if (idx < cardsArray.length - 1) cardsArray[idx + 1].classList.add('adjacent');
+                 }
+             };
+ 
+             // Trigger initially and on scroll
+-            carousel.addEventListener('scroll', updateCenterCard);
++            let autoplayInterval;
++            let scrollTimeout;
++            
++            carousel.addEventListener('scroll', () => {
++                updateCenterCard();
++                // When scrolling manually or via arrows, reset the autoplay timer
++                clearInterval(autoplayInterval);
++                clearTimeout(scrollTimeout);
++                scrollTimeout = setTimeout(() => {
++                    startAutoplay();
++                }, window.innerWidth <= 768 ? 10000 : 8000);
++            });
+             // Small timeout to let CSS layout calculate offsetLeft first
+             setTimeout(updateCenterCard, 100); 
+-
+-            // Autoplay logic
+-            let autoplayInterval;
+             
+             const moveNext = () => {
+                 let cardsList = Array.from(carousel.children);
+@@ -481,7 +524,7 @@
+                     const firstCard = carousel.firstElementChild;
+                     carousel.style.scrollSnapType = 'none';
+                     carousel.appendChild(firstCard);
+-                    carousel.scrollLeft -= (firstCard.offsetWidth + 30); // 30 is gap
++                    carousel.scrollLeft -= (firstCard.offsetWidth + 15); // 15 is gap
+                     void carousel.offsetWidth;
+                 }
+                 
+@@ -506,7 +549,7 @@
+                     const lastCard = carousel.lastElementChild;
+                     carousel.style.scrollSnapType = 'none';
+                     carousel.insertBefore(lastCard, carousel.firstElementChild);
+-                    carousel.scrollLeft += (lastCard.offsetWidth + 30);
++                    carousel.scrollLeft += (lastCard.offsetWidth + 15);
+                     void carousel.offsetWidth;
+                 }
+                 
+@@ -523,7 +566,8 @@
+             };
+ 
+             const startAutoplay = () => {
+-                const intervalTime = window.innerWidth <= 768 ? 10000 : 5000; // Much slower on mobile
++                const intervalTime = window.innerWidth <= 768 ? 10000 : 8000; // Increased time to 8s
++                clearInterval(autoplayInterval);
+                 autoplayInterval = setInterval(() => {
+                     moveNext();
+                 }, intervalTime); 
+@@ -531,6 +575,7 @@
+ 
+             const resetAutoplay = () => {
+                 clearInterval(autoplayInterval);
++                clearTimeout(scrollTimeout);
+                 startAutoplay();
+             };
+ 
+@@ -557,17 +602,18 @@
+ 
+         document.addEventListener('DOMContentLoaded', () => {
+             // Hotspot sequential animation on scroll
+-            const specsSection = document.getElementById('specs');
++            const specsSection = document.querySelector('.interactive-specs-container');
+             const hotspots = document.querySelectorAll('.hotspot');
+             
+             const specsObserver = new IntersectionObserver((entries) => {
+                 if (entries[0].isIntersecting) {
+                     hotspots.forEach((hs, index) => {
+                         setTimeout(() => {
+-                            hs.classList.add('active');
+-                        }, index * 400); // 400ms delay between each hotspot
++                            hs.classList.add('is-visible');
++                        }, index * 150); // 150ms delay between each hotspot
+                     });
+-                    specsObserver.disconnect();
++                } else {
++                    hotspots.forEach(hs => hs.classList.remove('active'));
+                 }
+             }, { threshold: 0.5 });
+             
+@@ -587,7 +633,9 @@
+                             card.classList.add('animate-in');
+                         }, index * 200); // 200ms delay between cards
+                     });
+-                    featuresObserver.disconnect();
++                } else {
++                    entries[0].target.classList.remove('animate-in');
++                    featureCards.forEach(card => card.classList.remove('animate-in'));
+                 }
+             }, { threshold: 0.2 });
+             
+@@ -600,7 +648,8 @@
+             const carouselObserver = new IntersectionObserver((entries) => {
+                 if (entries[0].isIntersecting) {
+                     entries[0].target.classList.add('animate-in');
+-                    carouselObserver.disconnect();
++                } else {
++                    entries[0].target.classList.remove('animate-in');
+                 }
+             }, { threshold: 0.2 });
+             
+@@ -614,7 +663,8 @@
+                 entries.forEach(entry => {
+                     if (entry.isIntersecting) {
+                         entry.target.classList.add('animate-in');
+-                        splitObserver.unobserve(entry.target);
++                    } else {
++                        entry.target.classList.remove('animate-in');
+                     }
+                 });
+             }, { threshold: 0.3 });
+@@ -692,34 +742,63 @@
+                 const stepsObserver = new IntersectionObserver((entries) => {
+                     if (entries[0].isIntersecting) {
+                         entries[0].target.classList.add('animate-in');
+-                        stepsObserver.disconnect();
++                        stepsObserver.unobserve(entries[0].target);
+                     }
+                 }, { threshold: 0.3 });
+                 stepsObserver.observe(stepsSection);
+             }
+ 
++            // Colors section animation
++            const colorsSection = document.querySelector('.colors-section');
++            if (colorsSection) {
++                const colorsObserver = new IntersectionObserver((entries) => {
++                    if (entries[0].isIntersecting) {
++                        entries[0].target.classList.add('animate-in');
++                        colorsObserver.unobserve(entries[0].target);
++                    }
++                }, { threshold: 0.2 });
++                colorsObserver.observe(colorsSection);
++            }
++
+             // Reviews section animation
+             const reviewsSection = document.querySelector('.reviews-section');
+             if (reviewsSection) {
+                 const reviewsObserver = new IntersectionObserver((entries) => {
+                     if (entries[0].isIntersecting) {
+                         entries[0].target.classList.add('animate-in');
+-                        reviewsObserver.disconnect();
++                    } else {
++                        entries[0].target.classList.remove('animate-in');
+                     }
+                 }, { threshold: 0.2 });
+                 reviewsObserver.observe(reviewsSection);
+             }
+ 
+-            // Color section line animation
+-            const colorSection = document.querySelector('.colors-section');
+-            if (colorSection) {
+-                const colorObserver = new IntersectionObserver((entries) => {
++
++
++            // Banner animation
++            const bannerSection = document.querySelector('.banner');
++            if (bannerSection) {
++                const bannerObserver = new IntersectionObserver((entries) => {
+                     if (entries[0].isIntersecting) {
+                         entries[0].target.classList.add('animate-in');
+-                        colorObserver.disconnect();
++                    } else {
++                        entries[0].target.classList.remove('animate-in');
++                    }
++                }, { threshold: 0.3 });
++                bannerObserver.observe(bannerSection);
++            }
++
++            // Context banner animation
++            const contextBannerSection = document.querySelector('.context-banner');
++            if (contextBannerSection) {
++                const contextObserver = new IntersectionObserver((entries) => {
++                    if (entries[0].isIntersecting) {
++                        entries[0].target.classList.add('animate-in');
++                    } else {
++                        entries[0].target.classList.remove('animate-in');
+                     }
+                 }, { threshold: 0.2 });
+-                colorObserver.observe(colorSection);
++                contextObserver.observe(contextBannerSection);
+             }
+ 
+             // Hotspot click logic
+@@ -842,22 +921,58 @@
+             const reviewBtnNext = document.getElementById('reviewNextBtn');
+             if (reviewCarousel && reviewBtnPrev && reviewBtnNext) {
+                 reviewBtnNext.addEventListener('click', () => {
+-                    const scrollAmount = reviewCarousel.clientWidth;
+-                    // If at the end, loop to start
+-                    if (reviewCarousel.scrollLeft + reviewCarousel.clientWidth >= reviewCarousel.scrollWidth - 10) {
+-                        reviewCarousel.scrollTo({ left: 0, behavior: 'smooth' });
+-                    } else {
+-                        reviewCarousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
++                    const cardWidth = reviewCarousel.firstElementChild.offsetWidth + 30;
++                    
++                    // If near the end, move the first card to the back
++                    if (reviewCarousel.scrollLeft + reviewCarousel.clientWidth >= reviewCarousel.scrollWidth - cardWidth/2) {
++                        reviewCarousel.style.scrollBehavior = 'auto';
++                        reviewCarousel.style.scrollSnapType = 'none';
++                        reviewCarousel.appendChild(reviewCarousel.firstElementChild);
++                        reviewCarousel.scrollLeft -= cardWidth;
++                        void reviewCarousel.offsetWidth;
+                     }
++                    
++                    reviewCarousel.style.scrollBehavior = 'smooth';
++                    reviewCarousel.style.scrollSnapType = 'x mandatory';
++                    reviewCarousel.scrollBy({ left: cardWidth, behavior: 'smooth' });
+                 });
++                
+                 reviewBtnPrev.addEventListener('click', () => {
+-                    const scrollAmount = reviewCarousel.clientWidth;
+-                    // If at start, loop to end
++                    const cardWidth = reviewCarousel.firstElementChild.offsetWidth + 30;
++                    
++                    // If at the beginning, move the last card to the front
+                     if (reviewCarousel.scrollLeft <= 10) {
+-                        reviewCarousel.scrollTo({ left: reviewCarousel.scrollWidth, behavior: 'smooth' });
+-                    } else {
+-                        reviewCarousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
++                        reviewCarousel.style.scrollBehavior = 'auto';
++                        reviewCarousel.style.scrollSnapType = 'none';
++                        reviewCarousel.prepend(reviewCarousel.lastElementChild);
++                        reviewCarousel.scrollLeft += cardWidth;
++                        void reviewCarousel.offsetWidth;
+                     }
++                    
++                    reviewCarousel.style.scrollBehavior = 'smooth';
++                    reviewCarousel.style.scrollSnapType = 'x mandatory';
++                    reviewCarousel.scrollBy({ left: -cardWidth, behavior: 'smooth' });
++                });
++            }
++            // Context Banner Interactive Color Selector
++            const contextColorBtns = document.querySelectorAll('.context-color-btn');
++            const contextMachineImg = document.getElementById('context-machine-img');
++            
++            if (contextMachineImg && contextColorBtns.length > 0) {
++                contextColorBtns.forEach(btn => {
++                    btn.addEventListener('click', () => {
++                        // Remove active class from all
++                        contextColorBtns.forEach(b => b.classList.remove('active'));
++                        // Add active class to clicked button
++                        btn.classList.add('active');
++                        
++                        // Change image source with a tiny fade effect
++                        contextMachineImg.classList.add('fade-out');
++                        setTimeout(() => {
++                            contextMachineImg.src = btn.getAttribute('data-img');
++                            contextMachineImg.classList.remove('fade-out');
++                        }, 150);
++                    });
+                 });
+             }
+         });
