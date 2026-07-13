@@ -444,19 +444,11 @@
                 if (targetId && targetId !== '#') {
                     const targetElement = document.querySelector(targetId);
                                         if (targetElement) {
-                        if (targetId === '#productos') {
-                            const y = targetElement.getBoundingClientRect().top + window.pageYOffset;
-                            const centerY = y - (window.innerHeight / 2) + (targetElement.offsetHeight / 2);
-                            window.scrollTo({
-                                top: centerY + 100, // +100px scrolls further down, pushing the element up
-                                behavior: 'smooth'
-                            });
-                        } else {
-                            targetElement.scrollIntoView({
-                                behavior: 'smooth',
-                                block: 'center'
-                            });
-                        }
+                                                const y = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                        window.scrollTo({
+                            top: y - 100, // Subtract to leave space for the fixed header
+                            behavior: 'smooth'
+                        });
                     }
                 }
             });
@@ -1015,6 +1007,8 @@
     </script>
 </body>
 </html>
+
+
 
 
 
