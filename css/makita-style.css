@@ -1083,7 +1083,6 @@ p.banner-desc {
 .footer {
     background-color: #0b0d10;
     padding: 60px 8% 80px;
-    border-top: 1.2px solid #222;
 }
 
 .footer-content {
@@ -1168,7 +1167,6 @@ p.banner-desc {
 .footer-bottom {
     text-align: center;
     padding-top: 20px;
-    border-top: 1.2px solid #222;
     color: var(--text-muted);
     font-size: 0.8rem;
 }
@@ -1518,8 +1516,9 @@ p.banner-desc {
         max-width: 100% !important;
         scroll-snap-align: center !important;
     }
-    .reviews-section {
+        .reviews-section {
         padding-top: 40px !important;
+        padding-bottom: 120px !important;
         padding-left: 0 !important;
         padding-right: 0 !important;
     }
@@ -2555,6 +2554,7 @@ html {
         transition: none !important;
     }
 }
+
 
 
 
