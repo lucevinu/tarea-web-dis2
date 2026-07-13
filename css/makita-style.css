@@ -876,11 +876,11 @@ p.banner-desc {
 }
 
 .carousel-btn.prev {
-    left: 5px;
+    left: 0;
 }
 
 .carousel-btn.next {
-    right: 5px;
+    right: 0;
 }
 
 .product-card h3 {
@@ -2521,6 +2521,7 @@ html {
         transition: none !important;
     }
 }
+
 
 
 
