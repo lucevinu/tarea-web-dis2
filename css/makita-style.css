@@ -2389,6 +2389,23 @@ html {
     .steps-section.animate-in .step-item:nth-child(3) .step-circle { transition-delay: 0.65s !important; }
     .steps-section.animate-in .step-item:nth-child(4) .step-circle { transition-delay: 1.15s !important; }
     .steps-section.animate-in .step-item:nth-child(5) .step-circle { transition-delay: 1.65s !important; }
+    /* Steps-done state (so they remain visible when animate-in is removed) */
+    .steps-section.steps-done .step-item {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+    .steps-section.steps-done .connecting-line {
+        height: 100% !important;
+        transition: none !important;
+    }
+    .steps-section.steps-done .step-circle {
+        border-color: var(--makita-yellow) !important;
+        background-color: var(--makita-yellow) !important;
+        color: #000 !important;
+        box-shadow: 0 0 20px rgba(255, 204, 0, 0.4) !important;
+        transition: none !important;
+    }
 }
 
 /* iPhone 12 Pro and taller mobile screens */
@@ -2523,5 +2540,6 @@ html {
         transition: none !important;
     }
 }
+
 
 

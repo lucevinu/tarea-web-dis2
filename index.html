@@ -776,12 +776,10 @@
                     if (entries[0].isIntersecting) {
                         entries[0].target.classList.add('animate-in');
                         if (window.innerWidth <= 768) {
-                            stepsObserver.unobserve(entries[0].target);
+                            entries[0].target.classList.add('steps-done');
                         }
                     } else {
-                        if (window.innerWidth > 768) {
-                            entries[0].target.classList.remove('animate-in');
-                        }
+                        entries[0].target.classList.remove('animate-in');
                     }
                 }, { threshold: 0.3 });
                 stepsObserver.observe(stepsSection);
@@ -1086,4 +1084,5 @@
     </script>
 </body>
 </html>
+
 
