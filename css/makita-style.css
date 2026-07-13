@@ -1361,7 +1361,7 @@ p.banner-desc {
     .colors-title-wrapper { width: 100% !important; max-width: none !important; }
     .colors-text p { font-size: 0.95rem; text-align: center !important; width: 100% !important; max-width: 100% !important; }
     
-    .reviews-container, .carousel-container {
+    .carousel-container {
         display: flex !important;
         overflow-x: auto !important;
         scroll-snap-type: x mandatory !important;
@@ -1370,6 +1370,19 @@ p.banner-desc {
         padding-right: 0 !important;
         scroll-padding-left: 0 !important;
         width: 100% !important;
+        box-sizing: border-box !important;
+        gap: 15px;
+    }
+    .reviews-container {
+        display: flex !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+        scrollbar-width: none;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        scroll-padding-left: 0 !important;
+        width: calc(100% - 80px) !important;
+        margin: 0 auto !important;
         box-sizing: border-box !important;
         gap: 15px;
     }
@@ -2267,8 +2280,8 @@ html {
 /* Fix mobile steps vertical timeline being overridden by global rules */
 @media (max-width: 768px) {
     .review-card {
-        flex: 0 0 calc(100% - 80px) !important;
-        max-width: calc(100% - 80px) !important;
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
         box-sizing: border-box !important;
         padding: 40px 20px !important;
         height: auto !important;
@@ -2445,11 +2458,5 @@ html {
     .reviews-section .section-title-wrapper {
         margin-left: 5% !important;
         margin-right: 5% !important;
-    }
-}
-
-@media (max-width: 768px) {
-    .reviews-container {
-        width: 100% !important;
     }
 }

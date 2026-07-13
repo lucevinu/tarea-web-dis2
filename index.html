@@ -978,6 +978,30 @@
             if (reviewCarousel && reviewBtnPrev && reviewBtnNext) {
                 const reviewsDotsContainer = document.getElementById('reviewsCarouselDots');
                 const reviewCards = Array.from(reviewCarousel.children);
+                
+                const initReviewCarousel = () => {
+                    const initLastCard = reviewCarousel.lastElementChild;
+                    reviewCarousel.style.scrollSnapType = 'none';
+                    reviewCarousel.insertBefore(initLastCard, reviewCarousel.firstElementChild);
+                    
+                    requestAnimationFrame(() => {
+                        const centerCardInit = reviewCarousel.children[1];
+                        let initScrollPos = centerCardInit.offsetLeft - (reviewCarousel.clientWidth / 2) + (centerCardInit.offsetWidth / 2);
+                        reviewCarousel.scrollLeft = initScrollPos;
+                        setTimeout(() => {
+                            reviewCarousel.style.scrollSnapType = 'x mandatory';
+                        }, 100);
+                    });
+                };
+
+                if (window.innerWidth <= 768) {
+                    if (document.readyState === 'complete') {
+                        initReviewCarousel();
+                    } else {
+                        window.addEventListener('load', initReviewCarousel);
+                    }
+                }
+
                 if (reviewsDotsContainer && reviewCards.length) {
                     reviewCards.forEach((card, idx) => {
                         card.setAttribute('data-orig-idx', idx);
