@@ -1396,7 +1396,7 @@ p.banner-desc {
     
     .feature-card h3, .review-card h3 { font-size: 1.1rem; margin-bottom: 10px; }
     .product-card h3 { font-size: 0.95rem; margin-bottom: 5px; }
-    .feature-card p, .review-card p, .product-card p { font-size: 0.85rem; line-height: 1.15; margin-top: 0; }
+    .product-card p { font-size: 0.85rem; line-height: 1.15; margin-top: 0; }
     
     .step-item h3 { font-size: 1.1rem; }
     .step-item p { font-size: 0.85rem; }
@@ -1471,10 +1471,7 @@ p.banner-desc {
         font-size: 1.15rem !important;
         margin-bottom: 10px !important;
     }
-    .feature-card p {
-        font-size: 0.85rem !important;
-        margin-bottom: 0 !important;
-        margin-top: 0 !important;
+    .feature-card p {margin-bottom: 0 !important; margin-top: 0 !important;
     }
     
     .desktop-text { display: none !important; }
@@ -2554,6 +2551,8 @@ html {
         transition: none !important;
     }
 }
+
+
 
 
 
