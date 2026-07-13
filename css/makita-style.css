@@ -771,10 +771,13 @@ p.banner-desc {
 }
 
 
-.products-carousel-section .section-title-wrapper,
-.reviews-section .section-title-wrapper {
+.products-carousel-section .section-title-wrapper {
     margin-top: 30px;
     margin-bottom: 30px !important;
+}
+.reviews-section .section-title-wrapper {
+    margin-top: 30px;
+    margin-bottom: 40px !important;
 }
 
 .products-carousel-section .carousel-dots,
@@ -2473,4 +2476,5 @@ html {
         margin-right: 5% !important;
     }
 }
+
 
