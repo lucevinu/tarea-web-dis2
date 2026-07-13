@@ -321,6 +321,7 @@ h1, h2, h3, h4, .anton-font {
 }
 
 .banner h2.banner-title {
+    font-family: 'Barlow Semi Condensed', sans-serif !important;
     font-size: 5.2rem;
     font-weight: 600;
     color: var(--makita-yellow);
