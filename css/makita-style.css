@@ -1247,7 +1247,7 @@ p.banner-desc {
         flex-direction: column;
         text-align: center;
         padding-top: 26vh;
-        background-image: url('../img/Img%20Hero%20Vertical%20F.png');
+        background-image: url('../img/Img-Hero-Vertical-F%20(1).webp');
         background-size: 130% auto;
         background-position: center calc(100% - 20vh);
         align-items: center;
@@ -2541,6 +2541,7 @@ html {
         transition: none !important;
     }
 }
+
 
 
 
