@@ -886,11 +886,11 @@ p.banner-desc {
 
 @media (min-width: 769px) {
     .carousel-btn.prev {
-        left: -40px;
+        left: -15px;
     }
     
     .carousel-btn.next {
-        right: -40px;
+        right: -15px;
     }
 }
 
@@ -2533,6 +2533,7 @@ html {
         transition: none !important;
     }
 }
+
 
 
 
