@@ -707,7 +707,7 @@ p.banner-desc {
 
 .product-card {
     flex: 0 0 280px;
-    background-color: transparent;
+    background-color: #15181c;
     border-radius: 12px;
     padding: 15px; /* Reduced padding */
     scroll-snap-align: center;
