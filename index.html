@@ -581,10 +581,15 @@
                     carousel.style.scrollSnapType = 'x mandatory';
                     cardsList = Array.from(carousel.children);
                     activeIndex = cardsList.findIndex(card => card.classList.contains('active'));
-                    let nextCard = cardsList[activeIndex + 1];
+                                        let nextCard = cardsList[activeIndex + 1];
                     if (nextCard) {
                         let scrollPos = nextCard.offsetLeft - (carousel.clientWidth / 2) + (nextCard.offsetWidth / 2);
                         carousel.scrollTo({ left: scrollPos, behavior: 'smooth' });
+                    } else {
+                        // Reached the end: instantly jump back to start without scrolling through all cards
+                        let firstCard = cardsList[0];
+                        let scrollPos = firstCard.offsetLeft - (carousel.clientWidth / 2) + (firstCard.offsetWidth / 2);
+                        carousel.scrollTo({ left: scrollPos, behavior: 'auto' });
                     }
                 });
             };
@@ -1037,6 +1042,7 @@
     </script>
 </body>
 </html>
+
 
 
 
