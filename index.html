@@ -41,7 +41,7 @@
         <div class="hero-content">
             <h2 class="anton-font" style="margin-bottom: 10px; margin-left: 3px; font-size: 1.35rem; letter-spacing: 2px;">CAFETERA CXT&reg; / LXT&reg;</h2>
             <h1 style="margin-bottom: 0;">EL CAFÉ DE<br>TU JORNADA</h1>
-            <p class="hero-subtitle">Te da la energía que necesitas <br class="mobile-break">y sin depender de un enchufe.</p>
+            <p class="hero-subtitle">Es rápida, liviana y no depende de un enchufe</p>
         </div>
     </section>
 
@@ -259,7 +259,7 @@
             <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
             <div class="carousel-container" id="productCarousel">
             <div class="product-card">
-                <img src="img/UC012GZ01-Photoroom.png" alt="Mini motosierra" style="transform: scale(1.45);">
+                <img src="img/UC012GZ01-Photoroom.png" alt="Mini motosierra" style="transform: scale(1.45); position: relative; top: 10px;">
                 <h3>Motosierra a batería 40v</h3>
             </div>
             <div class="product-card">
@@ -267,7 +267,7 @@
                 <h3>Atornillador de impacto</h3>
             </div>
             <div class="product-card">
-                <img src="img/taladro-base-magnetica-1150w-makita-hb500-Photoroom.png" alt="Taladro base magnética">
+                <img src="img/taladro-base-magnetica-1150w-makita-hb500-Photoroom.png" alt="Taladro base magnética" style="position: relative; top: 5px;">
                 <h3>Taladro base magnética</h3>
             </div>
             <div class="product-card">
@@ -468,20 +468,30 @@
                 });
             }
 
-            // Initialize: move last card to start to fill the left side
-            const initLastCard = carousel.lastElementChild;
-            carousel.style.scrollSnapType = 'none';
-            carousel.insertBefore(initLastCard, carousel.firstElementChild);
-            
-            requestAnimationFrame(() => {
-                const centerCardInit = carousel.children[1];
-                let initScrollPos = centerCardInit.offsetLeft - (carousel.clientWidth / 2) + (centerCardInit.offsetWidth / 2);
-                carousel.scrollLeft = initScrollPos;
-                setTimeout(() => {
-                    carousel.style.scrollSnapType = 'x mandatory';
-                }, 50);
-            });
-
+              // Initialize: wait a bit for layout to settle then find the center card
+              const initCarousel = () => {
+                  // Move last card to start to fill the left side
+                  const initLastCard = carousel.lastElementChild;
+                  carousel.style.scrollSnapType = 'none';
+                  carousel.insertBefore(initLastCard, carousel.firstElementChild);
+                  
+                  requestAnimationFrame(() => {
+                      const centerCardInit = carousel.children[1];
+                      let initScrollPos = centerCardInit.offsetLeft - (carousel.clientWidth / 2) + (centerCardInit.offsetWidth / 2);
+                      carousel.scrollLeft = initScrollPos;
+                      setTimeout(() => {
+                          carousel.style.scrollSnapType = 'x mandatory';
+                          updateCenterCard();
+                      }, 100);
+                  });
+              };
+              
+              // Run init after images are likely loaded to prevent offset calculation errors
+              if (document.readyState === 'complete') {
+                  initCarousel();
+              } else {
+                  window.addEventListener('load', initCarousel);
+              }
 
             // Scroll calculation to find the center card
             const updateCenterCard = () => {
@@ -731,7 +741,7 @@
                 colorAutoplayInterval = setInterval(() => {
                     let nextIndex = (currentColorIndex + 1) % machines.length;
                     updateColorCarousel(nextIndex);
-                }, 3000);
+                }, 8000);
             };
 
             const resetColorAutoplay = () => {
@@ -921,9 +931,20 @@
                             if (!firstItem) return;
                             const itemWidth = firstItem.offsetWidth;
                             
-                            // If reached the end, loop back to start
+                            // If reached the end, loop back to start seamlessly
                             if (currentScroll + clientWidth >= scrollWidth - 10) {
-                                container.scrollTo({ left: 0, behavior: 'smooth' });
+                                container.style.scrollBehavior = 'auto';
+                                container.style.scrollSnapType = 'none';
+                                container.appendChild(firstItem);
+                                container.scrollLeft -= itemWidth;
+                                void container.offsetWidth;
+                                requestAnimationFrame(() => {
+                                    container.style.scrollBehavior = 'smooth';
+                                    container.scrollLeft += itemWidth;
+                                    setTimeout(() => {
+                                        container.style.scrollSnapType = 'x mandatory';
+                                    }, 500);
+                                });
                             } else {
                                 container.scrollBy({ left: itemWidth, behavior: 'smooth' });
                             }
@@ -947,9 +968,9 @@
                 });
             };
 
-            setupMobileAutoplay('.cards-container', '.feature-card', 6000);
-            setupMobileAutoplay('.reviews-container', '.review-card', 7000);
-            setupMobileAutoplay('.steps-container', '.step-item', 6000);
+            setupMobileAutoplay('.cards-container', '.feature-card', 12000);
+            setupMobileAutoplay('.reviews-container', '.review-card', 12000);
+            setupMobileAutoplay('.steps-container', '.step-item', 12000);
             
             const reviewCarousel = document.getElementById('reviewsCarousel');
             const reviewBtnPrev = document.getElementById('reviewPrevBtn');
