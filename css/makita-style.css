@@ -2496,3 +2496,31 @@ html {
 
 
 
+.colors-section .colors-title-wrapper, .colors-section .color-desc-1 {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.colors-section.animate-in .colors-title-wrapper, .colors-section.animate-in .color-desc-1 {
+    opacity: 1;
+    transform: translateY(0);
+}
+.colors-showcase {
+    transform: translateY(-20px);
+}
+@media (min-width: 769px) {
+    .colors-text {
+        opacity: 0;
+        transform: translateX(-100px) !important;
+        transition: opacity 0.8s ease, transform 0.8s ease !important;
+    }
+    .colors-section.animate-in .colors-text {
+        opacity: 1;
+        transform: translateX(0) !important;
+    }
+    .colors-section .colors-title-wrapper, .colors-section .color-desc-1 {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}
