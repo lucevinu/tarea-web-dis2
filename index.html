@@ -443,11 +443,20 @@
                 const targetId = item.getAttribute('href');
                 if (targetId && targetId !== '#') {
                     const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'center'
-                        });
+                                        if (targetElement) {
+                        if (targetId === '#productos') {
+                            const y = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                            const centerY = y - (window.innerHeight / 2) + (targetElement.offsetHeight / 2);
+                            window.scrollTo({
+                                top: centerY + 100, // +100px scrolls further down, pushing the element up
+                                behavior: 'smooth'
+                            });
+                        } else {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }
                     }
                 }
             });
@@ -1006,6 +1015,7 @@
     </script>
 </body>
 </html>
+
 
 
 
