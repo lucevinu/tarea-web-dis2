@@ -171,7 +171,7 @@ h1, h2, h3, h4, .anton-font {
     color: var(--makita-yellow);
     text-decoration: none;
     font-family: 'Figtree', sans-serif;
-    font-weight: 600;
+    font-weight: 600 !important;
     font-size: 0.95rem;
     letter-spacing: 1.5px;
     transition: all 0.3s ease;
@@ -200,7 +200,7 @@ h1, h2, h3, h4, .anton-font {
     font-size: 1rem;
     letter-spacing: 2px;
     margin-bottom: 10px;
-    font-weight: 600;
+    font-weight: 600 !important;
 }
 
 .section-title {
@@ -210,7 +210,7 @@ h1, h2, h3, h4, .anton-font {
     display: inline-block;
     border-bottom: none;
     padding-bottom: 0;
-    font-weight: 600;
+    font-weight: 600 !important;
 }
 
 .cards-container {
@@ -324,7 +324,7 @@ h1, h2, h3, h4, .anton-font {
 .banner h2.banner-title {
     font-family: 'Barlow Semi Condensed', sans-serif !important;
     font-size: 4.8rem;
-    font-weight: 600;
+    font-weight: 600 !important;
     color: var(--makita-yellow);
     margin-bottom: 5px;
     letter-spacing: 2px;
@@ -571,7 +571,7 @@ p.banner-desc {
     width: 25px;
     height: 25px;
     font-family: 'Figtree', sans-serif;
-    font-weight: 600;
+    font-weight: 600 !important;
     background-color: var(--makita-yellow);
     border: 1.2px solid var(--makita-yellow);
     border-radius: 50%;
@@ -2533,6 +2533,7 @@ html {
         transition: none !important;
     }
 }
+
 
 
 
