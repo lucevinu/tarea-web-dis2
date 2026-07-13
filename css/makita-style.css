@@ -1236,7 +1236,7 @@ p.banner-desc {
         padding-top: 26vh;
         background-image: url('../img/Img%20Hero%20Vertical%20F.png');
         background-size: 130% auto;
-        background-position: center calc(100% - 13vh);
+        background-position: center calc(100% - 20vh);
         align-items: center;
     }
     .hero-content {
@@ -1265,7 +1265,7 @@ p.banner-desc {
     }
     .hero::before {
         display: block;
-        background: radial-gradient(160% 68vh at top center, var(--bg-dark) 65%, transparent 100%);
+        background: radial-gradient(160% 55vh at top center, var(--bg-dark) 65%, transparent 100%);
         height: 100%;
         width: 100%;
         position: absolute;
@@ -2389,11 +2389,11 @@ html {
 /* iPhone 12 Pro and taller mobile screens */
 @media (max-width: 768px) and (min-height: 750px) {
             .hero {
-        background-position: center calc(100% - 21vh);
+        background-position: center calc(100% - 28vh);
         padding-top: 28vh;
     }
     .hero::before {
-        background: radial-gradient(160% 72vh at top center, var(--bg-dark) 65%, transparent 100%);
+        background: radial-gradient(160% 60vh at top center, var(--bg-dark) 65%, transparent 100%);
     }
     .hero::after {
         height: 35vh;
@@ -2518,6 +2518,7 @@ html {
         transition: none !important;
     }
 }
+
 
 
 
