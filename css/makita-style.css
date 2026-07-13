@@ -1268,8 +1268,15 @@ p.banner-desc {
         padding-left: 40px !important;
         padding-right: 40px !important;
     }
-    .context-banner.framed {
-        padding-bottom: 80px !important;
+        .context-banner.framed {
+        padding: 0 !important;
+    }
+    .context-banner.framed .context-image {
+        border-radius: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        margin: 0 !important;
+        max-width: none !important;
     }
     .features {
         margin-top: -30vh;
@@ -2541,6 +2548,7 @@ html {
         transition: none !important;
     }
 }
+
 
 
 
