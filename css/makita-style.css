@@ -2031,7 +2031,7 @@ p.banner-desc {
 }
 /* Reviews Section */
 .reviews-section {
-    padding: 80px 8%;
+    padding: 80px 8% 140px; /* Increased bottom padding for more black space */
     background-color: var(--bg-dark);
 }
 
@@ -2538,6 +2538,7 @@ html {
         transition: none !important;
     }
 }
+
 
 
 
