@@ -483,13 +483,9 @@
 
               // Initialize: wait a bit for layout to settle then find the center card
               const initCarousel = () => {
-                  // Move last card to start to fill the left side
-                  const initLastCard = carousel.lastElementChild;
-                  carousel.style.scrollSnapType = 'none';
-                  carousel.insertBefore(initLastCard, carousel.firstElementChild);
                   
                   requestAnimationFrame(() => {
-                      const centerCardInit = carousel.children[1];
+                      const centerCardInit = carousel.children[0];
                       let initScrollPos = centerCardInit.offsetLeft - (carousel.clientWidth / 2) + (centerCardInit.offsetWidth / 2);
                       carousel.scrollLeft = initScrollPos;
                       setTimeout(() => {
@@ -564,15 +560,6 @@
                 let cardsList = Array.from(carousel.children);
                 let activeIndex = cardsList.findIndex(card => card.classList.contains('active'));
                 
-                // If we are at the end, move the first element to the end to loop infinitely
-                if (activeIndex >= cardsList.length - 2) {
-                    const firstCard = carousel.firstElementChild;
-                    carousel.style.scrollSnapType = 'none';
-                    carousel.appendChild(firstCard);
-                    carousel.scrollLeft -= (firstCard.offsetWidth + 15); // 15 is gap
-                    void carousel.offsetWidth;
-                }
-                
                 requestAnimationFrame(() => {
                     carousel.style.scrollSnapType = 'x mandatory';
                     cardsList = Array.from(carousel.children);
@@ -588,15 +575,6 @@
             const movePrev = () => {
                 let cardsList = Array.from(carousel.children);
                 let activeIndex = cardsList.findIndex(card => card.classList.contains('active'));
-                
-                // If we are at the beginning, move the last element to the start
-                if (activeIndex <= 1) {
-                    const lastCard = carousel.lastElementChild;
-                    carousel.style.scrollSnapType = 'none';
-                    carousel.insertBefore(lastCard, carousel.firstElementChild);
-                    carousel.scrollLeft += (lastCard.offsetWidth + 15);
-                    void carousel.offsetWidth;
-                }
                 
                 requestAnimationFrame(() => {
                     carousel.style.scrollSnapType = 'x mandatory';
@@ -931,55 +909,6 @@
                 scrollSpyObserver.observe(section);
             });
             
-            // Mobile Autoplay for horizontal carousels
-            const setupMobileAutoplay = (containerSelector, itemSelector, intervalMs) => {
-                const container = document.querySelector(containerSelector);
-                if (!container) return;
-                let autoPlayInterval;
-                
-                const startAutoplay = () => {
-                    if (window.innerWidth <= 768) {
-                        autoPlayInterval = setInterval(() => {
-                            const scrollWidth = container.scrollWidth;
-                            const clientWidth = container.clientWidth;
-                            let currentScroll = container.scrollLeft;
-                            const firstItem = container.querySelector(itemSelector);
-                            if (!firstItem) return;
-                            const itemWidth = firstItem.offsetWidth + 15;
-                            
-                            container.scrollBy({ left: itemWidth, behavior: 'smooth' });
-                            
-                            setTimeout(() => {
-                                if (container.scrollLeft + clientWidth >= container.scrollWidth - itemWidth/2) {
-                                    container.appendChild(container.firstElementChild);
-                                    container.scrollLeft -= itemWidth;
-                                    void container.offsetWidth;
-                                }
-                            }, 600);
-                        }, intervalMs);
-                    }
-                };
-
-                const stopAutoplay = () => clearInterval(autoPlayInterval);
-                
-                // Pause on manual touch interaction
-                container.addEventListener('touchstart', stopAutoplay, { passive: true });
-                container.addEventListener('touchend', () => {
-                    setTimeout(stopAutoplay, 10);
-                    setTimeout(startAutoplay, intervalMs); // Resume after interval
-                });
-                
-                startAutoplay();
-                window.addEventListener('resize', () => {
-                    stopAutoplay();
-                    startAutoplay();
-                });
-            };
-
-            setupMobileAutoplay('.cards-container', '.feature-card', 12000);
-            setupMobileAutoplay('.reviews-container', '.review-card', 12000);
-            setupMobileAutoplay('.steps-container', '.step-item', 12000);
-            
             const reviewCarousel = document.getElementById('reviewsCarousel');
             const reviewBtnPrev = document.getElementById('reviewPrevBtn');
             const reviewBtnNext = document.getElementById('reviewNextBtn');
@@ -988,12 +917,9 @@
                 const reviewCards = Array.from(reviewCarousel.children);
                 
                 const initReviewCarousel = () => {
-                    const initLastCard = reviewCarousel.lastElementChild;
-                    reviewCarousel.style.scrollSnapType = 'none';
-                    reviewCarousel.insertBefore(initLastCard, reviewCarousel.firstElementChild);
                     
                     requestAnimationFrame(() => {
-                        const centerCardInit = reviewCarousel.children[1];
+                        const centerCardInit = reviewCarousel.children[0];
                         let initScrollPos = centerCardInit.offsetLeft - (reviewCarousel.clientWidth / 2) + (centerCardInit.offsetWidth / 2);
                         reviewCarousel.scrollLeft = initScrollPos;
                         setTimeout(() => {
@@ -1047,28 +973,12 @@
                     const cardWidth = reviewCarousel.firstElementChild.offsetWidth + 15;
                     
                     reviewCarousel.scrollBy({ left: cardWidth, behavior: 'smooth' });
-                    
-                    setTimeout(() => {
-                        if (reviewCarousel.scrollLeft + reviewCarousel.clientWidth >= reviewCarousel.scrollWidth - cardWidth/2) {
-                            reviewCarousel.appendChild(reviewCarousel.firstElementChild);
-                            reviewCarousel.scrollLeft -= cardWidth;
-                            void reviewCarousel.offsetWidth;
-                        }
-                    }, 600);
                 });
                 
                 reviewBtnPrev.addEventListener('click', () => {
                     const cardWidth = reviewCarousel.firstElementChild.offsetWidth + 15;
                     
                     reviewCarousel.scrollBy({ left: -cardWidth, behavior: 'smooth' });
-                    
-                    setTimeout(() => {
-                        if (reviewCarousel.scrollLeft <= 10) {
-                            reviewCarousel.prepend(reviewCarousel.lastElementChild);
-                            reviewCarousel.scrollLeft += cardWidth;
-                            void reviewCarousel.offsetWidth;
-                        }
-                    }, 600);
                 });
             }
             // Context Banner Interactive Color Selector
@@ -1096,6 +1006,9 @@
     </script>
 </body>
 </html>
+
+
+
 
 
 
