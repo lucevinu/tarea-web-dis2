@@ -2337,8 +2337,9 @@ html {
         gap: 20px !important;
         z-index: 1 !important;
         width: 100% !important;
-        opacity: 1 !important;
-        transform: none !important;
+        opacity: 0 !important;
+        transform: translateX(50px) !important;
+        transition: opacity 0.4s ease-out, transform 0.4s ease-out !important;
     }
     .step-circle { 
         width: 50px !important;
@@ -2353,17 +2354,11 @@ html {
     .step-item p.anton-font {
         font-size: 0.9rem !important;
     }
-    .step-item p { 
-        margin: 0 !important; 
-        opacity: 0;
-        transform: translateX(50px);
-        transition: opacity 0.3s ease-out, transform 0.3s ease-out;
-    }
-    .steps-section.animate-in .step-item p {
-        opacity: 1;
-        transform: translateX(0);
-        transition-delay: 0.2s;
-    }
+    .step-item p { margin: 0 !important; }
+    .steps-section.animate-in .step-item:nth-child(2) p { opacity: 1; transform: translateX(0); transition-delay: 0.15s !important; }
+    .steps-section.animate-in .step-item:nth-child(3) p { opacity: 1; transform: translateX(0); transition-delay: 0.65s !important; }
+    .steps-section.animate-in .step-item:nth-child(4) p { opacity: 1; transform: translateX(0); transition-delay: 1.15s !important; }
+    .steps-section.animate-in .step-item:nth-child(5) p { opacity: 1; transform: translateX(0); transition-delay: 1.65s !important; }
     .connecting-line { 
         display: block !important; 
         position: absolute !important;
@@ -2386,6 +2381,10 @@ html {
         opacity: 1 !important;
         transform: none !important;
     }
+    .steps-section.animate-in .step-item:nth-child(2) { transition-delay: 0s !important; }
+    .steps-section.animate-in .step-item:nth-child(3) { transition-delay: 0.5s !important; }
+    .steps-section.animate-in .step-item:nth-child(4) { transition-delay: 1.0s !important; }
+    .steps-section.animate-in .step-item:nth-child(5) { transition-delay: 1.5s !important; }
     .steps-section.animate-in .step-item:nth-child(2) .step-circle { transition-delay: 0.15s !important; }
     .steps-section.animate-in .step-item:nth-child(3) .step-circle { transition-delay: 0.65s !important; }
     .steps-section.animate-in .step-item:nth-child(4) .step-circle { transition-delay: 1.15s !important; }
@@ -2524,3 +2523,5 @@ html {
         transition: none !important;
     }
 }
+
+
