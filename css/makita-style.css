@@ -760,8 +760,7 @@ p.banner-desc {
     width: 100%;
     max-width: 100%;
     height: 160px;
-    object-fit: contain;
-    margin: 0 auto 15px;
+    object-fit: contain; margin: 0 auto 15px; mix-blend-mode: lighten;
     filter: drop-shadow(0 15px 20px rgba(0,0,0,0.9));
     transition: transform 0.4s ease;
 }
@@ -2494,4 +2493,5 @@ html {
 
 .products-carousel-section .section-title { opacity: 0; transform: translateY(-20px); transition: opacity 0.8s ease, transform 0.8s ease; }
 .products-carousel-section.animate-in .section-title { opacity: 1; transform: translateY(0); }
+
 
